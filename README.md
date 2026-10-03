@@ -1,212 +1,313 @@
-# 🧠 AGI — 100 Days of Artificial General Intelligence
+# 🧠 100 DAYS OF AGI
 
 <div align="center">
 
-<img src="assets/agi-day1.svg" alt="100 Days of AGI - Day 01" width="100%">
+<img src="assets/agi-flyer.svg" alt="100 Days of AGI" width="100%">
 
-### **Learn → Build → Experiment → Document**
+### BUILDING INTELLIGENCE — ONE EXPERIMENT AT A TIME
 
-A living research/build log exploring **reasoning, agents, symbolic AI, spatial intelligence, multimodal systems, and emerging AI technology**.
+[![Day 01](https://img.shields.io/badge/DAY-01%20%2F%20100-7c3aed?style=for-the-badge)](./days/DAY_01.md)
+[![Build Log](https://img.shields.io/badge/BUILD-LOG-111827?style=for-the-badge)](./ROADMAP.md)
+[![Research](https://img.shields.io/badge/RESEARCH-LIVE-0ea5e9?style=for-the-badge)](./RESOURCES.md)
+[![Status](https://img.shields.io/badge/STATUS-EXPERIMENTING-22c55e?style=for-the-badge)](#)
 
-[![Day 01](https://img.shields.io/badge/Day-01-8ea7ff?style=for-the-badge)](./days/DAY_01.md)
-[![Progress](https://img.shields.io/badge/Progress-1%2F100-111827?style=for-the-badge)](./days/DAY_01.md)
-[![Status](https://img.shields.io/badge/Status-Building-22c55e?style=for-the-badge)](#)
+**Learn · Build · Break · Measure · Understand · Repeat**
 
 </div>
 
 ---
 
-## ⚡ What is this?
+## ⚡ WHAT IS THIS?
 
-This is **not a course dump**.
+You gave me one word:
 
-This repository is a 100-day public build log where every day produces something tangible:
+> **AGI**
 
-- 🧠 one important concept
-- 💻 one implementation or experiment
-- 🔬 one observation/result
-- 📝 one concise research note
-- 🆕 one check for relevant new technology
-- ➡️ one clear next step
+Everything else is allowed to evolve.
 
-The long-term direction is a research-oriented exploration of **symbolic reasoning + geometric knowledge + multimodal intelligence + autonomous systems**.
+This repository is a **100-day public research/build journey**. We are not following a five-topic syllabus. We are building a broad map across **reasoning, learning, language, vision, spatial intelligence, memory, agents, world models, robotics, neuro-symbolic AI, evaluation, and whatever genuinely important new technology appears along the way.**
+
+The rule:
+
+~~~text
+QUESTION → RESEARCH → BUILD → BREAK / TEST → MEASURE → KEEP / CHANGE / DROP → NEXT DAY
+~~~
 
 ---
 
-## 🗺️ 100-Day Roadmap
+## 🗺️ ENTER THE LAB
+
+| 🚪 | Destination |
+|---|---|
+| 🟣 **Today's experiment** | [DAY 01 → Geometric Knowledge Representation](./days/DAY_01.md) |
+| 🧭 **100-day map** | [ROADMAP →](./ROADMAP.md) |
+| 🌐 **Resource atlas** | [RESOURCES →](./RESOURCES.md) |
+| 🧪 **Day 01 code** | [geometric_knowledge.py →](./days/day-01/geometric_knowledge.py) |
 
 <details open>
-<summary><b>Phase 01 — Foundations · Days 01–20</b></summary>
+<summary><b>🎛️ OPEN THE LAB DASHBOARD</b></summary>
 
-| Day | Topic | Status |
-|---|---|---|
-| **01** | Geometric Knowledge Representation | 🟢 Current |
-| 02 | Symbolic Rules & Inference | ⬜ |
-| 03 | Knowledge Graphs | ⬜ |
-| 04 | Ontologies & Concepts | ⬜ |
-| 05 | Constraint Reasoning | ⬜ |
-| 06–10 | Reasoning experiments | ⬜ |
-| 11–20 | Multimodal + spatial foundations | ⬜ |
+### Current State
+
+**DAY 01 / 100**
+
+`[█░░░░░░░░░░░░░░░░░░] 1%`
+
+**Current question**
+
+> Can a machine represent a small world explicitly and reason over it without guessing?
+
+**Current build**
+
+`coordinates → relations → derived facts`
+
+**Next unlock**
+
+`symbolic rules → inference → multi-step reasoning`
+
+</details>
+
+---
+
+## 🎬 DAY 01 — START HERE
+
+### Geometric Knowledge Representation
+
+We begin with something deliberately small.
+
+A world contains objects. Objects have properties. Objects have relationships. Some relationships can be **computed**, not merely described.
+
+~~~text
+A = (0, 0)             B = (3, 4)
+
+        B ●
+          │
+          │
+          │
+          │
+A ●───────┘
+
+distance(A,B) = 5
+A is left of B
+A is below B
+~~~
+
+The interesting transition is:
+
+**description → representation → computation → reasoning**
+
+👉 **[Read Day 01 →](./days/DAY_01.md)**
+
+---
+
+## 🧩 100 DAYS — THE MAP
+
+The roadmap is deliberately broad. It is a **research map**, not a promise that every day will remain unchanged.
+
+<details>
+<summary><b>01–10 · Foundations of Reasoning</b></summary>
+
+Geometric knowledge · symbolic rules · knowledge graphs · ontologies · constraints · unification · search · probabilistic reasoning · causal reasoning · hybrid reasoner
 
 </details>
 
 <details>
-<summary><b>Phase 02 — Spatial Intelligence · Days 21–40</b></summary>
+<summary><b>11–20 · Learning Representations</b></summary>
 
-3D representations • point clouds • meshes • graph geometry • spatial reasoning • geometric learning
-
-</details>
-
-<details>
-<summary><b>Phase 03 — Agents & Reasoning · Days 41–60</b></summary>
-
-Tool use • planning • memory • verification • agent loops • neuro-symbolic systems
+Embeddings · metric learning · GNNs · graph transformers · neural retrieval · vector databases · structured retrieval · memory representations · representation evaluation · neural-symbolic bridges
 
 </details>
 
 <details>
-<summary><b>Phase 04 — Generative Intelligence · Days 61–80</b></summary>
+<summary><b>21–30 · Multimodal Intelligence</b></summary>
 
-Generative models • optimization • evolutionary search • simulation • computational morphogenesis
+Vision encoders · VLMs · image-to-structure · scene graphs · spatial relations · 3D representations · point clouds · meshes · multi-view reasoning · multimodal world representation
 
 </details>
 
 <details>
-<summary><b>Phase 05 — Integrated AGI Experiments · Days 81–100</b></summary>
+<summary><b>31–40 · Spatial Intelligence</b></summary>
 
-Multimodal perception → structured world model → reasoning → action → verification → explanation
+Coordinate systems · transformations · localization · mapping · spatial memory · geometric planning · topology · affordances · spatial benchmarks · spatial agents
+
+</details>
+
+<details>
+<summary><b>41–50 · Language, Retrieval & Memory</b></summary>
+
+Tokenization · attention · context · RAG · long-term memory · episodic memory · semantic memory · tool-augmented retrieval · memory evaluation · persistent memory prototype
+
+</details>
+
+<details>
+<summary><b>51–60 · Agents</b></summary>
+
+Tool use · function calling · planning loops · ReAct · multi-agent systems · agent memory · reflection · verification · computer use · autonomous research agent
+
+</details>
+
+<details>
+<summary><b>61–70 · Generative AI & World Models</b></summary>
+
+Generative models · diffusion · world representations · simulation · learned dynamics · world models · predictive representations · planning in learned worlds · evolutionary search · computational morphogenesis
+
+</details>
+
+<details>
+<summary><b>71–80 · Embodied / Physical Intelligence</b></summary>
+
+Robotics · perception-to-action · navigation · manipulation · robot memory · spatial tool use · simulation-to-real · physical constraints · embodied benchmarks · embodied intelligence loop
+
+</details>
+
+<details>
+<summary><b>81–90 · Neuro-Symbolic AGI</b></summary>
+
+Neural-symbolic architectures · differentiable logic · logic + embeddings · knowledge graph completion · rule learning · neuro-symbolic planning · program synthesis · verification · explanation · hybrid reasoning engine
+
+</details>
+
+<details>
+<summary><b>91–100 · Integrated AGI Experiments</b></summary>
+
+Unified world model · perception → memory · memory → reasoning · reasoning → planning · planning → action · action → observation · self-evaluation · continual learning · full-system experiment · research demo
+
+</details>
+
+**Full version → [ROADMAP.md](./ROADMAP.md)**
+
+---
+
+## 🧪 THE DAILY FORMAT
+
+Every day should leave something **real** behind.
+
+<details>
+<summary>📖 <b>1 — Research</b></summary>
+
+Read papers, docs, implementations, benchmarks, technical reports and primary sources.
+
+</details>
+
+<details>
+<summary>🔨 <b>2 — Build</b></summary>
+
+Write the smallest useful implementation. Prefer something runnable over another page of theory.
+
+</details>
+
+<details>
+<summary>💥 <b>3 — Break</b></summary>
+
+Try edge cases. Compare approaches. Find where the idea fails.
+
+</details>
+
+<details>
+<summary>📊 <b>4 — Measure</b></summary>
+
+Record outputs, accuracy, latency, cost, failure cases or whatever metric actually matters.
+
+</details>
+
+<details>
+<summary>📝 <b>5 — Explain</b></summary>
+
+Document what happened, what changed in our mental model, and what should happen next.
 
 </details>
 
 ---
 
-## 🚀 Start Here
+## 🆕 THE NEW-TECH RADAR
 
-### [📖 Day 01 — Geometric Knowledge Representation](./days/DAY_01.md)
+**This is the part that makes the 100 days alive.**
 
-**Question:** Can a machine represent a simple spatial world as explicit knowledge and reason over it?
+The roadmap is not frozen.
 
-**Build:** a tiny geometric knowledge graph.
+If a new model architecture, agent protocol, spatial model, world model, reasoning technique, benchmark, open-source framework, robotics stack or other technology becomes relevant, we can interrupt the roadmap and test it.
 
-**Result:** derive distance and directional relationships from structured coordinates.
+~~~text
+NEW TECH
+   ↓
+DISCOVER → READ → REPRODUCE → BENCHMARK
+                                  ↓
+                         INTEGRATE / REJECT
+~~~
 
----
+Recent spatial-intelligence research has expanded toward brain-inspired spatial intelligence, spatial-functional benchmarks, multi-view reasoning, and spatial agents/world models. These are exactly the kinds of developments that can change what we build next. 
 
-## 🧩 The Core Loop
-
-```text
-        ┌───────────────────┐
-        │   Learn a concept │
-        └─────────┬─────────┘
-                  ↓
-        ┌───────────────────┐
-        │   Build something │
-        └─────────┬─────────┘
-                  ↓
-        ┌───────────────────┐
-        │ Run an experiment │
-        └─────────┬─────────┘
-                  ↓
-        ┌───────────────────┐
-        │ Document the result│
-        └─────────┬─────────┘
-                  ↓
-        ┌───────────────────┐
-        │ Check new tech 🆕 │
-        └─────────┬─────────┘
-                  ↓
-               NEXT DAY
-```
+**Resource radar → [RESOURCES.md](./RESOURCES.md)**
 
 ---
 
-## 🆕 New Technology Radar
+## 🌍 THE BIG PICTURE
 
-AI moves too quickly for a fixed 100-day syllabus.
+~~~mermaid
+flowchart LR
+    A[Environment] --> B[Perception]
+    B --> C[World Representation]
+    C --> D[Memory]
+    D --> E[Reasoning]
+    E --> F[Planning]
+    F --> G[Tools / Action]
+    G --> H[Observation]
+    H --> D
+    E --> I[Verification]
+    I --> J[Explanation]
+~~~
 
-So the roadmap is **intentionally allowed to change**.
+The long-term experiment is not:
 
-When a relevant technology appears, we'll:
+> “Build a chatbot.”
 
-**Discover → Test → Compare → Integrate / Skip**
+It is:
 
-Possible areas:
-
-- New reasoning models
-- Multimodal models
-- Agent frameworks
-- Open-source models
-- Spatial / 3D AI
-- Neuro-symbolic methods
-- World models
-- Robotics / embodied AI
-- New developer tooling
-
-A technology only enters the core project when the experiment shows a useful reason.
-
----
-
-## 🧭 Long-Term Architecture
-
-```text
-                 Human / Environment
-                         │
-                         ▼
-              ┌─────────────────────┐
-              │ Multimodal Perception│
-              └──────────┬──────────┘
-                         ▼
-              ┌─────────────────────┐
-              │ World Representation │
-              │ text / graph / 3D   │
-              └──────────┬──────────┘
-                         ▼
-              ┌─────────────────────┐
-              │ Reasoning + Memory  │
-              └──────────┬──────────┘
-                         ▼
-              ┌─────────────────────┐
-              │ Planning + Tools    │
-              └──────────┬──────────┘
-                         ▼
-              ┌─────────────────────┐
-              │ Verify + Explain    │
-              └──────────┬──────────┘
-                         ▼
-                    Action / Output
-```
+> **Can multiple forms of intelligence be connected into a system that can perceive, represent, remember, reason, act, verify and explain?**
 
 ---
 
-## 📚 Daily Index
+## 🌐 RESOURCE UNIVERSE
 
-| Day | Focus | Link |
-|---:|---|---|
-| 01 | Geometric Knowledge Representation | [Open →](./days/DAY_01.md) |
-| 02 | Symbolic Rules & Inference | Coming next |
-| 03 | Knowledge Graphs | Coming soon |
-| 04 | Ontologies | Coming soon |
-| 05 | Constraint Reasoning | Coming soon |
+We will pull knowledge from **every useful layer**:
 
-> This index will grow every day. No fake progress bars — only committed work.
+**Papers · research labs · open-source repos · benchmarks · datasets · documentation · books · courses · technical reports · simulators · developer tools**
+
+Starting points:
+
+- [Avik Jain — 100 Days of ML Code](https://github.com/Avik-Jain/100-Days-Of-ML-Code)
+- [LLMs from Scratch](https://github.com/rasbt/LLMs-from-scratch)
+- [nanoGPT](https://github.com/karpathy/nanoGPT)
+- [Hugging Face](https://huggingface.co/)
+- [Papers with Code](https://paperswithcode.com/)
+- [arXiv AI](https://arxiv.org/list/cs.AI/recent)
+
+**→ [Open the full Resource Atlas](./RESOURCES.md)**
 
 ---
 
-## 🔭 Research Direction
+## 🧭 RULES OF THE 100 DAYS
 
-The existing research direction of this repository explores the intersection of:
-
-**AI/ML + symbolic reasoning + spatial/geometric computing + engineering/design automation.**
-
-The 100-day build turns that high-level direction into small, reproducible experiments.
+| Rule | Meaning |
+|---|---|
+| **Build > collect** | A repo full of links is not an experiment. |
+| **Evidence > hype** | New does not automatically mean useful. |
+| **Failure counts** | A broken experiment is still data. |
+| **Small → hard** | Start with inspectable systems, then increase complexity. |
+| **Measure** | Serious claims need an experiment or source. |
+| **Stay flexible** | New technology can change the roadmap. |
+| **Keep history** | Git commits are the research diary. |
 
 ---
 
 <div align="center">
 
-### **Day 01 / 100**
+### 🟣 DAY 01 / 100
 
-**The goal isn't to claim AGI.  
-The goal is to understand, build, test, and document the pieces.**
+**WE ARE NOT CLAIMING AGI.**
+
+**WE ARE BUILDING TOWARD UNDERSTANDING IT.**
+
+[🚀 ENTER DAY 01](./days/DAY_01.md) · [🗺️ ROADMAP](./ROADMAP.md) · [🌐 RESOURCES](./RESOURCES.md)
 
 </div>
