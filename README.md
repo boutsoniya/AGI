@@ -15,6 +15,10 @@
 
 </div>
 
+
+> 🚀 **Interactive Lab:** [Open the AGI Lab](./index.html) — search all 100 experiments, filter by capability, switch grid/timeline views, track progress locally, jump to a random experiment, and open research links.
+
+
 ---
 
 ## ⚡ WHAT IS THIS?
