@@ -1,322 +1,212 @@
-# AGI — Geometric & Cross-Domain Intelligence
+# 🧠 AGI — 100 Days of Artificial General Intelligence
 
-A research-oriented project exploring the intersection of **Symbolic AGI, geometric knowledge engineering, computational morphogenesis, spatial intelligence, and automated design**.
+<div align="center">
 
-The central idea is to build systems that do more than generate plausible outputs: they should represent structure explicitly, reason over relationships and constraints, and use geometry as a first-class form of knowledge.
+<img src="assets/agi-day1.svg" alt="100 Days of AGI - Day 01" width="100%">
 
-## Core Direction
+### **Learn → Build → Experiment → Document**
 
-The project is organized around three connected layers:
+A living research/build log exploring **reasoning, agents, symbolic AI, spatial intelligence, multimodal systems, and emerging AI technology**.
 
-**AI / Symbolic Reasoning**  
-Neuro-symbolic reasoning, knowledge graphs, ontologies, logical constraints, planning, explainability, and automated theorem proving.
+[![Day 01](https://img.shields.io/badge/Day-01-8ea7ff?style=for-the-badge)](./days/DAY_01.md)
+[![Progress](https://img.shields.io/badge/Progress-1%2F100-111827?style=for-the-badge)](./days/DAY_01.md)
+[![Status](https://img.shields.io/badge/Status-Building-22c55e?style=for-the-badge)](#)
 
-**Spatial & Geometric Intelligence**  
-Geometric representations, invariants, meshes, point clouds, graph structures, computational geometry, spatial reasoning, and context-dependent transformations.
+</div>
 
-**Engineering & Design Automation**  
-Parametric design, CAD/BIM automation, computational architecture, performance-driven design, morphogenic systems, optimization, and digital twins.
+---
 
-This cross-domain framing follows the supplied research notes, which describe the combination of AI/ML, spatial/geometric computing, and architecture/physics as a specialized technical direction. fileciteturn0file0L106-L132
+## ⚡ What is this?
 
-## Research Themes
+This is **not a course dump**.
 
-### 1. Symbolic AGI
+This repository is a 100-day public build log where every day produces something tangible:
 
-Symbolic AGI combines neural perception with explicit symbolic reasoning.
+- 🧠 one important concept
+- 💻 one implementation or experiment
+- 🔬 one observation/result
+- 📝 one concise research note
+- 🆕 one check for relevant new technology
+- ➡️ one clear next step
 
-Key components:
+The long-term direction is a research-oriented exploration of **symbolic reasoning + geometric knowledge + multimodal intelligence + autonomous systems**.
 
-- Knowledge graphs and ontologies
-- Logic and rule systems
-- Constraint reasoning
-- Commonsense and causal representations
-- Explainable, auditable reasoning
-- Neuro-symbolic integration
-- Automated theorem proving
+---
 
-The supplied material specifically connects symbolic reasoning with geometric engineering: a future design system could generate geometry while reasoning over structural, safety, thermal, and other constraints. fileciteturn0file0L143-L164
+## 🗺️ 100-Day Roadmap
 
-### 2. Geometric Knowledge Engineering
+<details open>
+<summary><b>Phase 01 — Foundations · Days 01–20</b></summary>
 
-Instead of treating geometry only as an output, this project treats geometry as structured knowledge.
+| Day | Topic | Status |
+|---|---|---|
+| **01** | Geometric Knowledge Representation | 🟢 Current |
+| 02 | Symbolic Rules & Inference | ⬜ |
+| 03 | Knowledge Graphs | ⬜ |
+| 04 | Ontologies & Concepts | ⬜ |
+| 05 | Constraint Reasoning | ⬜ |
+| 06–10 | Reasoning experiments | ⬜ |
+| 11–20 | Multimodal + spatial foundations | ⬜ |
 
-Potential representations include:
+</details>
 
-- Graphs
-- Meshes
-- Point clouds
-- Geometric primitives
-- Topological relationships
-- Geometric invariants
-- Spatial constraints
-- Transformation rules
+<details>
+<summary><b>Phase 02 — Spatial Intelligence · Days 21–40</b></summary>
 
-The source material describes a possible future role called **Geometric Knowledge Engineer**, focused on abstract feature analysis and geometric invariants. fileciteturn0file0L168-L180
+3D representations • point clouds • meshes • graph geometry • spatial reasoning • geometric learning
 
-### 3. Computational Morphogenesis
+</details>
 
-Computational morphogenesis explores how complex forms can be generated or transformed through rules, parameters, environmental conditions, and optimization.
+<details>
+<summary><b>Phase 03 — Agents & Reasoning · Days 41–60</b></summary>
 
-Possible applications:
+Tool use • planning • memory • verification • agent loops • neuro-symbolic systems
 
-- Generative architecture
-- Structural optimization
-- Cellular and lattice geometry
-- Climate-responsive forms
-- Material optimization
-- Automated shape transformation
-- Multi-objective generative systems
+</details>
 
-The supplied notes describe algorithmic morphogenesis as using parameters such as wind, light, and structural conditions to drive form generation. fileciteturn0file0L28-L36
+<details>
+<summary><b>Phase 04 — Generative Intelligence · Days 61–80</b></summary>
 
-### 4. Cross-Domain Invariant Engineering
+Generative models • optimization • evolutionary search • simulation • computational morphogenesis
 
-A long-term research direction is finding reusable structural relationships across domains that normally remain separate.
+</details>
 
-Example domains:
+<details>
+<summary><b>Phase 05 — Integrated AGI Experiments · Days 81–100</b></summary>
 
-- Physics
-- Architecture
-- Electronics
-- Materials
-- Robotics
-- Mathematics
-- Computer science
+Multimodal perception → structured world model → reasoning → action → verification → explanation
 
-The goal is not simply to connect datasets, but to discover representations and invariants that allow reasoning to transfer between domains.
+</details>
 
-### 5. Context Geometry
+---
 
-Meaning and useful structure can change with context.
+## 🚀 Start Here
 
-A context-aware geometric intelligence system could reason about:
+### [📖 Day 01 — Geometric Knowledge Representation](./days/DAY_01.md)
 
-- Environment
-- Function
-- Constraints
-- Human requirements
-- Physical conditions
-- Available materials
-- Energy and climate
-- Manufacturing limitations
+**Question:** Can a machine represent a simple spatial world as explicit knowledge and reason over it?
 
-This corresponds to the supplied concept of **Context Geometry Designer**, where systems and solutions dynamically change according to their environment and context. fileciteturn0file0L174-L184
+**Build:** a tiny geometric knowledge graph.
 
-## Proposed System Architecture
+**Result:** derive distance and directional relationships from structured coordinates.
 
-```
-                 ┌───────────────────────────┐
-                 │       User / Environment   │
-                 └─────────────┬─────────────┘
-                               │
-                               ▼
-                 ┌───────────────────────────┐
-                 │ Perception & Data Layer   │
-                 │ text / image / 3D / CAD   │
-                 └─────────────┬─────────────┘
-                               │
-                               ▼
-                 ┌───────────────────────────┐
-                 │ Geometric Knowledge Layer │
-                 │ graphs / meshes / rules   │
-                 │ invariants / relations    │
-                 └─────────────┬─────────────┘
-                               │
-                 ┌─────────────▼─────────────┐
-                 │ Symbolic Reasoning Engine  │
-                 │ logic / constraints /      │
-                 │ planning / verification    │
-                 └─────────────┬─────────────┘
-                               │
-                 ┌─────────────▼─────────────┐
-                 │ Generative & Optimization  │
-                 │ search / evolution / ML    │
-                 └─────────────┬─────────────┘
-                               │
-                 ┌─────────────▼─────────────┐
-                 │ Engineering Validation     │
-                 │ physics / structure / BIM  │
-                 └─────────────┬─────────────┘
-                               │
-                               ▼
-                 ┌───────────────────────────┐
-                 │ Explainable Design Output │
-                 │ geometry + reasoning      │
-                 └───────────────────────────┘
+---
+
+## 🧩 The Core Loop
+
+```text
+        ┌───────────────────┐
+        │   Learn a concept │
+        └─────────┬─────────┘
+                  ↓
+        ┌───────────────────┐
+        │   Build something │
+        └─────────┬─────────┘
+                  ↓
+        ┌───────────────────┐
+        │ Run an experiment │
+        └─────────┬─────────┘
+                  ↓
+        ┌───────────────────┐
+        │ Document the result│
+        └─────────┬─────────┘
+                  ↓
+        ┌───────────────────┐
+        │ Check new tech 🆕 │
+        └─────────┬─────────┘
+                  ↓
+               NEXT DAY
 ```
 
-## Technical Stack
+---
 
-### Programming
+## 🆕 New Technology Radar
 
-- Python
-- TypeScript / JavaScript
-- Linear algebra and numerical computing
-- Algorithms and data structures
+AI moves too quickly for a fixed 100-day syllabus.
 
-### Geometry
+So the roadmap is **intentionally allowed to change**.
 
-Potential libraries and platforms:
+When a relevant technology appears, we'll:
 
-- Open3D
-- Trimesh
-- Shapely
-- NetworkX
-- Rhino / Grasshopper
-- Blender
-- Autodesk Revit / BIM APIs
+**Discover → Test → Compare → Integrate / Skip**
 
-The source material specifically recommends moving beyond general data science libraries toward spatial libraries such as Shapely, Trimesh, NetworkX, and Open3D. fileciteturn0file0L124-L139
+Possible areas:
 
-### AI
+- New reasoning models
+- Multimodal models
+- Agent frameworks
+- Open-source models
+- Spatial / 3D AI
+- Neuro-symbolic methods
+- World models
+- Robotics / embodied AI
+- New developer tooling
 
-- Neural networks
-- LLMs
-- Graph neural networks
-- Geometric deep learning
-- Generative models
-- Reinforcement learning
-- Genetic / evolutionary optimization
+A technology only enters the core project when the experiment shows a useful reason.
 
-### Symbolic Layer
+---
 
-- Knowledge graphs
-- Ontologies
-- Constraint solvers
-- Rule engines
-- Graph reasoning
-- Theorem proving
+## 🧭 Long-Term Architecture
 
-## First Prototypes
-
-The project can evolve through small, testable prototypes rather than attempting AGI directly.
-
-### Prototype 01 — Geometric Knowledge Graph
-
-Input geometric objects and relationships.
-
-Output:
-
-- Nodes representing objects
-- Edges representing spatial relationships
-- Computable geometric properties
-- Queryable knowledge representation
-
-### Prototype 02 — Constraint-Aware Generator
-
-Input:
-
-- Site dimensions
-- Functional requirements
-- Environmental constraints
-- Structural constraints
-
-Output:
-
-- Candidate spatial configurations
-- Constraint violations
-- Explanations for accepted/rejected designs
-
-### Prototype 03 — Morphogenic Optimizer
-
-Start with a primitive geometry and repeatedly transform it according to:
-
-- Load
-- Light
-- Wind
-- Material
-- Energy
-- Spatial constraints
-
-The system searches for forms satisfying multiple objectives.
-
-### Prototype 04 — Neuro-Symbolic Geometry Agent
-
-Combine:
-
-```
-LLM / Neural Model
-        +
-Geometric Representation
-        +
-Symbolic Rules
-        +
-Constraint Solver
-        =
-Reasoning Design Agent
+```text
+                 Human / Environment
+                         │
+                         ▼
+              ┌─────────────────────┐
+              │ Multimodal Perception│
+              └──────────┬──────────┘
+                         ▼
+              ┌─────────────────────┐
+              │ World Representation │
+              │ text / graph / 3D   │
+              └──────────┬──────────┘
+                         ▼
+              ┌─────────────────────┐
+              │ Reasoning + Memory  │
+              └──────────┬──────────┘
+                         ▼
+              ┌─────────────────────┐
+              │ Planning + Tools    │
+              └──────────┬──────────┘
+                         ▼
+              ┌─────────────────────┐
+              │ Verify + Explain    │
+              └──────────┬──────────┘
+                         ▼
+                    Action / Output
 ```
 
-The agent should be able to explain **why** a generated solution satisfies or violates a constraint.
+---
 
-## Long-Term Vision
+## 📚 Daily Index
 
-The long-term direction is a computational intelligence system that can:
+| Day | Focus | Link |
+|---:|---|---|
+| 01 | Geometric Knowledge Representation | [Open →](./days/DAY_01.md) |
+| 02 | Symbolic Rules & Inference | Coming next |
+| 03 | Knowledge Graphs | Coming soon |
+| 04 | Ontologies | Coming soon |
+| 05 | Constraint Reasoning | Coming soon |
 
-1. Understand complex spatial environments.
-2. Build structured geometric knowledge.
-3. Discover relationships and invariants.
-4. Reason using explicit constraints.
-5. Generate candidate solutions.
-6. Simulate and optimize them.
-7. Verify their properties.
-8. Explain the reasoning behind the result.
-9. Transfer useful abstractions between domains.
+> This index will grow every day. No fake progress bars — only committed work.
 
-This is intended as a research and engineering direction, not a claim that current systems already possess AGI.
+---
 
-## Career / Research Relevance
+## 🔭 Research Direction
 
-The supplied material identifies several emerging or speculative role concepts around this intersection:
+The existing research direction of this repository explores the intersection of:
 
-- Geometric Knowledge Engineer
-- Morphogenic Engineer
-- Computational Designer
-- BIM / Automation Engineer
-- Cross-Domain Invariant Engineer
-- Context Geometry Designer
-- AI/ML Engineer for Spatial Computing
+**AI/ML + symbolic reasoning + spatial/geometric computing + engineering/design automation.**
 
-The underlying skill stack is deliberately cross-disciplinary: AI/ML + spatial/geometric computing + domain knowledge in architecture, physics, or engineering. fileciteturn0file0L108-L139
+The 100-day build turns that high-level direction into small, reproducible experiments.
 
-## Suggested Roadmap
+---
 
-### Phase 1 — Foundations
-- Python
-- Linear algebra
-- Geometry
-- Graph theory
-- Algorithms
-- Basic machine learning
+<div align="center">
 
-### Phase 2 — Spatial Computing
-- Open3D
-- Trimesh
-- Shapely
-- NetworkX
-- 3D representations
-- CAD/BIM APIs
+### **Day 01 / 100**
 
-### Phase 3 — Symbolic Intelligence
-- Logic
-- Knowledge graphs
-- Ontologies
-- Constraint solving
-- Planning
-- Theorem proving
+**The goal isn't to claim AGI.  
+The goal is to understand, build, test, and document the pieces.**
 
-### Phase 4 — Generative Engineering
-- Parametric design
-- Optimization
-- Generative models
-- Reinforcement learning
-- Computational morphogenesis
-
-### Phase 5 — Integrated Agent
-Build a system that combines perception, geometric knowledge, symbolic reasoning, optimization, simulation, and explainable output.
-
-## Status
-
-**Repository initialized — research/prototype stage.**
-
-The next implementation step should be a small end-to-end geometric reasoning prototype before expanding toward larger AGI-oriented architecture.
+</div>
