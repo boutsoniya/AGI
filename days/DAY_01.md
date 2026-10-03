@@ -1,101 +1,232 @@
-# Day 01 — Geometric Knowledge Representation
+# 🟣 Day 01 — Geometric Knowledge Representation
 
-> **100 Days of AGI** · Learn → Build → Experiment → Document
+> **100 Days of AGI · Day 01 / 100**
 
-## 🎯 Objective
+[← Back to Lab](../README.md) · [Roadmap](../ROADMAP.md) · [Resources](../RESOURCES.md) · [Run the code](./day-01/geometric_knowledge.py)
 
-Start AGI from a concrete reasoning problem: represent entities and their spatial relationships in a machine-readable structure.
+---
 
-Instead of asking a model to merely describe a scene, we create explicit facts that a reasoning system can query.
+## 🎯 Today's Mission
 
-## 🧠 Concept
+Start with a tiny world that we can **inspect, compute over, and reason about**.
 
-We represent objects as nodes and relationships as edges.
+We are not trying to make the system impressive today.
 
-Example:
+We are trying to make the representation **explicit**.
 
-```text
+### The question
+
+> **Can a machine store a small spatial world and derive relationships from it without asking a language model to guess?**
+
+---
+
+## 🧠 The Idea
+
+A world can be represented as:
+
+~~~text
+ENTITY
+  ↓
+PROPERTY
+  ↓
+RELATION
+  ↓
+RULE
+  ↓
+DERIVED FACT
+~~~
+
+For Day 01:
+
+~~~text
 A = (0, 0)
 B = (3, 4)
 
 distance(A, B) = 5
-A is left of B
-A is below B
-```
 
-The important shift is:
+A ── left of ──→ B
+A ── below ────→ B
+~~~
 
-**textual description → structured knowledge → computable reasoning**
+The important transition is:
 
-## 🔬 Experiment
+**description → representation → computation**
 
-Build a tiny geometric knowledge graph containing points and derive:
+---
 
-- Euclidean distance
-- relative position
-- directional relationships
-- queryable facts
+## 🔨 What We Built
 
-### Minimal Python prototype
+A zero-dependency Python prototype:
 
-```python
-from math import hypot
+- stores geometric entities
+- computes Euclidean distance
+- derives directional relations
+- prints the knowledge state
+- keeps the logic inspectable
 
-points = {
-    "A": (0, 0),
-    "B": (3, 4),
-}
+**Run it:**
 
-def distance(a, b):
-    ax, ay = points[a]
-    bx, by = points[b]
-    return hypot(bx - ax, by - ay)
+~~~bash
+python days/day-01/geometric_knowledge.py
+~~~
 
-print("distance(A, B):", distance("A", "B"))
-print("A is left of B:", points["A"][0] < points["B"][0])
-print("A is below B:", points["A"][1] < points["B"][1])
-```
+**Expected:**
 
-Expected result:
+~~~text
+=== AGI / DAY 01 ===
+Geometric Knowledge Representation
 
-```text
-distance(A, B): 5.0
-A is left of B: True
-A is below B: True
-```
+Entities:
+- A: point(0.0, 0.0)
+- B: point(3.0, 4.0)
+- C: point(3.0, 0.0)
 
-## 💡 Why this matters for AGI
+Derived facts:
+- distance(A, B) = 5.0
+- A is left of B
+- A is below B
+~~~
 
-A future reasoning system needs representations that can support more than language generation.
+---
 
-This experiment establishes a tiny foundation for:
+## 🧪 Experiment
 
-```text
-Perception
-   ↓
-Structured Representation
-   ↓
-Relations
-   ↓
-Rules / Constraints
-   ↓
-Reasoning
-   ↓
-Explanation
-```
+### A — Change the world
 
-## 🆕 New Technology Watch
+Move B to another coordinate.
 
-Every day of this project will also track relevant developments in AI, agents, multimodal models, spatial computing, reasoning, and open-source tooling.
+Ask:
 
-**Rule:** new technology is not added just because it is new. We test whether it improves the current experiment.
+1. Does the distance change correctly?
+2. Do the directional facts change?
+3. What happens if two points share an x or y coordinate?
+4. What happens if the points overlap?
 
-## 📌 Day 01 Takeaway
+### B — Add a rule
 
-> **Geometry can be represented as knowledge, not just rendered as an image.**
+Add a new relation such as:
 
-## Next
+~~~text
+same_x(A, B)
+same_y(A, B)
+~~~
 
-**Day 02 → Symbolic Rules & Inference**
+Then make the program derive it from coordinates.
 
-We will turn geometric facts into rules that can derive new facts automatically.
+### C — Make the representation richer
+
+Try:
+
+~~~text
+circle
+rectangle
+triangle
+contains
+touches
+overlaps
+near
+far
+~~~
+
+Now the experiment starts looking less like a calculator and more like a tiny **world model**.
+
+---
+
+## 💥 Failure Cases We Want
+
+A useful research log records where the idea breaks.
+
+| Case | Question |
+|---|---|
+| Same point | Is distance exactly zero? |
+| Same x | Is left/right undefined? |
+| Same y | Is above/below undefined? |
+| Negative coordinates | Does the representation remain consistent? |
+| Floating point | How much numerical error is acceptable? |
+| New object type | Can the representation extend without rewriting everything? |
+
+---
+
+## 🌐 Why This Matters
+
+Recent spatial-intelligence research is moving beyond simple image recognition toward structured spatial memory, multi-view reasoning, functional reasoning and embodied agents. citeturn1search0turn1search9turn1search11turn1search10
+
+That makes this tiny experiment useful as a **base layer**:
+
+~~~text
+           PERCEPTION
+               ↓
+        WORLD REPRESENTATION
+               ↓
+       GEOMETRIC KNOWLEDGE
+               ↓
+          SYMBOLIC RULES
+               ↓
+           REASONING
+               ↓
+        PLANNING / ACTION
+               ↓
+          VERIFICATION
+~~~
+
+A 2026 ACL study also reports important limitations in current multimodal spatial reasoning and finds that text-based chain-of-thought can hurt generalized visual spatial tasks. That gives us a concrete reason to treat **representation and grounding** as first-class components rather than assuming language reasoning solves everything. citeturn1search2turn1search3
+
+---
+
+## 📚 Research Shelf
+
+### Start here
+
+- [Nature Communications — Brain-inspired spatial intelligence](https://www.nature.com/articles/s41467-026-74358-5)
+- [Apple ML — Spatial-Functional Intelligence Benchmark](https://machinelearning.apple.com/research/spatial)
+- [PMLR — Multi-image spatial reasoning](https://proceedings.mlr.press/v306/oi26a.html)
+- [Spatial AI Agents & World Models — arXiv](https://arxiv.org/abs/2602.01644)
+- [S-Agent — Spatial Tool Use](https://www.alphaxiv.org/abs/2606.20515)
+- [100 Days of ML Code — inspiration](https://github.com/Avik-Jain/100-Days-Of-ML-Code)
+- [LLMs from Scratch](https://github.com/rasbt/LLMs-from-scratch)
+
+More resources → **[Resource Atlas](../RESOURCES.md)**
+
+---
+
+## 🧠 What I Learned
+
+> A reasoning system needs a representation it can operate on.
+
+Today the representation is tiny.
+
+That is intentional.
+
+Tomorrow we make the system **derive facts from rules**.
+
+---
+
+## 🔓 Next Unlock
+
+### Day 02 → Symbolic Rules & Inference
+
+~~~text
+DAY 01
+coordinates
+    ↓
+relations
+
+DAY 02
+relations
+    ↓
+rules
+    ↓
+new facts
+~~~
+
+**[→ Continue through the Roadmap](../ROADMAP.md)**
+
+---
+
+<div align="center">
+
+### DAY 01 / 100
+
+**SMALL WORLD. EXPLICIT KNOWLEDGE. REAL REASONING.**
+
+</div>
