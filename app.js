@@ -29,7 +29,7 @@ const research=[
 ["INSPIRATION","100 Days of ML Code — Avik Jain","The inspiration for turning learning into a public daily practice rather than a static course.","https://github.com/Avik-Jain/100-Days-Of-ML-Code"]
 ];
 
-const $=s=>document.querySelector(s), $=s=>document.querySelectorAll(s);
+const $=s=>document.querySelector(s);
 
 /*
   Publishing model
@@ -103,7 +103,7 @@ function showDrop(i){
   $(".choice-row button:nth-child(1)").textContent=d.a;
   $(".choice-row button:nth-child(2)").textContent=d.b;
   $("#predictionResult").textContent="";
-  $$(".choice-row button").forEach((b,n)=>{
+  document.querySelectorAll(".choice-row button").forEach((b,n)=>{
     b.onclick=()=>$("#predictionResult").textContent=n===0?d.resultA:d.resultB;
   });
 
@@ -138,7 +138,7 @@ function renderArchive(){
       <span class="archive-link">Open day →</span>
     </article>`).join("") || "<p>No match yet.</p>";
 
-  $$(".archive-card").forEach(c=>c.onclick=()=>openDay(+c.dataset.i));
+  document.querySelectorAll(".archive-card").forEach(c=>c.onclick=()=>openDay(+c.dataset.i));
 }
 
 function renderResearch(){
