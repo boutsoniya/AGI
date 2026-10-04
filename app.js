@@ -73,7 +73,20 @@ function dateForDay(index){
 }
 
 let selectedIndex=currentIndex();
-const completed=JSON.parse(localStorage.getItem("agi-read")||"{}");
+let completed={};
+try{
+  const raw=localStorage.getItem("agi-read");
+  completed=raw?JSON.parse(raw):{};
+  if(!completed || typeof completed!=="object") completed={};
+}catch(e){
+  completed={};
+}
+function safeStorageGet(key,fallback=""){
+  try{return localStorage.getItem(key)??fallback}catch(e){return fallback}
+}
+function safeStorageSet(key,value){
+  try{localStorage.setItem(key,value)}catch(e){}
+}
 
 function updateUrl(index){
   history.replaceState(null,"",index===currentIndex() ? location.pathname+location.search : `#day=${index+1}`);
@@ -150,19 +163,19 @@ function renderResearch(){
   $("#researchGrid").innerHTML=research.map(r=>"<article class='research-card'><div class='type'>"+r[0]+"</div><h3>"+r[1]+"</h3><p>"+r[2]+"</p><a target='_blank' rel='noopener' href='"+r[3]+"'>Open resource ↗</a></article>").join("");
 }
 function saveNote(){
-  localStorage.setItem("agi-note",$("#note").value);
-  localStorage.setItem("agi-note-day",String(selectedIndex));
+  safeStorageSet("agi-note",$("#note").value);
+  safeStorageSet("agi-note-day",String(selectedIndex));
   $("#noteSaved").textContent="Saved locally ✓";
   setTimeout(()=>$("#noteSaved").textContent="",1800);
 }
 
 $("#search").oninput=renderArchive;
 $("#saveNote").onclick=saveNote;
-$("#note").value=localStorage.getItem("agi-note")||"";
+$("#note").value=safeStorageGet("agi-note");
 
 $("#saveToday").onclick=()=>{
   completed[selectedIndex]=true;
-  localStorage.setItem("agi-read",JSON.stringify(completed));
+  safeStorageSet("agi-read",JSON.stringify(completed));
   $("#saveToday").textContent="Saved ✓";
 };
 
