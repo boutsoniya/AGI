@@ -120,9 +120,9 @@ function showDrop(i){
   $("#predictionQuestion").textContent=d.q;
   $(".choice-row button:nth-child(1)").textContent=d.a;
   $(".choice-row button:nth-child(2)").textContent=d.b;
-  $("#predictionResult").textContent="";
+  $("#predictionResult").textContent="Choose an answer before reading.";
   document.querySelectorAll(".choice-row button").forEach((b,n)=>{
-    b.onclick=()=>$("#predictionResult").textContent=n===0?d.resultA:d.resultB;
+    b.onclick=(event)=>{event.preventDefault();$("#predictionResult").textContent=n===0?d.resultA:d.resultB;document.querySelectorAll(".choice-row button").forEach(x=>x.classList.remove("chosen"));b.classList.add("chosen");};
   });
 
   $("#dayStatus").textContent=`DAY ${i+1} OF ${publishedCount()}`;
@@ -153,7 +153,7 @@ function renderArchive(){
       <div class="num">DAY ${String(d.i+1).padStart(2,"0")} · ${dateForDay(d.i)}</div>
       <h3>${d.title}</h3>
       <p>${d.hook}</p>
-      <span class="archive-link">Open day →</span>
+      <a class="archive-link" href="days/day-${String(d.i+1).padStart(2,"0")}/" onclick="event.stopPropagation()">Open day →</a>
     </article>`).join("") || "<p>No match yet.</p>";
 
   document.querySelectorAll(".archive-card").forEach(c=>c.onclick=()=>openDay(+c.dataset.i));
@@ -198,4 +198,19 @@ renderResearch();
 window.addEventListener("hashchange",()=>{
   const i=readDayFromHash();
   if(i!==null) showDrop(i);
+});
+
+// Robust interaction fallback for dynamically-rendered archive cards and prediction buttons.
+document.addEventListener("click",event=>{
+  const button=event.target.closest(".choice-row button");
+  if(button){
+    const n=button.dataset.choice==="A"?0:1;
+    const d=drops[selectedIndex];
+    $("#predictionResult").textContent=n===0?d.resultA:d.resultB;
+    document.querySelectorAll(".choice-row button").forEach(x=>x.classList.remove("chosen"));
+    button.classList.add("chosen");
+    return;
+  }
+  const card=event.target.closest(".archive-card");
+  if(card && !event.target.closest("a")) openDay(Number(card.dataset.i));
 });
