@@ -27,7 +27,7 @@
 
 <section id="today" class="today-wrap">
   <div class="today-card">
-    <div class="today-top"><span class="eyebrow">TODAY'S DROP</span><span id="todayDate"></span></div>
+    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate"></span></div>
     <div class="today-grid">
       <div>
         <div class="drop-number" id="todayNumber"></div>
@@ -49,7 +49,12 @@
       <article><span class="label">WHERE IT BREAKS</span><div id="failure"></div></article>
     </div>
     <div class="drop-footer">
-      <div><span class="label">TAKEAWAY</span><strong id="takeaway"></strong></div>
+      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway"></strong></div>
+      <div class="day-controls">
+        <button class="day-btn" id="prevDay">← Previous</button>
+        <span id="dayStatus"></span>
+        <button class="day-btn" id="nextDay">Next →</button>
+      </div>
       <button class="primary small" id="saveToday">Save to notebook</button>
     </div>
   </div>
@@ -57,11 +62,11 @@
 
 <section class="explore-strip">
   <div><div class="eyebrow">KEEP EXPLORING</div><h2>There is always another question.</h2></div>
-  <div class="explore-actions"><button id="olderBtn">Browse previous drops →</button><a href="#research">Open research shelf →</a></div>
+  <div class="explore-actions"><button id="olderBtn">Browse the archive →</button><a href="#research">Open research shelf →</a></div>
 </section>
 
 <section id="archive" class="archive">
-  <div class="section-head"><div><div class="eyebrow">THE JOURNAL</div><h2>Previous drops</h2></div><input id="search" placeholder="Search an idea…"></div>
+  <div class="section-head"><div><div class="eyebrow">THE JOURNAL</div><h2>Every published day stays here.</h2><p id="archiveMeta"></p></div><input id="search" placeholder="Search an idea…"></div>
   <div id="archiveGrid" class="archive-grid"></div>
 </section>
 
