@@ -75,15 +75,11 @@ function updateUrl(index){
 }
 
 function readDayFromHash(){
-  const match=location.hash.match(/^#day=(\\d+)$/);
+  const match=location.hash.match(/^#day=(\d+)$/);
   if(!match) return null;
   const index=Number(match[1])-1;
   return index>=0 && index<publishedCount() ? index : null;
 }
-
-let todayIndex=Number(localStorage.getItem("agi-today-index")||0);
-if(todayIndex<0||todayIndex>=drops.length)todayIndex=0;
-const completed=JSON.parse(localStorage.getItem("agi-read")||"{}");
 
 function showDrop(i){
   if(i<0 || i>=publishedCount()) return;
