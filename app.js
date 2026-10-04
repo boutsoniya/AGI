@@ -29,45 +29,159 @@ const research=[
 ["INSPIRATION","100 Days of ML Code — Avik Jain","The inspiration for turning learning into a public daily practice rather than a static course.","https://github.com/Avik-Jain/100-Days-Of-ML-Code"]
 ];
 
-const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const $=s=>document.querySelector(s), $=s=>document.querySelectorAll(s);
+
+/*
+  Publishing model
+  ----------------
+  Day 1 is the day this journal launched: 04 Oct 2026.
+  Add a new object to `drops` and it automatically becomes the next day.
+  The content lives in GitHub, so every published day remains accessible.
+*/
+const JOURNAL_START = "2026-10-04";
+
+function localDateKey(date=new Date()){
+  const y=date.getFullYear();
+  const m=String(date.getMonth()+1).padStart(2,"0");
+  const d=String(date.getDate()).padStart(2,"0");
+  return `${y}-${m}-${d}`;
+}
+
+function dayNumberForDate(date=new Date()){
+  const start=new Date(`${JOURNAL_START}T00:00:00`);
+  const current=new Date(`${localDateKey(date)}T00:00:00`);
+  return Math.floor((current-start)/86400000)+1;
+}
+
+function publishedCount(){
+  return Math.min(Math.max(dayNumberForDate(),1),drops.length);
+}
+
+function currentIndex(){
+  return publishedCount()-1;
+}
+
+function dateForDay(index){
+  const d=new Date(`${JOURNAL_START}T00:00:00`);
+  d.setDate(d.getDate()+index);
+  return d.toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"});
+}
+
+let selectedIndex=currentIndex();
+const completed=JSON.parse(localStorage.getItem("agi-read")||"{}");
+
+function updateUrl(index){
+  history.replaceState(null,"",index===currentIndex() ? location.pathname+location.search : `#day=${index+1}`);
+}
+
+function readDayFromHash(){
+  const match=location.hash.match(/^#day=(\\d+)$/);
+  if(!match) return null;
+  const index=Number(match[1])-1;
+  return index>=0 && index<publishedCount() ? index : null;
+}
+
 let todayIndex=Number(localStorage.getItem("agi-today-index")||0);
 if(todayIndex<0||todayIndex>=drops.length)todayIndex=0;
 const completed=JSON.parse(localStorage.getItem("agi-read")||"{}");
 
-function showDrop(i,modal=false){
- const d=drops[i];
- $("#todayNumber").textContent="DROP "+String(i+1).padStart(2,"0");
- $("#todayTitle").textContent=d.title; $("#todayHook").textContent=d.hook;
- $("#todayTags").innerHTML=d.tags.map(t=>"<span>"+t+"</span>").join("");
- $("#idea").textContent=d.idea; $("#why").textContent=d.why; $("#experiment").textContent=d.experiment; $("#failure").textContent=d.failure; $("#takeaway").textContent=d.takeaway;
- $("#predictionQuestion").textContent=d.q; $(".choice-row button:nth-child(1)").textContent=d.a; $(".choice-row button:nth-child(2)").textContent=d.b;
- $("#predictionResult").textContent="";
- $$(".choice-row button").forEach((b,n)=>b.onclick=()=>$("#predictionResult").textContent=n===0?d.resultA:d.resultB);
- if(modal){
-   $("#modalBody").innerHTML="<div class='eyebrow'>DROP "+String(i+1).padStart(2,"0")+" · "+d.tags.join(" · ")+"</div><h2>"+d.title+"</h2><p>"+d.hook+"</p><h3>The idea</h3><p>"+d.idea+"</p><h3>Try this</h3><p>"+d.experiment+"</p><h3>Where it breaks</h3><p>"+d.failure+"</p><div class='modal-links'>"+d.links.map(x=>"<a target='_blank' rel='noopener' href='"+x+"'>Open source ↗</a>").join("")+"</div>";
-   $("#modal").classList.remove("hidden");
- }
+function showDrop(i){
+  if(i<0 || i>=publishedCount()) return;
+  selectedIndex=i;
+  const d=drops[i];
+  const isToday=i===currentIndex();
+
+  $("#todayLabel").textContent=isToday ? "TODAY'S DROP" : "JOURNAL DROP";
+  $("#todayDate").textContent=dateForDay(i);
+  $("#todayNumber").textContent="DAY "+String(i+1).padStart(2,"0");
+  $("#todayTitle").textContent=d.title;
+  $("#todayHook").textContent=d.hook;
+  $("#todayTags").innerHTML=d.tags.map(t=>"<span>"+t+"</span>").join("");
+  $("#idea").textContent=d.idea;
+  $("#why").textContent=d.why;
+  $("#experiment").textContent=d.experiment;
+  $("#failure").textContent=d.failure;
+  $("#takeaway").textContent=d.takeaway;
+
+  $("#predictionQuestion").textContent=d.q;
+  $(".choice-row button:nth-child(1)").textContent=d.a;
+  $(".choice-row button:nth-child(2)").textContent=d.b;
+  $("#predictionResult").textContent="";
+  $$(".choice-row button").forEach((b,n)=>{
+    b.onclick=()=>$("#predictionResult").textContent=n===0?d.resultA:d.resultB;
+  });
+
+  $("#dayStatus").textContent=`DAY ${i+1} OF ${publishedCount()}`;
+  $("#prevDay").disabled=i===0;
+  $("#nextDay").disabled=i===currentIndex();
+  $("#prevDay").classList.toggle("disabled",i===0);
+  $("#nextDay").classList.toggle("disabled",i===currentIndex());
+  $("#saveToday").textContent=completed[i] ? "Saved ✓" : "Save to notebook";
 }
+
+function openDay(i){
+  if(i<0 || i>=publishedCount()) return;
+  showDrop(i);
+  updateUrl(i);
+  document.querySelector("#today").scrollIntoView({behavior:"smooth",block:"start"});
+}
+
 function renderArchive(){
- const q=$("#search").value.toLowerCase();
- const list=drops.map((d,i)=>({...d,i})).filter(d=>(d.title+" "+d.hook+" "+d.tags.join(" ")).toLowerCase().includes(q));
- $("#archiveGrid").innerHTML=list.map(d=>"<article class='archive-card' data-i='"+d.i+"'><div class='num'>DROP "+String(d.i+1).padStart(2,"0")+"</div><h3>"+d.title+"</h3><p>"+d.hook+"</p></article>").join("")||"<p>No match yet.</p>";
- $$(".archive-card").forEach(c=>c.onclick=()=>showDrop(+c.dataset.i,true));
+  const q=$("#search").value.toLowerCase();
+  const count=publishedCount();
+  $("#archiveMeta").textContent=`${count} day${count===1?"":"s"} published · each one stays in the archive`;
+  const list=drops.map((d,i)=>({...d,i}))
+    .slice(0,count)
+    .filter(d=>(d.title+" "+d.hook+" "+d.tags.join(" ")).toLowerCase().includes(q));
+
+  $("#archiveGrid").innerHTML=list.map(d=>`
+    <article class="archive-card ${d.i===selectedIndex?"active":""}" data-i="${d.i}">
+      <div class="num">DAY ${String(d.i+1).padStart(2,"0")} · ${dateForDay(d.i)}</div>
+      <h3>${d.title}</h3>
+      <p>${d.hook}</p>
+      <span class="archive-link">Open day →</span>
+    </article>`).join("") || "<p>No match yet.</p>";
+
+  $$(".archive-card").forEach(c=>c.onclick=()=>openDay(+c.dataset.i));
 }
-function renderResearch(){$("#researchGrid").innerHTML=research.map(r=>"<article class='research-card'><div class='type'>"+r[0]+"</div><h3>"+r[1]+"</h3><p>"+r[2]+"</p><a target='_blank' rel='noopener' href='"+r[3]+"'>Open resource ↗</a></article>").join("")}
+
+function renderResearch(){
+  $("#researchGrid").innerHTML=research.map(r=>"<article class='research-card'><div class='type'>"+r[0]+"</div><h3>"+r[1]+"</h3><p>"+r[2]+"</p><a target='_blank' rel='noopener' href='"+r[3]+"'>Open resource ↗</a></article>").join("");
+}
 function saveNote(){
- localStorage.setItem("agi-note",$("#note").value);
- $("#noteSaved").textContent="Saved locally ✓";
- setTimeout(()=>$("#noteSaved").textContent="",1800);
+  localStorage.setItem("agi-note",$("#note").value);
+  localStorage.setItem("agi-note-day",String(selectedIndex));
+  $("#noteSaved").textContent="Saved locally ✓";
+  setTimeout(()=>$("#noteSaved").textContent="",1800);
 }
-$("#todayDate").textContent=new Date().toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"});
+
 $("#search").oninput=renderArchive;
 $("#saveNote").onclick=saveNote;
 $("#note").value=localStorage.getItem("agi-note")||"";
-$("#saveToday").onclick=()=>{completed[todayIndex]=true;localStorage.setItem("agi-read",JSON.stringify(completed));$("#saveToday").textContent="Saved ✓";};
+
+$("#saveToday").onclick=()=>{
+  completed[selectedIndex]=true;
+  localStorage.setItem("agi-read",JSON.stringify(completed));
+  $("#saveToday").textContent="Saved ✓";
+};
+
+$("#prevDay").onclick=()=>openDay(selectedIndex-1);
+$("#nextDay").onclick=()=>openDay(selectedIndex+1);
 $("#olderBtn").onclick=()=>document.querySelector("#archive").scrollIntoView({behavior:"smooth"});
-function randomDrop(){showDrop(Math.floor(Math.random()*drops.length),true)}
-$("#surpriseBtn").onclick=randomDrop;$("#randomHero").onclick=randomDrop;
-$("#closeModal").onclick=()=>$("#modal").classList.add("hidden");
-$("#modal").onclick=e=>{if(e.target.id==="modal")$("#modal").classList.add("hidden")};
-showDrop(todayIndex);renderArchive();renderResearch();
+
+function randomDrop(){
+  const count=publishedCount();
+  openDay(Math.floor(Math.random()*count));
+}
+$("#surpriseBtn").onclick=randomDrop;
+$("#randomHero").onclick=randomDrop;
+
+const hashIndex=readDayFromHash();
+showDrop(hashIndex===null?currentIndex():hashIndex);
+renderArchive();
+renderResearch();
+
+window.addEventListener("hashchange",()=>{
+  const i=readDayFromHash();
+  if(i!==null) showDrop(i);
+});
