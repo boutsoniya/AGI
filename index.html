@@ -27,32 +27,32 @@
 
 <section id="today" class="today-wrap">
   <div class="today-card">
-    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate"></span></div>
+    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">5 Oct 2026</span></div>
     <div class="today-grid">
       <div>
-        <div class="drop-number" id="todayNumber"></div>
-        <h2 id="todayTitle"></h2>
-        <p class="lead" id="todayHook"></p>
-        <div class="topic-tags" id="todayTags"></div>
+        <div class="drop-number" id="todayNumber">DAY 02</div>
+        <h2 id="todayTitle">How does a machine derive a new fact?</h2>
+        <p class="lead" id="todayHook">Knowing facts is useful. Knowing what follows from those facts is where a knowledge system starts to reason.</p>
+        <div class="topic-tags" id="todayTags"><span>symbolic reasoning</span><span>rules</span><span>inference</span></div>
       </div>
       <div class="question-card">
         <span>BEFORE YOU READ</span>
-        <h3 id="predictionQuestion"></h3>
-        <div class="choice-row"><button data-choice="A"></button><button data-choice="B"></button></div>
-        <p id="predictionResult" class="prediction-result"></p>
+        <h3 id="predictionQuestion">A system knows A→B and B→C. What should it do next?</h3>
+        <div class="choice-row"><button data-choice="A">Store the facts only</button><button data-choice="B">Derive A→C when the rule allows it</button></div>
+        <p id="predictionResult" class="prediction-result">Choose an answer before reading.</p>
       </div>
     </div>
     <div class="drop-body">
-      <article><span class="label">THE IDEA</span><div id="idea"></div></article>
-      <article><span class="label">WHY IT MATTERS</span><div id="why"></div></article>
-      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment"></div></article>
-      <article><span class="label">WHERE IT BREAKS</span><div id="failure"></div></article>
+      <article><span class="label">THE IDEA</span><div id="idea">Symbolic inference makes relationships explicit. Instead of asking a model to guess a conclusion, we define facts and rules, then apply the rules to derive new facts. For example: if A is inside B, and B is inside C, then A is inside C. The important object is not the answer alone, but the chain that produced it.</div></article>
+      <article><span class="label">WHY IT MATTERS</span><div id="why">Rules give a reasoning system inspectable structure. You can see which facts were known, which rule fired, and why a new fact was added. That makes debugging and verification possible in a way that an unexplained prediction is not.</div></article>
+      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Build a tiny forward-chaining engine. Start with facts such as 'A is left of B' and 'B is left of C'. Add a rule saying: if X is left of Y and Y is left of Z, infer X is left of Z. Then add a contradictory fact and see whether your engine detects or blindly accepts the inconsistency.</div></article>
+      <article><span class="label">WHERE IT BREAKS</span><div id="failure">Naive rule systems can explode as the number of facts grows, apply rules in the wrong order, derive redundant facts, or silently preserve contradictions. A rule engine is only as reliable as its representation, rule definitions and consistency checks.</div></article>
     </div>
     <div class="drop-footer">
-      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway"></strong></div>
+      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Reasoning becomes inspectable when facts, rules and derived conclusions are separate objects.</strong></div>
       <div class="day-controls">
         <button class="day-btn" id="prevDay">← Previous</button>
-        <span id="dayStatus"></span>
+        <span id="dayStatus">DAY 02 OF 2</span>
         <button class="day-btn" id="nextDay">Next →</button>
       </div>
       <button class="primary small" id="saveToday">Save to notebook</button>
@@ -67,7 +67,23 @@
 
 <section id="archive" class="archive">
   <div class="section-head"><div><div class="eyebrow">THE JOURNAL</div><h2>Every published day stays here.</h2><p id="archiveMeta"></p></div><input id="search" placeholder="Search an idea…"></div>
-  <div id="archiveGrid" class="archive-grid"></div>
+  <div id="archiveGrid" class="archive-grid">
+    <article class="archive-card" data-i="0">
+      <div class="num">DAY 01 · 4 Oct 2026</div>
+      <h3>Can AI actually reason?</h3>
+      <p>When a model gives the right answer, how do we know it reasoned instead of recognising a familiar pattern?</p>
+      <span class="archive-link">Open day →</span>
+    </article>
+    <article class="archive-card active" data-i="1">
+      <div class="num">DAY 02 · 5 Oct 2026</div>
+      <h3>How does a machine derive a new fact?</h3>
+      <p>Knowing facts is useful. Knowing what follows from those facts is where a knowledge system starts to reason.</p>
+      <span class="archive-link">Open day →</span>
+    </article>
+  </div>
+  <noscript>
+    <p class="eyebrow" style="margin-top:1rem">JavaScript is optional. The current day and published archive remain readable without it.</p>
+  </noscript>
 </section>
 
 <section id="research" class="research">
@@ -85,5 +101,5 @@
 
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
 <footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI · <a href="https://github.com/boutsoniya/AGI">GitHub</a></footer>
-<script src="app.js?v=20261005-1"></script>
+<script src="app.js?v=20261005-2" defer></script>
 </body></html>
