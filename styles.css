@@ -12,3 +12,20 @@
 .modal{position:fixed;inset:0;background:#17171799;z-index:50;display:grid;place-items:center;padding:20px}.hidden{display:none}.modal-card{max-width:720px;width:100%;max-height:86vh;overflow:auto;background:var(--paper);border-radius:17px;padding:34px;position:relative}.close{position:absolute;right:15px;top:9px;background:none;border:0;font-size:28px;color:var(--muted);cursor:pointer}.modal-card h2{font-family:Georgia,serif;font-size:34px;font-weight:500;line-height:1.05}.modal-card p,.modal-card li{color:#55524d}.modal-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.modal-links a{border:1px solid var(--line);padding:9px 12px;border-radius:8px;font-size:12px}
 footer{text-align:center;border-top:1px solid var(--line);padding:28px;color:#817c74;font-size:11px}footer a{color:var(--accent)}
 @media(max-width:800px){.topbar nav{display:none}.today-grid,.drop-body{grid-template-columns:1fr}.drop-body article:nth-child(odd){border-right:0}.archive-grid,.research-grid{grid-template-columns:1fr 1fr}.notebook{grid-template-columns:1fr}.explore-strip{display:block}.explore-actions{margin-top:20px}}@media(max-width:560px){.hero{padding-top:70px}.hero h1{font-size:64px}.today-grid{padding:30px 22px}.drop-body article,.drop-footer{padding:22px}.archive-grid,.research-grid{grid-template-columns:1fr}.topbar{padding:0 18px}.ghost{display:none}}
+
+/* Daily archive + day navigation */
+#archiveMeta{margin:6px 0 0;color:var(--muted);font-size:12px}
+.drop-footer{display:grid;grid-template-columns:1fr auto auto;gap:22px;align-items:center}
+.takeaway-wrap{min-width:0}
+.day-controls{display:flex;align-items:center;gap:7px}
+.day-btn{border:1px solid var(--line);background:transparent;padding:9px 11px;border-radius:8px;cursor:pointer;font-size:12px}
+.day-btn:hover:not(:disabled){border-color:#aaa29a;background:#f7f4ee}
+.day-btn:disabled,.day-btn.disabled{opacity:.38;cursor:not-allowed}
+#dayStatus{font-size:10px;letter-spacing:.08em;color:var(--muted);min-width:74px;text-align:center}
+.archive-card{position:relative;transition:transform .16s ease,border-color .16s ease}
+.archive-card.active{border-color:var(--accent)}
+.archive-link{display:inline-block;margin-top:13px;font-size:11px;color:var(--accent);font-weight:750}
+@media(max-width:800px){
+  .drop-footer{grid-template-columns:1fr}
+  .day-controls{justify-content:space-between}
+}
