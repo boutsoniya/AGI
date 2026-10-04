@@ -68,7 +68,8 @@ function currentIndex(){
 
 function dateForDay(index){
   const d=new Date(`${JOURNAL_START}T00:00:00`);
-  d.setDate(d.getDate()+index);
+  // Day 02 was released early on launch day; normal daily cadence resumes from Day 03.
+  d.setDate(d.getDate()+Math.max(index-1,0));
   return d.toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"});
 }
 
