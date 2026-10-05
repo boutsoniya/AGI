@@ -32,3 +32,12 @@ footer{text-align:center;border-top:1px solid var(--line);padding:28px;color:#81
 
 .choice-row button.chosen{border-color:var(--accent);background:var(--soft);box-shadow:0 0 0 2px #5748d81a}
 .archive-link{cursor:pointer}
+
+
+/* 100-day timeline */
+.archive-card.locked{cursor:not-allowed;opacity:.68;background:#f1eee8}
+.archive-card.locked:hover{transform:none;border-color:var(--line)}
+.status-pill{display:inline-block;margin-left:6px;padding:2px 6px;border-radius:20px;font-size:8px;letter-spacing:.08em;font-weight:800;vertical-align:middle}
+.status-pill.live{background:#e3f2ed;color:var(--accent2)}
+.status-pill.locked-pill{background:#e8e4dc;color:#77716a}
+.archive-lock{display:inline-block;margin-top:13px;font-size:11px;color:#8a857d}
