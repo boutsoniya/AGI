@@ -143,21 +143,45 @@ function openDay(i){
 
 function renderArchive(){
   const q=$("#search").value.toLowerCase();
-  const count=publishedCount();
-  $("#archiveMeta").textContent=`${count} day${count===1?"":"s"} published · each one stays in the archive`;
-  const list=drops.map((d,i)=>({...d,i}))
-    .slice(0,count)
-    .filter(d=>(d.title+" "+d.hook+" "+d.tags.join(" ")).toLowerCase().includes(q));
+  const published=publishedCount();
+  const timelineSize=100;
+  $("#archiveMeta").textContent=`${published} published · ${timelineSize} days planned · published days stay permanently accessible`;
 
-  $("#archiveGrid").innerHTML=list.map(d=>`
-    <article class="archive-card ${d.i===selectedIndex?"active":""}" data-i="${d.i}">
-      <div class="num">DAY ${String(d.i+1).padStart(2,"0")} · ${dateForDay(d.i)}</div>
-      <h3>${d.title}</h3>
-      <p>${d.hook}</p>
-      <a class="archive-link" href="days/day-${String(d.i+1).padStart(2,"0")}/" onclick="event.stopPropagation()">Open day →</a>
-    </article>`).join("") || "<p>No match yet.</p>";
+  const list=Array.from({length:timelineSize},(_,i)=>{
+    const publishedDay=i<published;
+    const authored=i<drops.length;
+    const d=authored?drops[i]:null;
+    return {i,publishedDay,authored,d};
+  }).filter(x=>{
+    if(!q) return true;
+    const hay=x.d ? (x.d.title+" "+x.d.hook+" "+x.d.tags.join(" ")).toLowerCase() : `day ${x.i+1}`;
+    return hay.includes(q);
+  });
 
-  document.querySelectorAll(".archive-card").forEach(c=>c.onclick=()=>openDay(+c.dataset.i));
+  $("#archiveGrid").innerHTML=list.map(x=>{
+    const n=String(x.i+1).padStart(2,"0");
+    if(x.publishedDay && x.d){
+      return `<article class="archive-card published ${x.i===selectedIndex?"active":""}" data-i="${x.i}">
+        <div class="num">DAY ${n} · ${dateForDay(x.i)} <span class="status-pill live">PUBLISHED</span></div>
+        <h3>${x.d.title}</h3>
+        <p>${x.d.hook}</p>
+        <a class="archive-link" href="days/day-${n}/" onclick="event.stopPropagation()">Open day →</a>
+      </article>`;
+    }
+    const label=x.authored?"SEALED · RELEASES ${dateForDay(x.i)}":"NOT WRITTEN YET";
+    const title=x.authored?x.d.title:"Day ${n}";
+    const desc=x.authored?x.d.hook:"This entry is intentionally locked. Come back on its release date.";
+    return `<article class="archive-card locked" aria-disabled="true">
+      <div class="num">DAY ${n} · ${dateForDay(x.i)} <span class="status-pill locked-pill">${label}</span></div>
+      <h3>${title}</h3>
+      <p>${desc}</p>
+      <span class="archive-lock">🔒 Locked until release</span>
+    </article>`;
+  }).join("") || "<p>No match yet.</p>";
+
+  document.querySelectorAll(".archive-card.published").forEach(card=>{
+    card.onclick=()=>openDay(Number(card.dataset.i));
+  });
 }
 
 function renderResearch(){
