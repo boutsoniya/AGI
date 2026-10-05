@@ -30,29 +30,29 @@
     <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">5 Oct 2026</span></div>
     <div class="today-grid">
       <div>
-        <div class="drop-number" id="todayNumber">DAY 02</div>
-        <h2 id="todayTitle">How does a machine derive a new fact?</h2>
-        <p class="lead" id="todayHook">Knowing facts is useful. Knowing what follows from those facts is where a knowledge system starts to reason.</p>
-        <div class="topic-tags" id="todayTags"><span>symbolic reasoning</span><span>rules</span><span>inference</span></div>
+        <div class="drop-number" id="todayNumber">DAY 03</div>
+        <h2 id="todayTitle">Does an AI actually remember you?</h2>
+        <p class="lead" id="todayHook">A model can sound like it remembers you. But is it remembering — or simply seeing the right text again?</p>
+        <div class="topic-tags" id="todayTags"><span>memory</span><span>agents</span><span>identity</span></div>
       </div>
       <div class="question-card">
         <span>BEFORE YOU READ</span>
-        <h3 id="predictionQuestion">A system knows A→B and B→C. What should it do next?</h3>
-        <div class="choice-row"><button data-choice="A">Store the facts only</button><button data-choice="B">Derive A→C when the rule allows it</button></div>
+        <h3 id="predictionQuestion">An agent remembers 10,000 facts about you. Is it automatically better?</h3>
+        <div class="choice-row"><button data-choice="A">Yes — more memory means more intelligence</button><button data-choice="B">No — memory needs management</button></div>
         <p id="predictionResult" class="prediction-result">Choose an answer before reading.</p>
       </div>
     </div>
     <div class="drop-body">
-      <article><span class="label">THE IDEA</span><div id="idea">Symbolic inference makes relationships explicit. Instead of asking a model to guess a conclusion, we define facts and rules, then apply the rules to derive new facts. For example: if A is inside B, and B is inside C, then A is inside C. The important object is not the answer alone, but the chain that produced it.</div></article>
-      <article><span class="label">WHY IT MATTERS</span><div id="why">Rules give a reasoning system inspectable structure. You can see which facts were known, which rule fired, and why a new fact was added. That makes debugging and verification possible in a way that an unexplained prediction is not.</div></article>
-      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Build a tiny forward-chaining engine. Start with facts such as 'A is left of B' and 'B is left of C'. Add a rule saying: if X is left of Y and Y is left of Z, infer X is left of Z. Then add a contradictory fact and see whether your engine detects or blindly accepts the inconsistency.</div></article>
-      <article><span class="label">WHERE IT BREAKS</span><div id="failure">Naive rule systems can explode as the number of facts grows, apply rules in the wrong order, derive redundant facts, or silently preserve contradictions. A rule engine is only as reliable as its representation, rule definitions and consistency checks.</div></article>
+      <article><span class="label">THE IDEA</span><div id="idea">AI memory is not one thing. A system can keep information inside the current context, retrieve records from an external store, compress past interactions into summaries, or learn something into its parameters. These mechanisms behave differently. A useful agent therefore needs more than storage: it needs to decide what to write, what to retrieve, what to update, and what to forget.</div></article>
+      <article><span class="label">WHY IT MATTERS</span><div id="why">Memory changes the kind of intelligence an agent can display. Without persistence, every session begins almost from zero. With badly managed persistence, the system can remember the wrong thing, preserve stale information, mix up people or retrieve irrelevant history. Long-term memory is therefore partly a systems-design problem, not just a bigger context window.</div></article>
+      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Run a tiny memory test. Tell an AI three facts across separate conversations. Later ask it to combine two old facts with a new instruction. Then correct one of the facts and ask the original question again. Finally ask: “What do you remember, and where did each fact come from?” You are testing recall, updating and provenance separately.</div></article>
+      <article><span class="label">WHERE IT BREAKS</span><div id="failure">More memory can make an agent worse. Retrieval may surface irrelevant history, summaries can lose important details, old facts can conflict with new ones, and a system may confidently treat an inferred detail as something you explicitly told it.</div></article>
     </div>
     <div class="drop-footer">
-      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Reasoning becomes inspectable when facts, rules and derived conclusions are separate objects.</strong></div>
+      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Intelligent memory is not “remember everything”. It is selective, updateable and useful for the next decision.</strong></div>
       <div class="day-controls">
         <button class="day-btn" id="prevDay">← Previous</button>
-        <span id="dayStatus">DAY 02 OF 2</span>
+        <span id="dayStatus">DAY 03 OF 3</span>
         <button class="day-btn" id="nextDay">Next →</button>
       </div>
       <button class="primary small" id="saveToday">Save to notebook</button>
@@ -74,11 +74,17 @@
       <p>When a model gives the right answer, how do we know it reasoned instead of recognising a familiar pattern?</p>
       <a class="archive-link" href="days/day-01/">Open day →</a>
     </article>
-    <article class="archive-card active" data-i="1">
-      <div class="num">DAY 02 · 5 Oct 2026</div>
+    <article class="archive-card" data-i="1">
+      <div class="num">DAY 02 · 4 Oct 2026</div>
       <h3>How does a machine derive a new fact?</h3>
       <p>Knowing facts is useful. Knowing what follows from those facts is where a knowledge system starts to reason.</p>
       <a class="archive-link" href="days/day-02/">Open day →</a>
+    </article>
+    <article class="archive-card active" data-i="2">
+      <div class="num">DAY 03 · 5 Oct 2026</div>
+      <h3>Does an AI actually remember you?</h3>
+      <p>A model can sound like it remembers you. But is it remembering — or simply seeing the right text again?</p>
+      <a class="archive-link" href="days/day-03/">Open day →</a>
     </article>
   </div>
   <noscript>
