@@ -41,3 +41,21 @@ footer{text-align:center;border-top:1px solid var(--line);padding:28px;color:#81
 .status-pill.live{background:#e3f2ed;color:var(--accent2)}
 .status-pill.locked-pill{background:#e8e4dc;color:#77716a}
 .archive-lock{display:inline-block;margin-top:13px;font-size:11px;color:#8a857d}
+
+
+/* Day 04 interactive lab */
+.lab-panel{margin-top:24px;padding:26px;border:1px solid var(--line);border-radius:18px;background:var(--paper)}
+.lab-panel[hidden]{display:none}
+.lab-panel h3{margin:7px 0 8px;font-family:var(--serif);font-size:28px}
+.lab-intro{max-width:680px;color:var(--muted);line-height:1.65}
+.claim-row{padding:18px 0;border-top:1px solid var(--line)}
+.claim-top{display:flex;gap:12px;align-items:flex-start}
+.claim-number{font-size:10px;letter-spacing:.12em;font-weight:800;color:var(--accent)}
+.confidence-row{display:flex;align-items:center;gap:10px;margin-top:14px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.confidence-row input{width:min(240px,45vw);accent-color:var(--accent)}
+.confidence-row output{min-width:42px;font-weight:800;color:var(--ink)}
+.reveal-claim{border:1px solid var(--line);background:var(--paper);border-radius:9px;padding:7px 11px;cursor:pointer}
+.reveal-claim:disabled{opacity:.55;cursor:default}
+.claim-result{margin-top:10px;padding:10px 12px;border-radius:10px;background:var(--soft);font-size:12px;line-height:1.5;color:var(--muted)}
+.lab-actions{display:flex;align-items:center;gap:14px;margin-top:8px;flex-wrap:wrap}
+.lab-score{font-size:13px;font-weight:800;color:var(--accent)}
