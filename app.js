@@ -100,6 +100,65 @@ function readDayFromHash(){
   return index>=0 && index<publishedCount() ? index : null;
 }
 
+const hallucinationClaims=[
+  {text:"The Great Wall of China is visible from the Moon with the naked eye.",truth:false,why:"This is a common myth. The wall is not readily visible from the Moon without aid."},
+  {text:"Adult humans typically have 206 bones.",truth:true,why:"206 is the standard count used for the adult human skeleton, with normal anatomical variation."},
+  {text:"Lightning never strikes the same place twice.",truth:false,why:"Lightning can strike the same location repeatedly, especially tall or exposed structures."},
+  {text:"Water boils at about 100°C at sea level.",truth:true,why:"At standard atmospheric pressure, water boils at about 100°C; boiling point changes with pressure."},
+  {text:"The Sahara is the largest desert on Earth.",truth:false,why:"Antarctica is the largest desert. The Sahara is the largest hot desert."}
+];
+
+function renderHallucinationLab(){
+  const panel=$("#day4Lab");
+  if(!panel) return;
+  const active=selectedIndex===3;
+  panel.hidden=!active;
+  if(!active) return;
+  $("#hallucinationLab").innerHTML=hallucinationClaims.map((x,i)=>`
+    <div class="claim-row" data-claim="${i}">
+      <div class="claim-top"><span class="claim-number">0${i+1}</span><strong>${x.text}</strong></div>
+      <div class="confidence-row">
+        <span>My confidence</span>
+        <input type="range" min="0" max="100" value="50" data-confidence="${i}">
+        <output id="confidence-${i}">50%</output>
+        <button class="reveal-claim" data-reveal="${i}">Reveal</button>
+      </div>
+      <div class="claim-result" id="claim-result-${i}">Set confidence, then reveal.</div>
+    </div>`).join("");
+  document.querySelectorAll("[data-confidence]").forEach(input=>{
+    input.oninput=()=>{const o=$("#confidence-"+input.dataset.confidence);o.textContent=input.value+"%";};
+  });
+  document.querySelectorAll("[data-reveal]").forEach(btn=>{
+    btn.onclick=()=>{
+      const i=Number(btn.dataset.reveal), x=hallucinationClaims[i];
+      const row=btn.closest(".claim-row");
+      const confidence=Number(row.querySelector("[data-confidence]").value);
+      row.dataset.revealed="1";
+      row.dataset.correct=String((confidence>=50)===x.truth);
+      $("#claim-result-"+i).innerHTML=(x.truth?"<b>TRUE</b>":"<b>FALSE</b>")+" — "+x.why;
+      btn.textContent="Revealed ✓";
+      btn.disabled=true;
+    };
+  });
+  $("#hallucinationScore").textContent="";
+}
+
+function scoreHallucinations(){
+  const rows=[...document.querySelectorAll(".claim-row[data-revealed='1']")];
+  if(rows.length<5){$("#hallucinationScore").textContent="Reveal all 5 claims first.";return;}
+  const gaps=rows.map(row=>{
+    const i=Number(row.dataset.claim);
+    const p=Number(row.querySelector("[data-confidence]").value)/100;
+    const y=hallucinationClaims[i].truth?1:0;
+    return Math.abs(p-y);
+  });
+  const avg=gaps.reduce((a,b)=>a+b,0)/gaps.length;
+  const calibration=Math.round((1-avg)*100);
+  let label=calibration>=80?"Strong calibration":"Worth inspecting";
+  if(calibration<60) label="Confidence is outrunning evidence";
+  $("#hallucinationScore").textContent=`${calibration}/100 · ${label}`;
+}
+
 function showDrop(i){
   if(i<0 || i>=publishedCount()) return;
   selectedIndex=i;
@@ -117,6 +176,7 @@ function showDrop(i){
   $("#experiment").textContent=d.experiment;
   $("#failure").textContent=d.failure;
   $("#takeaway").textContent=d.takeaway;
+  renderHallucinationLab();
 
   $("#predictionQuestion").textContent=d.q;
   $(".choice-row button:nth-child(1)").textContent=d.a;
@@ -197,6 +257,8 @@ function saveNote(){
 $("#search").oninput=renderArchive;
 $("#saveNote").onclick=saveNote;
 $("#note").value=safeStorageGet("agi-note");
+
+$("#scoreHallucinations").onclick=scoreHallucinations;
 
 $("#saveToday").onclick=()=>{
   completed[selectedIndex]=true;
