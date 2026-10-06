@@ -46,6 +46,16 @@
       <article><span class="label">THE IDEA</span><div id="idea">AI memory is not one thing. A system can keep information inside the current context, retrieve records from an external store, compress past interactions into summaries, or learn something into its parameters. These mechanisms behave differently. A useful agent therefore needs more than storage: it needs to decide what to write, what to retrieve, what to update, and what to forget.</div></article>
       <article><span class="label">WHY IT MATTERS</span><div id="why">Memory changes the kind of intelligence an agent can display. Without persistence, every session begins almost from zero. With badly managed persistence, the system can remember the wrong thing, preserve stale information, mix up people or retrieve irrelevant history. Long-term memory is therefore partly a systems-design problem, not just a bigger context window.</div></article>
       <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Run a tiny memory test. Tell an AI three facts across separate conversations. Later ask it to combine two old facts with a new instruction. Then correct one of the facts and ask the original question again. Finally ask: “What do you remember, and where did each fact come from?” You are testing recall, updating and provenance separately.</div></article>
+      <article id="day4Lab" class="lab-panel" hidden>
+        <div class="label">INTERACTIVE LAB · HALLUCINATION CHECK</div>
+        <h3>Can confidence predict truth?</h3>
+        <p class="lab-intro">For each claim, set how confident you are that it is true. Then reveal the result. The goal is not to get every answer right — it is to notice whether confidence tracks reality.</p>
+        <div id="hallucinationLab"></div>
+        <div class="lab-actions">
+          <button class="primary small" id="scoreHallucinations">Score my calibration</button>
+          <span id="hallucinationScore" class="lab-score"></span>
+        </div>
+      </article>
       <article><span class="label">WHERE IT BREAKS</span><div id="failure">More memory can make an agent worse. Retrieval may surface irrelevant history, summaries can lose important details, old facts can conflict with new ones, and a system may confidently treat an inferred detail as something you explicitly told it.</div></article>
     </div>
     <div class="drop-footer">
@@ -107,5 +117,5 @@
 
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
 <footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI · <a href="https://github.com/boutsoniya/AGI">GitHub</a></footer>
-<script src="app.js?v=20261005-4" defer></script>
+<script src="app.js?v=20261006-1" defer></script>
 </body></html>
