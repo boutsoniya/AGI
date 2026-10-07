@@ -27,25 +27,25 @@
 
 <section id="today" class="today-wrap">
   <div class="today-card">
-    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">5 Oct 2026</span></div>
+    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">7 Oct 2026</span></div>
     <div class="today-grid">
       <div>
-        <div class="drop-number" id="todayNumber">DAY 03</div>
-        <h2 id="todayTitle">Does an AI actually remember you?</h2>
-        <p class="lead" id="todayHook">A model can sound like it remembers you. But is it remembering — or simply seeing the right text again?</p>
-        <div class="topic-tags" id="todayTags"><span>memory</span><span>agents</span><span>identity</span></div>
+        <div class="drop-number" id="todayNumber">DAY 05</div>
+        <h2 id="todayTitle">Can an AI use tools?</h2>
+        <p class="lead" id="todayHook">The interesting shift is not only smarter models. It is models that can decide when to call something outside themselves.</p>
+        <div class="topic-tags" id="todayTags"><span>agents</span><span>tools</span></div>
       </div>
       <div class="question-card">
         <span>BEFORE YOU READ</span>
-        <h3 id="predictionQuestion">An agent remembers 10,000 facts about you. Is it automatically better?</h3>
-        <div class="choice-row"><button data-choice="A">Yes — more memory means more intelligence</button><button data-choice="B">No — memory needs management</button></div>
+        <h3 id="predictionQuestion">What makes a tool-using model an agent?</h3>
+        <div class="choice-row"><button data-choice="A">It can call tools</button><button data-choice="B">It can choose and act in a loop</button></div>
         <p id="predictionResult" class="prediction-result">Choose an answer before reading.</p>
       </div>
     </div>
     <div class="drop-body">
-      <article><span class="label">THE IDEA</span><div id="idea">AI memory is not one thing. A system can keep information inside the current context, retrieve records from an external store, compress past interactions into summaries, or learn something into its parameters. These mechanisms behave differently. A useful agent therefore needs more than storage: it needs to decide what to write, what to retrieve, what to update, and what to forget.</div></article>
-      <article><span class="label">WHY IT MATTERS</span><div id="why">Memory changes the kind of intelligence an agent can display. Without persistence, every session begins almost from zero. With badly managed persistence, the system can remember the wrong thing, preserve stale information, mix up people or retrieve irrelevant history. Long-term memory is therefore partly a systems-design problem, not just a bigger context window.</div></article>
-      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Run a tiny memory test. Tell an AI three facts across separate conversations. Later ask it to combine two old facts with a new instruction. Then correct one of the facts and ask the original question again. Finally ask: “What do you remember, and where did each fact come from?” You are testing recall, updating and provenance separately.</div></article>
+      <article><span class="label">THE IDEA</span><div id="idea">Tool use turns a model from a text generator into a component inside a larger loop: observe a task, choose an action, call a tool, inspect the result, and continue. The tool might be a calculator, database, browser, code interpreter or another service.</div></article>
+      <article><span class="label">WHY IT MATTERS</span><div id="why">External tools let systems access fresh information, perform deterministic operations and affect the world. But every new action also creates new failure modes: bad tool selection, incorrect arguments, unsafe actions and feedback loops.</div></article>
+      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Give a model two tools: a calculator and a tiny lookup table. Ask questions where one tool is clearly useful and others where no tool is needed. Log which tool it chooses, the arguments it sends, and whether it checks the returned result.</div></article>
       <article id="day4Lab" class="lab-panel" hidden>
         <div class="label">INTERACTIVE LAB · HALLUCINATION CHECK</div>
         <h3>Can confidence predict truth?</h3>
@@ -63,13 +63,13 @@
           <span id="toolLabScore" class="lab-score"></span>
         </div>
       </article>
-      <article><span class="label">WHERE IT BREAKS</span><div id="failure">More memory can make an agent worse. Retrieval may surface irrelevant history, summaries can lose important details, old facts can conflict with new ones, and a system may confidently treat an inferred detail as something you explicitly told it.</div></article>
+      <article><span class="label">WHERE IT BREAKS</span><div id="failure">A model can call a correct tool incorrectly. Tool-use success therefore needs evaluation at the level of both decision and execution.</div></article>
     </div>
     <div class="drop-footer">
-      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Intelligent memory is not “remember everything”. It is selective, updateable and useful for the next decision.</strong></div>
+      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Agentic behaviour is a loop, not a single prompt.</strong></div>
       <div class="day-controls">
         <button class="day-btn" id="prevDay">← Previous</button>
-        <span id="dayStatus">DAY 03 OF 3</span>
+        <span id="dayStatus">DAY 05 OF 5</span>
         <button class="day-btn" id="nextDay">Next →</button>
       </div>
       <button class="primary small" id="saveToday">Save to notebook</button>
