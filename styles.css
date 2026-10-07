@@ -59,3 +59,13 @@ footer{text-align:center;border-top:1px solid var(--line);padding:28px;color:#81
 .claim-result{margin-top:10px;padding:10px 12px;border-radius:10px;background:var(--soft);font-size:12px;line-height:1.5;color:var(--muted)}
 .lab-actions{display:flex;align-items:center;gap:14px;margin-top:8px;flex-wrap:wrap}
 .lab-score{font-size:13px;font-weight:800;color:var(--accent)}
+
+
+/* Day 05 interactive tool lab */
+.tool-task{padding:18px 0;border-top:1px solid var(--line)}
+.tool-task-head{display:flex;gap:12px;align-items:flex-start}
+.tool-options{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+.tool-options button{border:1px solid var(--line);background:var(--paper);border-radius:9px;padding:8px 11px;font-size:12px;cursor:pointer}
+.tool-options button:hover{border-color:var(--accent)}
+.tool-options button.chosen{border-color:var(--accent);background:var(--soft);box-shadow:0 0 0 2px #5748d81a}
+.tool-result{margin-top:10px;padding:10px 12px;border-radius:10px;background:#f4f1eb;font-size:12px;line-height:1.5;color:var(--muted)}
