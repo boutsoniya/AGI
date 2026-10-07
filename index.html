@@ -46,6 +46,13 @@
       <article><span class="label">THE IDEA</span><div id="idea">AI memory is not one thing. A system can keep information inside the current context, retrieve records from an external store, compress past interactions into summaries, or learn something into its parameters. These mechanisms behave differently. A useful agent therefore needs more than storage: it needs to decide what to write, what to retrieve, what to update, and what to forget.</div></article>
       <article><span class="label">WHY IT MATTERS</span><div id="why">Memory changes the kind of intelligence an agent can display. Without persistence, every session begins almost from zero. With badly managed persistence, the system can remember the wrong thing, preserve stale information, mix up people or retrieve irrelevant history. Long-term memory is therefore partly a systems-design problem, not just a bigger context window.</div></article>
       <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Run a tiny memory test. Tell an AI three facts across separate conversations. Later ask it to combine two old facts with a new instruction. Then correct one of the facts and ask the original question again. Finally ask: “What do you remember, and where did each fact come from?” You are testing recall, updating and provenance separately.</div></article>
+      <article id="day4Lab" class="lab-panel" hidden>
+        <div class="label">INTERACTIVE LAB · HALLUCINATION CHECK</div>
+        <h3>Can confidence predict truth?</h3>
+        <p class="lab-intro">For each claim, set how confident you are that it is true. Then reveal the result. The goal is not to get every answer right — it is to notice whether confidence tracks reality.</p>
+        <div id="hallucinationLab"></div>
+        <div class="lab-actions"><button class="primary small" id="scoreHallucinations">Score my calibration</button><span id="hallucinationScore" class="lab-score"></span></div>
+      </article>
       <article id="day5Lab" class="lab-panel" hidden>
         <div class="label">INTERACTIVE LAB · TOOL ROUTER</div>
         <h3>Should the agent use a tool?</h3>
@@ -78,24 +85,11 @@
 <section id="archive" class="archive">
   <div class="section-head"><div><div class="eyebrow">THE JOURNAL</div><h2>Every published day stays here.</h2><p id="archiveMeta"></p></div><input id="search" placeholder="Search an idea…"></div>
   <div id="archiveGrid" class="archive-grid">
-    <article class="archive-card" data-i="0">
-      <div class="num">DAY 01 · 4 Oct 2026</div>
-      <h3>Can AI actually reason?</h3>
-      <p>When a model gives the right answer, how do we know it reasoned instead of recognising a familiar pattern?</p>
-      <a class="archive-link" href="days/day-01/">Open day →</a>
-    </article>
-    <article class="archive-card" data-i="1">
-      <div class="num">DAY 02 · 4 Oct 2026</div>
-      <h3>How does a machine derive a new fact?</h3>
-      <p>Knowing facts is useful. Knowing what follows from those facts is where a knowledge system starts to reason.</p>
-      <a class="archive-link" href="days/day-02/">Open day →</a>
-    </article>
-    <article class="archive-card active" data-i="2">
-      <div class="num">DAY 03 · 5 Oct 2026</div>
-      <h3>Does an AI actually remember you?</h3>
-      <p>A model can sound like it remembers you. But is it remembering — or simply seeing the right text again?</p>
-      <a class="archive-link" href="days/day-03/">Open day →</a>
-    </article>
+    <article class="archive-card" data-i="0"><div class="num">DAY 01 · 4 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can AI actually reason?</h3><p>When a model gives the right answer, how do we know it reasoned instead of recognising a familiar pattern?</p><a class="archive-link" href="days/day-01/">Open day →</a></article>
+    <article class="archive-card" data-i="1"><div class="num">DAY 02 · 4 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>How does a machine derive a new fact?</h3><p>Knowing facts is useful. Knowing what follows from those facts is where a knowledge system starts to reason.</p><a class="archive-link" href="days/day-02/">Open day →</a></article>
+    <article class="archive-card" data-i="2"><div class="num">DAY 03 · 5 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Does an AI actually remember you?</h3><p>A model can sound like it remembers you. But is it remembering — or simply seeing the right text again?</p><a class="archive-link" href="days/day-03/">Open day →</a></article>
+    <article class="archive-card" data-i="3"><div class="num">DAY 04 · 6 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Why do AI systems hallucinate?</h3><p>Sometimes the model sounds certain because it is fluent, not because it has verified the claim.</p><a class="archive-link" href="days/day-04/">Open day →</a></article>
+    <article class="archive-card" data-i="4"><div class="num">DAY 05 · 7 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI use tools?</h3><p>The interesting shift is not only smarter models. It is models that can decide when to call something outside themselves.</p><a class="archive-link" href="days/day-05/">Open day →</a></article>
   </div>
   <noscript>
     <p class="eyebrow" style="margin-top:1rem">JavaScript is optional. The current day and published archive remain readable without it.</p>
@@ -117,5 +111,5 @@
 
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
 <footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI · <a href="https://github.com/boutsoniya/AGI">GitHub</a></footer>
-<script src="app.js?v=20261007-1" defer></script>
+<script src="app.js?v=20261007-2" defer></script>
 </body></html>
