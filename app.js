@@ -159,6 +159,53 @@ function scoreHallucinations(){
   $("#hallucinationScore").textContent=`${calibration}/100 · ${label}`;
 }
 
+const toolLabTasks=[
+ {task:"What is 347 × 28?",answer:"calculator",why:"Arithmetic is deterministic; a calculator is the right tool.",run:"347 × 28 = 9,716"},
+ {task:"What is the capital of Japan?",answer:"lookup",why:"A lookup tool can retrieve a factual reference without asking the model to rely only on memory.",run:"Tokyo"},
+ {task:"Rewrite this sentence in a friendlier tone.",answer:"direct",why:"No external information or deterministic computation is required.",run:"Direct generation is enough."},
+ {task:"A store has 17 notebooks at ₹84 each. What is the total?",answer:"calculator",why:"The arithmetic is deterministic and easy to verify with a calculator.",run:"17 × ₹84 = ₹1,428"},
+ {task:"Which planet is known for its prominent rings?",answer:"lookup",why:"A reference lookup is appropriate when the task asks for a factual fact that can be retrieved.",run:"Saturn"}
+];
+const toolLabels={direct:"Answer directly",calculator:"Use calculator",lookup:"Look it up"};
+
+function renderToolLab(){
+  const panel=$("#day5Lab");
+  if(!panel) return;
+  const active=selectedIndex===4;
+  panel.hidden=!active;
+  if(!active) return;
+  $("#toolLab").innerHTML=toolLabTasks.map((x,i)=>`
+    <div class="tool-task" data-task="${i}">
+      <div class="tool-task-head"><span class="claim-number">0${i+1}</span><strong>${x.task}</strong></div>
+      <div class="tool-options">
+        ${Object.entries(toolLabels).map(([key,label])=>`<button data-tool="${key}" data-task-choice="${i}">${label}</button>`).join("")}
+      </div>
+      <div class="tool-result" id="tool-result-${i}">Choose an action.</div>
+    </div>`).join("");
+  document.querySelectorAll("[data-task-choice]").forEach(btn=>{
+    btn.onclick=()=>{
+      const i=Number(btn.dataset.taskChoice);
+      const row=btn.closest(".tool-task");
+      row.dataset.choice=btn.dataset.tool;
+      row.querySelectorAll("button").forEach(x=>x.classList.remove("chosen"));
+      btn.classList.add("chosen");
+      const t=toolLabTasks[i];
+      $("#tool-result-"+i).textContent="Selected: "+toolLabels[btn.dataset.tool]+". "+(btn.dataset.tool===t.answer?t.why:"That works, but it is not the smallest or most reliable action for this task.");
+    };
+  });
+  $("#toolLabScore").textContent="";
+}
+
+function scoreToolLab(){
+  const rows=[...document.querySelectorAll(".tool-task")];
+  const unanswered=rows.filter(r=>!r.dataset.choice);
+  if(unanswered.length){$("#toolLabScore").textContent=`Choose an action for all ${rows.length} tasks first.`;return;}
+  const correct=rows.filter((r,i)=>r.dataset.choice===toolLabTasks[i].answer).length;
+  const score=Math.round(correct/rows.length*100);
+  const label=score===100?"Excellent routing":score>=80?"Good routing":"Inspect the decision boundary";
+  $("#toolLabScore").textContent=`${score}/100 · ${label}`;
+}
+
 function showDrop(i){
   if(i<0 || i>=publishedCount()) return;
   selectedIndex=i;
@@ -177,6 +224,7 @@ function showDrop(i){
   $("#failure").textContent=d.failure;
   $("#takeaway").textContent=d.takeaway;
   renderHallucinationLab();
+  renderToolLab();
 
   $("#predictionQuestion").textContent=d.q;
   $(".choice-row button:nth-child(1)").textContent=d.a;
@@ -259,6 +307,7 @@ $("#saveNote").onclick=saveNote;
 $("#note").value=safeStorageGet("agi-note");
 
 $("#scoreHallucinations").onclick=scoreHallucinations;
+$("#scoreToolLab").onclick=scoreToolLab;
 
 $("#saveToday").onclick=()=>{
   completed[selectedIndex]=true;
