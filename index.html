@@ -27,25 +27,25 @@
 
 <section id="today" class="today-wrap">
   <div class="today-card">
-    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">7 Oct 2026</span></div>
+    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">8 Oct 2026</span></div>
     <div class="today-grid">
       <div>
-        <div class="drop-number" id="todayNumber">DAY 05</div>
-        <h2 id="todayTitle">Can an AI use tools?</h2>
-        <p class="lead" id="todayHook">The interesting shift is not only smarter models. It is models that can decide when to call something outside themselves.</p>
-        <div class="topic-tags" id="todayTags"><span>agents</span><span>tools</span></div>
+        <div class="drop-number" id="todayNumber">DAY 06</div>
+        <h2 id="todayTitle">Can AI build a model of the world?</h2>
+        <p class="lead" id="todayHook">If an agent predicts what happens after an action, it has something more useful than a bag of facts.</p>
+        <div class="topic-tags" id="todayTags"><span>world models</span><span>prediction</span></div>
       </div>
       <div class="question-card">
         <span>BEFORE YOU READ</span>
-        <h3 id="predictionQuestion">What makes a tool-using model an agent?</h3>
-        <div class="choice-row"><button data-choice="A">It can call tools</button><button data-choice="B">It can choose and act in a loop</button></div>
+        <h3 id="predictionQuestion">What matters more for planning?</h3>
+        <div class="choice-row"><button data-choice="A">Perfectly describing the past</button><button data-choice="B">Predicting useful futures</button></div>
         <p id="predictionResult" class="prediction-result">Choose an answer before reading.</p>
       </div>
     </div>
     <div class="drop-body">
-      <article><span class="label">THE IDEA</span><div id="idea">Tool use turns a model from a text generator into a component inside a larger loop: observe a task, choose an action, call a tool, inspect the result, and continue. The tool might be a calculator, database, browser, code interpreter or another service.</div></article>
-      <article><span class="label">WHY IT MATTERS</span><div id="why">External tools let systems access fresh information, perform deterministic operations and affect the world. But every new action also creates new failure modes: bad tool selection, incorrect arguments, unsafe actions and feedback loops.</div></article>
-      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Give a model two tools: a calculator and a tiny lookup table. Ask questions where one tool is clearly useful and others where no tool is needed. Log which tool it chooses, the arguments it sends, and whether it checks the returned result.</div></article>
+      <article><span class="label">THE IDEA</span><div id="idea">A world model tries to represent how an environment behaves: what is currently true, what may happen next, and how actions change the state. This idea appears across model-based reinforcement learning, robotics, simulation and newer generative systems.</div></article>
+      <article><span class="label">WHY IT MATTERS</span><div id="why">Prediction can support planning. Instead of blindly trying actions in the real world, an agent can evaluate possible futures in an internal or simulated environment.</div></article>
+      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Create a tiny grid world. Give an agent the current state and a few possible actions. Predict the next state before each move, then compare the prediction with what actually happened.</div></article>
       <article id="day4Lab" class="lab-panel" hidden>
         <div class="label">INTERACTIVE LAB · HALLUCINATION CHECK</div>
         <h3>Can confidence predict truth?</h3>
@@ -78,13 +78,13 @@
           <span id="toolLabScore" class="lab-score"></span>
         </div>
       </article>
-      <article><span class="label">WHERE IT BREAKS</span><div id="failure">A model can call a correct tool incorrectly. Tool-use success therefore needs evaluation at the level of both decision and execution.</div></article>
+      <article><span class="label">WHERE IT BREAKS</span><div id="failure">A predictor can look convincing while missing the parts of the environment that matter for decisions. Small prediction errors can compound over long horizons.</div></article>
     </div>
     <div class="drop-footer">
-      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Agentic behaviour is a loop, not a single prompt.</strong></div>
+      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">A useful world model must predict the consequences that matter for action.</strong></div>
       <div class="day-controls">
         <button class="day-btn" id="prevDay">← Previous</button>
-        <span id="dayStatus">DAY 05 OF 5</span>
+        <span id="dayStatus">DAY 06 OF 6</span>
         <button class="day-btn" id="nextDay">Next →</button>
       </div>
       <button class="primary small" id="saveToday">Save to notebook</button>
