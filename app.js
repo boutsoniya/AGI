@@ -224,7 +224,8 @@ function showDrop(i){
   $("#failure").textContent=d.failure;
   $("#takeaway").textContent=d.takeaway;
   renderHallucinationLab();
-  renderToolLab();\nrenderWorldModelLab();
+  renderToolLab();
+renderWorldModelLab();
 
   $("#predictionQuestion").textContent=d.q;
   $(".choice-row button:nth-child(1)").textContent=d.a;
@@ -349,7 +350,8 @@ function runWorldModelStep(action){
     ? `Goal reached in ${worldState.steps} moves. The model helped turn actions into a plan.`
     : `Distance to goal: ${distance} step${distance===1?"":"s"}.`;
 }
-\nfunction renderResearch(){
+
+function renderResearch(){
   $("#researchGrid").innerHTML=research.map(r=>"<article class='research-card'><div class='type'>"+r[0]+"</div><h3>"+r[1]+"</h3><p>"+r[2]+"</p><a target='_blank' rel='noopener' href='"+r[3]+"'>Open resource ↗</a></article>").join("");
 }
 function saveNote(){
@@ -364,7 +366,8 @@ $("#saveNote").onclick=saveNote;
 $("#note").value=safeStorageGet("agi-note");
 
 $("#scoreHallucinations").onclick=scoreHallucinations;
-$("#scoreToolLab").onclick=scoreToolLab;\n$("#resetWorldLab").onclick=renderWorldModelLab;
+$("#scoreToolLab").onclick=scoreToolLab;
+$("#resetWorldLab").onclick=renderWorldModelLab;
 
 $("#saveToday").onclick=()=>{
   completed[selectedIndex]=true;
