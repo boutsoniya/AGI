@@ -302,6 +302,7 @@ const worldModelMap=[
 ];
 const worldStart={r:0,c:0};
 const worldGoal={r:3,c:3};
+const WORLD_LAB_VERSION="2026-10-08-orthogonal-v2";
 const worldActions={up:[-1,0],down:[1,0],left:[0,-1],right:[0,1]};
 const worldActionLabels={up:"↑ Up",down:"↓ Down",left:"← Left",right:"→ Right"};
 let worldState={r:0,c:0,steps:0,history:[]};
@@ -310,7 +311,10 @@ function worldCellOpen(r,c){
   return r>=0&&r<4&&c>=0&&c<4&&worldModelMap[r][c]!=="#";
 }
 function worldPredicted(r,c,a){
-  const d=worldActions[a],nr=r+d[0],nc=c+d[1];
+  const d=worldActions[a];
+  // Every action is exactly one orthogonal transition: never a diagonal move.
+  if(!d || (Math.abs(d[0])+Math.abs(d[1])!==1)) return {r,c};
+  const nr=r+d[0],nc=c+d[1];
   return worldCellOpen(nr,nc)?{r:nr,c:nc}:{r,c};
 }
 function renderWorldGrid(pred=null){
