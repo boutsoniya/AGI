@@ -69,3 +69,19 @@ footer{text-align:center;border-top:1px solid var(--line);padding:28px;color:#81
 .tool-options button:hover{border-color:var(--accent)}
 .tool-options button.chosen{border-color:var(--accent);background:var(--soft);box-shadow:0 0 0 2px #5748d81a}
 .tool-result{margin-top:10px;padding:10px 12px;border-radius:10px;background:#f4f1eb;font-size:12px;line-height:1.5;color:var(--muted)}
+
+/* Day 06 world model lab */
+.world-layout{display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:start;margin-top:20px}
+.world-grid{display:grid;grid-template-columns:repeat(4,1fr);aspect-ratio:1;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#f0ede5}
+.world-cell{display:grid;place-items:center;border-right:1px solid #ded9d0;border-bottom:1px solid #ded9d0;font-size:20px;position:relative}
+.world-cell.wall{background:#272522;color:transparent}
+.world-cell.open{background:var(--paper)}
+.world-cell.agent span{color:var(--accent);font-size:22px}
+.world-cell.goal span{color:var(--accent2)}
+.world-cell.predicted{box-shadow:inset 0 0 0 3px var(--accent);background:var(--soft)}
+.world-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}
+.world-action{border:1px solid var(--line);background:var(--paper);border-radius:9px;padding:9px;cursor:pointer}
+.world-action:hover{border-color:var(--accent)}
+.world-prediction{padding:12px;border-radius:10px;background:#f4f1eb;color:var(--muted);font-size:12px;line-height:1.5;min-height:70px}
+.world-legend{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:10px}
+@media(max-width:600px){.world-layout{grid-template-columns:1fr}.world-grid{max-width:280px}}
