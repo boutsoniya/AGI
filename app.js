@@ -224,7 +224,7 @@ function showDrop(i){
   $("#failure").textContent=d.failure;
   $("#takeaway").textContent=d.takeaway;
   renderHallucinationLab();
-  renderToolLab();
+  renderToolLab();\nrenderWorldModelLab();
 
   $("#predictionQuestion").textContent=d.q;
   $(".choice-row button:nth-child(1)").textContent=d.a;
@@ -292,7 +292,64 @@ function renderArchive(){
   });
 }
 
-function renderResearch(){
+
+const worldModelMap=[
+  ["S","·","·","#"],
+  ["#","·","#","·"],
+  ["·","·","·","·"],
+  ["·","#","·","G"]
+];
+const worldStart={r:0,c:0};
+const worldGoal={r:3,c:3};
+const worldActions={up:[-1,0],down:[1,0],left:[0,-1],right:[0,1]};
+const worldActionLabels={up:"↑ Up",down:"↓ Down",left:"← Left",right:"→ Right"};
+let worldState={r:0,c:0,steps:0,history:[]};
+
+function worldCellOpen(r,c){
+  return r>=0&&r<4&&c>=0&&c<4&&worldModelMap[r][c]!=="#";
+}
+function worldPredicted(r,c,a){
+  const d=worldActions[a],nr=r+d[0],nc=c+d[1];
+  return worldCellOpen(nr,nc)?{r:nr,c:nc}:{r,c};
+}
+function renderWorldGrid(pred=null){
+  const grid=$("#worldGrid"); if(!grid)return;
+  grid.innerHTML=worldModelMap.flatMap((row,r)=>row.map((cell,c)=>{
+    const here=worldState.r===r&&worldState.c===c;
+    const isGoal=worldGoal.r===r&&worldGoal.c===c;
+    const isPred=pred&&pred.r===r&&pred.c===c&&!here;
+    const cls=["world-cell",cell==="#"?"wall":"open",here?"agent":"",isGoal?"goal":"",isPred?"predicted":""].filter(Boolean).join(" ");
+    return `<div class="${cls}"><span>${here?"●":isGoal?"◆":cell==="#"?"":"·"}</span></div>`;
+  }).join(""));
+}
+function worldDistance(p){return Math.abs(p.r-worldGoal.r)+Math.abs(p.c-worldGoal.c);}
+function renderWorldModelLab(){
+  const panel=$("#day6Lab"); if(!panel)return;
+  const active=selectedIndex===5; panel.hidden=!active; if(!active)return;
+  worldState={r:worldStart.r,c:worldStart.c,steps:0,history:[]};
+  renderWorldGrid();
+  $("#worldPrediction").textContent="Choose an action. The model will predict the next state before the move.";
+  $("#worldScore").textContent="";
+  document.querySelectorAll("[data-world-action]").forEach(btn=>{
+    btn.onclick=()=>runWorldModelStep(btn.dataset.worldAction);
+  });
+}
+function runWorldModelStep(action){
+  const predicted=worldPredicted(worldState.r,worldState.c,action);
+  const before={...worldState};
+  worldState.r=predicted.r; worldState.c=predicted.c; worldState.steps++;
+  const blocked=before.r===predicted.r&&before.c===predicted.c;
+  worldState.history.push({action,before,predicted,blocked});
+  renderWorldGrid(predicted);
+  const actual=`Actual state: row ${worldState.r+1}, column ${worldState.c+1}.`;
+  const note=blocked?" The action hit a wall or boundary, so the state stayed the same.":" Prediction matched the transition.";
+  $("#worldPrediction").textContent=`Model predicted → ${worldActionLabels[action]}. ${actual}${note}`;
+  const distance=worldDistance(worldState);
+  $("#worldScore").textContent=worldState.r===worldGoal.r&&worldState.c===worldGoal.c
+    ? `Goal reached in ${worldState.steps} moves. The model helped turn actions into a plan.`
+    : `Distance to goal: ${distance} step${distance===1?"":"s"}.`;
+}
+\nfunction renderResearch(){
   $("#researchGrid").innerHTML=research.map(r=>"<article class='research-card'><div class='type'>"+r[0]+"</div><h3>"+r[1]+"</h3><p>"+r[2]+"</p><a target='_blank' rel='noopener' href='"+r[3]+"'>Open resource ↗</a></article>").join("");
 }
 function saveNote(){
@@ -307,7 +364,7 @@ $("#saveNote").onclick=saveNote;
 $("#note").value=safeStorageGet("agi-note");
 
 $("#scoreHallucinations").onclick=scoreHallucinations;
-$("#scoreToolLab").onclick=scoreToolLab;
+$("#scoreToolLab").onclick=scoreToolLab;\n$("#resetWorldLab").onclick=renderWorldModelLab;
 
 $("#saveToday").onclick=()=>{
   completed[selectedIndex]=true;
