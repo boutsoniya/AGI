@@ -53,6 +53,21 @@
         <div id="hallucinationLab"></div>
         <div class="lab-actions"><button class="primary small" id="scoreHallucinations">Score my calibration</button><span id="hallucinationScore" class="lab-score"></span></div>
       </article>
+      <article id="day6Lab" class="lab-panel" hidden>
+        <div class="label">INTERACTIVE LAB · WORLD MODEL</div>
+        <h3>Predict the next state</h3>
+        <p class="lab-intro">The agent is in a tiny grid world. Before each action, the world model predicts where the agent should end up. Move through the environment and watch prediction become useful for planning.</p>
+        <div class="world-layout">
+          <div id="worldGrid" class="world-grid" aria-label="Tiny grid world"></div>
+          <div class="world-side">
+            <div class="world-legend"><span>● agent</span><span>◆ goal</span><span>■ obstacle</span></div>
+            <div class="world-actions"><button class="world-action" data-world-action="up">↑ Up</button><button class="world-action" data-world-action="down">↓ Down</button><button class="world-action" data-world-action="left">← Left</button><button class="world-action" data-world-action="right">→ Right</button></div>
+            <div id="worldPrediction" class="world-prediction">Choose an action. The model will predict the next state before the move.</div>
+            <div id="worldScore" class="lab-score"></div>
+            <button class="secondary small" id="resetWorldLab">Reset world</button>
+          </div>
+        </div>
+      </article>
       <article id="day5Lab" class="lab-panel" hidden>
         <div class="label">INTERACTIVE LAB · TOOL ROUTER</div>
         <h3>Should the agent use a tool?</h3>
@@ -111,5 +126,5 @@
 
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
 <footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI · <a href="https://github.com/boutsoniya/AGI">GitHub</a></footer>
-<script src="app.js?v=20261007-2" defer></script>
+<script src="app.js?v=20261008-1" defer></script>
 </body></html>
