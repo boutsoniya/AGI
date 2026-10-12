@@ -27,25 +27,25 @@
 
 <section id="today" class="today-wrap">
   <div class="today-card">
-    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">12 Oct 2026</span></div>
+    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">13 Oct 2026</span></div>
     <div class="today-grid">
       <div>
-        <div class="drop-number" id="todayNumber">DAY 10</div>
-        <h2 id="todayTitle">Can multiple AI agents cooperate?</h2>
-        <p class="lead" id="todayHook">Give several agents different roles and you may get collaboration — or an expensive conversation where nobody checks anything.</p>
-        <div class="topic-tags" id="todayTags"><span>multi-agent</span><span>systems</span></div>
+        <div class="drop-number" id="todayNumber">DAY 11</div>
+        <h2 id="todayTitle">What is an AI world model actually good for?</h2>
+        <p class="lead" id="todayHook">Prediction becomes interesting when it changes what an agent chooses to do.</p>
+        <div class="topic-tags" id="todayTags"><span>planning</span><span>world models</span></div>
       </div>
       <div class="question-card">
         <span>BEFORE YOU READ</span>
-        <h3 id="predictionQuestion">Does adding more AI agents automatically improve a result?</h3>
-        <div class="choice-row"><button data-choice="A">Yes, more agents means more intelligence</button><button data-choice="B">No, roles and verification matter</button></div>
+        <h3 id="predictionQuestion">What is the strongest test of a world model?</h3>
+        <div class="choice-row"><button data-choice="A">Looks realistic</button><button data-choice="B">Improves decisions</button></div>
         <p id="predictionResult" class="prediction-result">Choose an answer before reading.</p>
       </div>
     </div>
     <div class="drop-body">
-      <article><span class="label">THE IDEA</span><div id="idea">Multi-agent systems divide work among specialised or role-based agents. Cooperation can help with decomposition, debate and independent verification, but coordination itself becomes a systems problem.</div></article>
-      <article><span class="label">WHY IT MATTERS</span><div id="why">Multiple perspectives can reduce some blind spots. They can also amplify shared errors, duplicate work and increase latency or cost.</div></article>
-      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Give three agents distinct roles: planner, critic and executor. Run the same task once with a single agent and once with the trio. Compare accuracy, number of steps, disagreements and time. Make the critic point to evidence rather than simply agree or disagree.</div></article>
+      <article><span class="label">THE IDEA</span><div id="idea">The practical test of a world model is not whether its generated future looks realistic. It is whether using the model improves decisions compared with acting without it.</div></article>
+      <article><span class="label">WHY IT MATTERS</span><div id="why">A system can produce beautiful simulations that are irrelevant to the decision at hand. Decision usefulness gives a sharper evaluation target.</div></article>
+      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">In a small simulated environment, let an agent choose actions directly. Then let it roll out several possible futures before choosing. Compare reward, planning time and failure cases.</div></article>
       <article id="day4Lab" class="lab-panel" hidden>
         <div class="label">INTERACTIVE LAB · HALLUCINATION CHECK</div>
         <h3>Can confidence predict truth?</h3>
@@ -78,13 +78,13 @@
           <span id="toolLabScore" class="lab-score"></span>
         </div>
       </article>
-      <article><span class="label">WHERE IT BREAKS</span><div id="failure">Agents can share the same blind spot, repeat one another’s mistakes, or spend more time coordinating than solving the task. Agreement is not proof.</div></article>
+      <article><span class="label">WHERE IT BREAKS</span><div id="failure">Long imagined rollouts can compound model error and become computationally expensive.</div></article>
     </div>
     <div class="drop-footer">
-      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">More agents help only when their division of labour adds useful information and verification.</strong></div>
+      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">A world model earns its place when it improves decisions.</strong></div>
       <div class="day-controls">
         <button class="day-btn" id="prevDay">← Previous</button>
-        <span id="dayStatus">DAY 10 OF 10</span>
+        <span id="dayStatus">DAY 11 OF 11</span>
         <button class="day-btn" id="nextDay">Next →</button>
       </div>
       <button class="primary small" id="saveToday">Save to notebook</button>
@@ -110,6 +110,7 @@
     <article class="archive-card" data-i="7"><div class="num">DAY 08 · 10 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>What makes a benchmark useful?</h3><p>A leaderboard gives you a number. A good benchmark tells you what that number actually means.</p><a class="archive-link" href="days/day-08/">Open day →</a></article>
     <article class="archive-card" data-i="8"><div class="num">DAY 09 · 11 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can AI learn continuously?</h3><p>Humans update their knowledge without rebuilding the brain from scratch. AI systems still struggle with that.</p><a class="archive-link" href="days/day-09/">Open day →</a></article>
     <article class="archive-card" data-i="9"><div class="num">DAY 10 · 12 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can multiple AI agents cooperate?</h3><p>Give several agents different roles and you may get collaboration — or an expensive conversation where nobody checks anything.</p><a class="archive-link" href="days/day-10/">Open day →</a></article>
+    <article class="archive-card" data-i="10"><div class="num">DAY 11 · 13 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>What is an AI world model actually good for?</h3><p>Prediction becomes interesting when it changes what an agent chooses to do.</p><a class="archive-link" href="days/day-11/">Open day →</a></article>
   </div>
   <noscript>
     <p class="eyebrow" style="margin-top:1rem">JavaScript is optional. The current day and published archive remain readable without it.</p>
@@ -131,5 +132,5 @@
 
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
 <footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI · <a href="https://github.com/boutsoniya/AGI">GitHub</a></footer>
-<script src="app.js?v=20261012-1" defer></script>
+<script src="app.js?v=20261012-2" defer></script>
 </body></html>
