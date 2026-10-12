@@ -56,7 +56,7 @@ function dayNumberForDate(date=new Date()){
 }
 
 // Day 02 is intentionally released alongside Day 01 on launch day.
-const RELEASED_DAY_COUNT = 2;
+const RELEASED_DAY_COUNT = 11; // Day 11 published early as the current drop.
 
 function publishedCount(){
   return Math.min(Math.max(dayNumberForDate()+1,RELEASED_DAY_COUNT),drops.length);
