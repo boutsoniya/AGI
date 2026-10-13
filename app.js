@@ -56,7 +56,7 @@ function dayNumberForDate(date=new Date()){
 }
 
 // Day 02 is intentionally released alongside Day 01 on launch day.
-const RELEASED_DAY_COUNT = 11; // Day 11 published early as the current drop.
+const RELEASED_DAY_COUNT = 12; // Day 12 published as the current drop.
 
 function publishedCount(){
   return Math.min(Math.max(dayNumberForDate()+1,RELEASED_DAY_COUNT),drops.length);
@@ -67,6 +67,7 @@ function currentIndex(){
 }
 
 function dateForDay(index){
+  if(index===11) return "13 Oct 2026";
   const d=new Date(`${JOURNAL_START}T00:00:00`);
   // Day 02 was released early on launch day; normal daily cadence resumes from Day 03.
   d.setDate(d.getDate()+Math.max(index-1,0));
