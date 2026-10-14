@@ -27,25 +27,25 @@
 
 <section id="today" class="today-wrap">
   <div class="today-card">
-    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">13 Oct 2026</span></div>
+    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">14 Oct 2026</span></div>
     <div class="today-grid">
       <div>
-        <div class="drop-number" id="todayNumber">DAY 12</div>
-        <h2 id="todayTitle">What would count as evidence for AGI?</h2>
-        <p class="lead" id="todayHook">The word AGI sounds precise until you try to write down a test that everyone would accept.</p>
-        <div class="topic-tags" id="todayTags"><span>AGI</span><span>evaluation</span></div>
+        <div class="drop-number" id="todayNumber">DAY 13</div>
+        <h2 id="todayTitle">Can an AI agent know when to stop?</h2>
+        <p class="lead" id="todayHook">A capable agent is not just one that keeps acting — it is one that recognises when another action is no longer worth the cost.</p>
+        <div class="topic-tags" id="todayTags"><span>AI agents</span><span>decision-making</span></div>
       </div>
       <div class="question-card">
         <span>BEFORE YOU READ</span>
-        <h3 id="predictionQuestion">What is the strongest test of a world model?</h3>
-        <div class="choice-row"><button data-choice="A">Looks realistic</button><button data-choice="B">Improves decisions</button></div>
+        <h3 id="predictionQuestion">When should an agent stop searching?</h3>
+        <div class="choice-row"><button data-choice="A">After a fixed number of calls</button><button data-choice="B">When another step is not worth its cost</button></div>
         <p id="predictionResult" class="prediction-result">Choose an answer before reading.</p>
       </div>
     </div>
     <div class="drop-body">
-      <article><span class="label">THE IDEA</span><div id="idea">Artificial General Intelligence is not one universally agreed benchmark. Different definitions emphasise breadth, autonomy, learning, transfer, reasoning, embodiment or economic usefulness. That makes measurement itself part of the AGI question.</div></article>
-      <article><span class="label">WHY IT MATTERS</span><div id="why">If we cannot say what capability we are measuring, arguments about whether a system is 'AGI' can become arguments about labels rather than evidence.</div></article>
-      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Write your own five-part AGI test. Include at least one unfamiliar task, one adaptation task, one long-horizon task, one real-world constraint and one failure-recovery test. Then ask what evidence would convince you.</div></article>
+      <article><span class="label">THE IDEA</span><div id="idea">Stopping is a decision. An agent needs to weigh the expected benefit of another step against its cost, uncertainty and possible harm. That can mean ending a search, asking a human, returning a partial answer, or refusing to take an irreversible action.</div></article>
+      <article><span class="label">WHY IT MATTERS</span><div id="why">Many agent demos reward persistence: more tool calls, longer plans, more attempts. But real tasks have budgets, deadlines and consequences. Knowing when to stop helps prevent wasted work, cascading errors and confident action on weak evidence.</div></article>
+      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Give an agent a task with a limited tool-call budget. Test three policies: stop after a fixed number of steps, stop when confidence crosses a threshold, and stop when the expected value of another step is lower than its cost. Compare task success, tool calls, unsupported claims and harmful actions.</div></article>
       <article id="day4Lab" class="lab-panel" hidden>
         <div class="label">INTERACTIVE LAB · HALLUCINATION CHECK</div>
         <h3>Can confidence predict truth?</h3>
@@ -78,13 +78,13 @@
           <span id="toolLabScore" class="lab-score"></span>
         </div>
       </article>
-      <article><span class="label">WHERE IT BREAKS</span><div id="failure">Any fixed test can eventually become an optimisation target. A convincing claim therefore needs a portfolio of evidence, not one magic score.</div></article>
+      <article><span class="label">WHERE IT BREAKS</span><div id="failure">A stopping rule can quit too early when confidence is poorly calibrated, or continue too long when the agent mistakes activity for progress. Thresholds also need to change with the stakes of the task.</div></article>
     </div>
     <div class="drop-footer">
-      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Before asking whether AI is AGI, define what evidence would change your mind.</strong></div>
+      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Good autonomy includes a well-designed stopping rule.</strong></div>
       <div class="day-controls">
         <button class="day-btn" id="prevDay">← Previous</button>
-        <span id="dayStatus">DAY 12 OF 12</span>
+        <span id="dayStatus">DAY 13 OF 13</span>
         <button class="day-btn" id="nextDay">Next →</button>
       </div>
       <button class="primary small" id="saveToday">Save to notebook</button>
@@ -112,6 +112,7 @@
     <article class="archive-card" data-i="9"><div class="num">DAY 10 · 12 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can multiple AI agents cooperate?</h3><p>Give several agents different roles and you may get collaboration — or an expensive conversation where nobody checks anything.</p><a class="archive-link" href="days/day-10/">Open day →</a></article>
     <article class="archive-card" data-i="10"><div class="num">DAY 11 · 13 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>What is an AI world model actually good for?</h3><p>Prediction becomes interesting when it changes what an agent chooses to do.</p><a class="archive-link" href="days/day-11/">Open day →</a></article>
     <article class="archive-card" data-i="11"><div class="num">DAY 12 · 13 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>What would count as evidence for AGI?</h3><p>The word AGI sounds precise until you try to write down a test that everyone would accept.</p><a class="archive-link" href="days/day-12/">Open day →</a></article>
+    <article class="archive-card" data-i="12"><div class="num">DAY 13 · 14 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI agent know when to stop?</h3><p>A capable agent is not just one that keeps acting — it is one that recognises when another action is no longer worth the cost.</p><a class="archive-link" href="days/day-13/">Open day →</a></article>
   </div>
   <noscript>
     <p class="eyebrow" style="margin-top:1rem">JavaScript is optional. The current day and published archive remain readable without it.</p>
@@ -133,5 +134,5 @@
 
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
 <footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI · <a href="https://github.com/boutsoniya/AGI">GitHub</a></footer>
-<script src="app.js?v=20261013-1" defer></script>
+<script src="app.js?v=20261014-1" defer></script>
 </body></html>
