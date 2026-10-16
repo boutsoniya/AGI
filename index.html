@@ -27,25 +27,25 @@
 
 <section id="today" class="today-wrap">
   <div class="today-card">
-    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">15 Oct 2026</span></div>
+    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">17 Oct 2026</span></div>
     <div class="today-grid">
       <div>
-        <div class="drop-number" id="todayNumber">DAY 14</div>
-        <h2 id="todayTitle">Can AI recognise when it doesn't know?</h2>
-        <p class="lead" id="todayHook">A trustworthy AI needs more than answers. It needs a way to signal when the evidence is too weak to support one.</p>
-        <div class="topic-tags" id="todayTags"><span>uncertainty</span><span>reliability</span></div>
+        <div class="drop-number" id="todayNumber">DAY 15</div>
+        <h2 id="todayTitle">Can an AI explain why it made a decision?</h2>
+        <p class="lead" id="todayHook">An explanation is useful only if it reveals what actually drove the decision—not just a convincing story told afterwards.</p>
+        <div class="topic-tags" id="todayTags"><span>explainability</span><span>interpretability</span></div>
       </div>
       <div class="question-card">
         <span>BEFORE YOU READ</span>
-        <h3 id="predictionQuestion">A model has no evidence for a claim. What is the better response?</h3>
-        <div class="choice-row"><button data-choice="A">Give the most plausible guess</button><button data-choice="B">State the uncertainty or ask for evidence</button></div>
+        <h3 id="predictionQuestion">An AI gives a clear, confident explanation. What should you check next?</h3>
+        <div class="choice-row"><button data-choice="A">Whether the explanation sounds reasonable</button><button data-choice="B">Whether it matches the model's behaviour</button></div>
         <p id="predictionResult" class="prediction-result">Choose an answer before reading.</p>
       </div>
     </div>
     <div class="drop-body">
-      <article><span class="label">THE IDEA</span><div id="idea">A model's confidence in a generated answer is not automatically a reliable measure of whether that answer is correct. Uncertainty estimation asks what the system can actually justify from its evidence, and selective prediction lets it answer some cases while abstaining or asking for more information on others.</div></article>
-      <article><span class="label">WHY IT MATTERS</span><div id="why">In high-stakes or ambiguous situations, a confident guess can be worse than no answer. A system that communicates uncertainty clearly can route difficult cases to a person, gather missing evidence, or give a bounded answer instead of inventing certainty.</div></article>
-      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Prepare 10 questions: a few easy, several ambiguous, and two whose answers are not present in the supplied material. For each, ask the model for an answer, its confidence, and the evidence it used. Check the answers independently. See whether confidence tracks correctness, and whether abstaining on weak-evidence questions improves reliability.</div></article>
+      <article><span class="label">THE IDEA</span><div id="idea">AI explanations come in different forms. A model can describe the evidence it used, highlight influential features, provide examples, or expose parts of its internal computation. These are not interchangeable: a simple explanation can be understandable without faithfully reflecting the model's actual process.</div></article>
+      <article><span class="label">WHY IT MATTERS</span><div id="why">When a system affects people, money, health or access to services, users need more than a prediction. They need to challenge errors, spot unfair patterns and understand when the output should not be trusted. But a polished explanation can create false confidence if it is not checked against the model.</div></article>
+      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Choose a small classification task. Ask a model to explain one prediction, then change one input feature at a time and record whether the prediction changes as the explanation suggests. Compare its stated reasons with a simple feature-ablation test. Look for mismatches instead of judging the explanation by how persuasive it sounds.</div></article>
       <article id="day4Lab" class="lab-panel" hidden>
         <div class="label">INTERACTIVE LAB · HALLUCINATION CHECK</div>
         <h3>Can confidence predict truth?</h3>
@@ -78,13 +78,13 @@
           <span id="toolLabScore" class="lab-score"></span>
         </div>
       </article>
-      <article><span class="label">WHERE IT BREAKS</span><div id="failure">Self-reported confidence can be poorly calibrated, and a fluent explanation can sound like evidence without actually supporting the claim. Abstention also has a cost: if the threshold is too strict, the system may refuse useful questions.</div></article>
+      <article><span class="label">WHERE IT BREAKS</span><div id="failure">Feature importance is not automatically causal, and explanations can change with the method used. A plausible post-hoc story may not faithfully describe the computation that produced the output.</div></article>
     </div>
     <div class="drop-footer">
-      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Reliability means knowing when the evidence is not enough.</strong></div>
+      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">A convincing explanation is not the same as a faithful one.</strong></div>
       <div class="day-controls">
         <button class="day-btn" id="prevDay">← Previous</button>
-        <span id="dayStatus">DAY 14 OF 14</span>
+        <span id="dayStatus">DAY 15 OF 15</span>
         <button class="day-btn" id="nextDay">Next →</button>
       </div>
       <button class="primary small" id="saveToday">Save to notebook</button>
@@ -114,6 +114,7 @@
     <article class="archive-card" data-i="11"><div class="num">DAY 12 · 13 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>What would count as evidence for AGI?</h3><p>The word AGI sounds precise until you try to write down a test that everyone would accept.</p><a class="archive-link" href="days/day-12/">Open day →</a></article>
     <article class="archive-card" data-i="12"><div class="num">DAY 13 · 14 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI agent know when to stop?</h3><p>A capable agent is not just one that keeps acting — it is one that recognises when another action is no longer worth the cost.</p><a class="archive-link" href="days/day-13/">Open day →</a></article>
     <article class="archive-card" data-i="13"><div class="num">DAY 14 · 15 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can AI recognise when it doesn't know?</h3><p>A trustworthy AI needs more than answers. It needs a way to signal when the evidence is too weak to support one.</p><a class="archive-link" href="days/day-14/">Open day →</a></article>
+    <article class="archive-card" data-i="14"><div class="num">DAY 15 · 17 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI explain why it made a decision?</h3><p>An explanation is useful only if it reveals what actually drove the decision—not just a convincing story told afterwards.</p><a class="archive-link" href="days/day-15/">Open day →</a></article>
   </div>
   <noscript>
     <p class="eyebrow" style="margin-top:1rem">JavaScript is optional. The current day and published archive remain readable without it.</p>
@@ -135,5 +136,5 @@
 
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
 <footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI · <a href="https://github.com/boutsoniya/AGI">GitHub</a></footer>
-<script src="app.js?v=20261015-1" defer></script>
+<script src="app.js?v=20261017-1" defer></script>
 </body></html>
