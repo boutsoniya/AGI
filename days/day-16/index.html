@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 16 — Can an AI learn from one example?</title>
+<meta name="description" content="100 Days of AGI — Day 16: few-shot learning and generalisation.">
+<link rel="stylesheet" href="../../days/days.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top"><a class="brand" href="../../">ONE IDEA / DAY</a><a class="back" href="../../#archive">← Archive</a></header>
+<main>
+<section class="hero">
+<div class="eyebrow">100 DAYS OF AGI · DAY 16 · 18 OCT 2026</div>
+<h1>Can an AI learn from one example?</h1>
+<p class="hook">A system that needs thousands of labelled examples may be powerful—but what does it take to adapt from just one?</p>
+<div class="tags"><span>few-shot learning</span><span>generalisation</span></div>
+</section>
+<section class="card"><div class="label">THE IDEA</div><p>Few-shot learning studies how a model can perform a new task from a small number of examples. In-context learning lets a language model infer a pattern from examples inside a prompt, while other approaches adapt parameters or use prior learned representations. These are different mechanisms, and success on a tiny demonstration does not prove the model has learned a general rule.</p></section>
+<section class="card"><div class="label">WHY IT MATTERS</div><p>People often learn a new category or instruction from very few examples, so sample efficiency is an important part of flexible intelligence. In practical AI, fewer labelled examples can reduce data collection costs and help systems adapt to unfamiliar tasks—but only if they generalise beyond the examples they were shown.</p></section>
+<section class="card"><div class="label">TRY THIS</div><p>Make a tiny pattern task with three labels or categories. Give a model one labelled example per category, then test it on new examples that vary in wording or appearance. Repeat with five examples. Keep the test cases separate from the demonstrations and record accuracy, mistakes, and whether a superficial change breaks the pattern.</p></section>
+<section class="card"><div class="label">WHERE IT BREAKS</div><p>A model may imitate the format of the examples, exploit a shortcut, or be sensitive to their order. One successful prediction is weak evidence; performance across carefully varied, unseen cases is more informative.</p></section>
+<section class="card takeaway"><div class="label">TAKEAWAY</div><p>Learning from few examples is impressive only when the pattern survives beyond them.</p></section>
+<section class="card"><div class="label">BEFORE YOU READ</div><h2>A model succeeds after seeing one example. What should you test next?</h2><p><strong>A.</strong> Give it more examples of the same format</p><p><strong>B.</strong> Test new cases that vary the surface details</p><p><strong>Answer: B.</strong> Hold out new cases and vary irrelevant details to test whether the learned pattern transfers.</p></section>
+<section class="card"><div class="label">GO DEEPER</div><ul><li><a href="https://arxiv.org/abs/2005.14165" target="_blank" rel="noopener">Language Models are Few-Shot Learners ↗</a></li><li><a href="https://arxiv.org/abs/2005.00247" target="_blank" rel="noopener">Language Models are Few-Shot Learners (GPT-3 paper) ↗</a></li></ul></section>
+<nav class="day-nav"><a href="../day-15/">← Day 15</a><a href="../../#archive">All days →</a></nav>
+</main>
+<footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI</footer>
+</div>
+</body>
+</html>
