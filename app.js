@@ -61,7 +61,7 @@ function dayNumberForDate(date=new Date()){
 }
 
 // Day 02 is intentionally released alongside Day 01 on launch day.
-const RELEASED_DAY_COUNT = 16; // Day 16 published as the current drop.
+const RELEASED_DAY_COUNT = 17; // Day 17 published as the current drop.
 
 function publishedCount(){
   return Math.min(Math.max(dayNumberForDate()+1,RELEASED_DAY_COUNT),drops.length);
@@ -72,6 +72,7 @@ function currentIndex(){
 }
 
 function dateForDay(index){
+  if(index===16) return "20 Oct 2026";
   if(index===11) return "13 Oct 2026";
   if(index===12) return "14 Oct 2026";
   if(index===13) return "15 Oct 2026";
@@ -306,7 +307,8 @@ const worldModelMap=[
   ["S","·","·","#"],
   ["#","·","#","·"],
   ["·","·","·","·"],
-  ["·","#","·","G"]
+  ["·","#","·","G"],
+{"title":"Can AI tell correlation from causation?","hook":"Two things happen together. Did one cause the other—or are they both responding to something else?","tags":["causal reasoning","interventions"],"idea":"Correlation means two variables tend to vary together; causation is a claim about what would change if we intervened on one of them. Ice-cream sales and drownings may rise in the same season, but that does not mean ice cream causes drowning. Hot weather can increase both swimming and ice-cream purchases. A causal explanation tries to represent these pathways rather than treating every association as a cause.","why":"AI systems often learn statistical patterns from observational data. Those patterns can be useful for prediction while still being unreliable for deciding what action will change an outcome. Product teams, doctors, policymakers and researchers need to distinguish 'what tends to happen together' from 'what will happen if we do something differently.'","experiment":"Invent a tiny dataset where umbrella use and wet streets are strongly associated. Ask a model whether umbrellas make streets wet. Then introduce rain as a third variable that causes both umbrella use and wet streets. Ask what evidence would help distinguish the explanations, and what might happen if you intervened by handing out umbrellas without changing the weather.","failure":"Causal diagrams depend on assumptions, and observational data alone may not identify the direction of cause. A model can confidently tell a plausible causal story from a correlation. Randomised experiments can help, but they can be expensive, unethical or impossible; natural experiments and domain knowledge also require careful assumptions.","takeaway":"A pattern can predict what happens without telling you what will happen if you intervene.","q":"Ice-cream sales and drownings rise together. What is the best next question?","a":"Does ice cream cause drowning?","b":"Could a third factor influence both?","resultA":"That jumps from association to causation. The relationship needs a mechanism and evidence that rules out alternative explanations.","resultB":"Exactly. A confounder such as hot weather may increase both swimming and ice-cream sales. Ask what changes under an intervention, not just what co-occurs.","links":["https://www.nature.com/articles/nmeth.2697","https://arxiv.org/abs/1911.10500"]}
 ];
 const worldStart={r:0,c:0};
 const worldGoal={r:3,c:3};
