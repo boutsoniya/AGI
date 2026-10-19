@@ -27,25 +27,25 @@
 
 <section id="today" class="today-wrap">
   <div class="today-card">
-    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">18 Oct 2026</span></div>
+    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">20 Oct 2026</span></div>
     <div class="today-grid">
       <div>
-        <div class="drop-number" id="todayNumber">DAY 16</div>
-        <h2 id="todayTitle">Can an AI learn from one example?</h2>
-        <p class="lead" id="todayHook">A system that needs thousands of labelled examples may be powerful—but what does it take to adapt from just one?</p>
-        <div class="topic-tags" id="todayTags"><span>few-shot learning</span><span>generalisation</span></div>
+        <div class="drop-number" id="todayNumber">DAY 17</div>
+        <h2 id="todayTitle">Can AI tell correlation from causation?</h2>
+        <p class="lead" id="todayHook">Two things happen together. Did one cause the other—or are they both responding to something else?</p>
+        <div class="topic-tags" id="todayTags"><span>causal reasoning</span><span>interventions</span></div>
       </div>
       <div class="question-card">
         <span>BEFORE YOU READ</span>
-        <h3 id="predictionQuestion">A model succeeds after seeing one example. What should you test next?</h3>
-        <div class="choice-row"><button data-choice="A">Give it more examples of the same format</button><button data-choice="B">Test new cases that vary the surface details</button></div>
+        <h3 id="predictionQuestion">Ice-cream sales and drownings rise together. What is the best next question?</h3>
+        <div class="choice-row"><button data-choice="A">Does ice cream cause drowning?</button><button data-choice="B">Could a third factor influence both?</button></div>
         <p id="predictionResult" class="prediction-result">Choose an answer before reading.</p>
       </div>
     </div>
     <div class="drop-body">
-      <article><span class="label">THE IDEA</span><div id="idea">Few-shot learning studies how a model can perform a new task from a small number of examples. In-context learning lets a language model infer a pattern from examples inside a prompt, while other approaches adapt parameters or use prior learned representations. These are different mechanisms, and success on a tiny demonstration does not prove the model has learned a general rule.</div></article>
-      <article><span class="label">WHY IT MATTERS</span><div id="why">People often learn a new category or instruction from very few examples, so sample efficiency is an important part of flexible intelligence. In practical AI, fewer labelled examples can reduce data collection costs and help systems adapt to unfamiliar tasks—but only if they generalise beyond the examples they were shown.</div></article>
-      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Make a tiny pattern task with three labels or categories. Give a model one labelled example per category, then test it on new examples that vary in wording or appearance. Repeat with five examples. Keep the test cases separate from the demonstrations and record accuracy, mistakes, and whether a superficial change breaks the pattern.</div></article>
+      <article><span class="label">THE IDEA</span><div id="idea">Correlation means two variables tend to vary together; causation is a claim about what would change if we intervened on one of them. Ice-cream sales and drownings may rise in the same season, but that does not mean ice cream causes drowning. Hot weather can increase both swimming and ice-cream purchases. A causal explanation tries to represent these pathways rather than treating every association as a cause.</div></article>
+      <article><span class="label">WHY IT MATTERS</span><div id="why">AI systems often learn statistical patterns from observational data. Those patterns can be useful for prediction while still being unreliable for deciding what action will change an outcome. Product teams, doctors, policymakers and researchers need to distinguish 'what tends to happen together' from 'what will happen if we do something differently.'</div></article>
+      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Invent a tiny dataset where umbrella use and wet streets are strongly associated. Ask a model whether umbrellas make streets wet. Then introduce rain as a third variable that causes both umbrella use and wet streets. Ask what evidence would help distinguish the explanations, and what might happen if you intervened by handing out umbrellas without changing the weather.</div></article>
       <article id="day4Lab" class="lab-panel" hidden>
         <div class="label">INTERACTIVE LAB · HALLUCINATION CHECK</div>
         <h3>Can confidence predict truth?</h3>
@@ -78,13 +78,13 @@
           <span id="toolLabScore" class="lab-score"></span>
         </div>
       </article>
-      <article><span class="label">WHERE IT BREAKS</span><div id="failure">A model may imitate the format of the examples, exploit a shortcut, or be sensitive to their order. One successful prediction is weak evidence; performance across carefully varied, unseen cases is more informative.</div></article>
+      <article><span class="label">WHERE IT BREAKS</span><div id="failure">Causal diagrams depend on assumptions, and observational data alone may not identify the direction of cause. A model can confidently tell a plausible causal story from a correlation. Randomised experiments can help, but they can be expensive, unethical or impossible; natural experiments and domain knowledge also require careful assumptions.</div></article>
     </div>
     <div class="drop-footer">
-      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Learning from few examples is impressive only when the pattern survives beyond them.</strong></div>
+      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">A pattern can predict what happens without telling you what will happen if you intervene.</strong></div>
       <div class="day-controls">
         <button class="day-btn" id="prevDay">← Previous</button>
-        <span id="dayStatus">DAY 16 OF 16</span>
+        <span id="dayStatus">DAY 17 OF 17</span>
         <button class="day-btn" id="nextDay">Next →</button>
       </div>
       <button class="primary small" id="saveToday">Save to notebook</button>
@@ -116,6 +116,7 @@
     <article class="archive-card" data-i="13"><div class="num">DAY 14 · 15 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can AI recognise when it doesn't know?</h3><p>A trustworthy AI needs more than answers. It needs a way to signal when the evidence is too weak to support one.</p><a class="archive-link" href="days/day-14/">Open day →</a></article>
     <article class="archive-card" data-i="14"><div class="num">DAY 15 · 17 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI explain why it made a decision?</h3><p>An explanation is useful only if it reveals what actually drove the decision—not just a convincing story told afterwards.</p><a class="archive-link" href="days/day-15/">Open day →</a></article>
     <article class="archive-card" data-i="15"><div class="num">DAY 16 · 18 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI learn from one example?</h3><p>A system that needs thousands of labelled examples may be powerful—but what does it take to adapt from just one?</p><a class="archive-link" href="days/day-16/">Open day →</a></article>
+    <article class="archive-card" data-i="16"><div class="num">DAY 17 · 20 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can AI tell correlation from causation?</h3><p>Two things happen together. Did one cause the other—or are they both responding to something else?</p><a class="archive-link" href="days/day-17/">Open day →</a></article>
   </div>
   <noscript>
     <p class="eyebrow" style="margin-top:1rem">JavaScript is optional. The current day and published archive remain readable without it.</p>
@@ -137,5 +138,5 @@
 
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
 <footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI · <a href="https://github.com/boutsoniya/AGI">GitHub</a></footer>
-<script src="app.js?v=20261018-1" defer></script>
+<script src="app.js?v=20261020-1" defer></script>
 </body></html>
