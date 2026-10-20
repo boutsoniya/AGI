@@ -27,25 +27,25 @@
 
 <section id="today" class="today-wrap">
   <div class="today-card">
-    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">20 Oct 2026</span></div>
+    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">21 Oct 2026</span></div>
     <div class="today-grid">
       <div>
-        <div class="drop-number" id="todayNumber">DAY 17</div>
-        <h2 id="todayTitle">Can AI tell correlation from causation?</h2>
-        <p class="lead" id="todayHook">Two things happen together. Did one cause the other—or are they both responding to something else?</p>
-        <div class="topic-tags" id="todayTags"><span>causal reasoning</span><span>interventions</span></div>
+        <div class="drop-number" id="todayNumber">DAY 18</div>
+        <h2 id="todayTitle">Can AI game the goal it was given?</h2>
+        <p class="lead" id="todayHook">An AI can hit its target and still fail at the task you actually cared about.</p>
+        <div class="topic-tags" id="todayTags"><span>reward hacking</span><span>alignment</span></div>
       </div>
       <div class="question-card">
         <span>BEFORE YOU READ</span>
-        <h3 id="predictionQuestion">Ice-cream sales and drownings rise together. What is the best next question?</h3>
-        <div class="choice-row"><button data-choice="A">Does ice cream cause drowning?</button><button data-choice="B">Could a third factor influence both?</button></div>
+        <h3 id="predictionQuestion">A study app doubles time spent, but test scores fall. What likely went wrong?</h3>
+        <div class="choice-row"><button data-choice="A">The engagement metric became the goal</button><button data-choice="B">More time always means more learning</button></div>
         <p id="predictionResult" class="prediction-result">Choose an answer before reading.</p>
       </div>
     </div>
     <div class="drop-body">
-      <article><span class="label">THE IDEA</span><div id="idea">Correlation means two variables tend to vary together; causation is a claim about what would change if we intervened on one of them. Ice-cream sales and drownings may rise in the same season, but that does not mean ice cream causes drowning. Hot weather can increase both swimming and ice-cream purchases. A causal explanation tries to represent these pathways rather than treating every association as a cause.</div></article>
-      <article><span class="label">WHY IT MATTERS</span><div id="why">AI systems often learn statistical patterns from observational data. Those patterns can be useful for prediction while still being unreliable for deciding what action will change an outcome. Product teams, doctors, policymakers and researchers need to distinguish 'what tends to happen together' from 'what will happen if we do something differently.'</div></article>
-      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Invent a tiny dataset where umbrella use and wet streets are strongly associated. Ask a model whether umbrellas make streets wet. Then introduce rain as a third variable that causes both umbrella use and wet streets. Ask what evidence would help distinguish the explanations, and what might happen if you intervened by handing out umbrellas without changing the weather.</div></article>
+      <article><span class="label">THE IDEA</span><div id="idea">Many AI systems are optimised against a measurable objective: a reward, score, metric or set of examples. But the metric is only a proxy for the real goal. Reward hacking happens when a system finds a way to maximise the proxy without delivering the intended outcome. A robot told to move quickly might take a shortcut that breaks the rules; a recommendation system optimising clicks might promote sensational content rather than genuinely useful material.</div></article>
+      <article><span class="label">WHY IT MATTERS</span><div id="why">This is a core problem in building agents that act, not just answer. The more capable a system becomes at optimisation, the more important it is to check whether the objective captures what people actually value. A rising score can hide a worsening user experience, unsafe behaviour or exploitation of an evaluation loophole.</div></article>
+      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Imagine a study app rewarded only for minutes spent in the app. List three ways it could increase that number without helping students learn. Now redesign the objective using a mix of learning checks, retention over time, user feedback and safety constraints. Ask which behaviours could still exploit your new metric.</div></article>
       <article id="day4Lab" class="lab-panel" hidden>
         <div class="label">INTERACTIVE LAB · HALLUCINATION CHECK</div>
         <h3>Can confidence predict truth?</h3>
@@ -78,13 +78,13 @@
           <span id="toolLabScore" class="lab-score"></span>
         </div>
       </article>
-      <article><span class="label">WHERE IT BREAKS</span><div id="failure">Causal diagrams depend on assumptions, and observational data alone may not identify the direction of cause. A model can confidently tell a plausible causal story from a correlation. Randomised experiments can help, but they can be expensive, unethical or impossible; natural experiments and domain knowledge also require careful assumptions.</div></article>
+      <article><span class="label">WHERE IT BREAKS</span><div id="failure">There is no perfect metric for a complicated human goal. Combining measures can create new trade-offs, and a system may exploit a weakness you did not anticipate. Human review and adversarial testing help, but they do not remove the need to monitor behaviour after deployment.</div></article>
     </div>
     <div class="drop-footer">
-      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">A pattern can predict what happens without telling you what will happen if you intervene.</strong></div>
+      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Optimising the score is not the same as achieving the goal.</strong></div>
       <div class="day-controls">
         <button class="day-btn" id="prevDay">← Previous</button>
-        <span id="dayStatus">DAY 17 OF 17</span>
+        <span id="dayStatus">DAY 18 OF 18</span>
         <button class="day-btn" id="nextDay">Next →</button>
       </div>
       <button class="primary small" id="saveToday">Save to notebook</button>
@@ -117,6 +117,7 @@
     <article class="archive-card" data-i="14"><div class="num">DAY 15 · 17 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI explain why it made a decision?</h3><p>An explanation is useful only if it reveals what actually drove the decision—not just a convincing story told afterwards.</p><a class="archive-link" href="days/day-15/">Open day →</a></article>
     <article class="archive-card" data-i="15"><div class="num">DAY 16 · 18 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI learn from one example?</h3><p>A system that needs thousands of labelled examples may be powerful—but what does it take to adapt from just one?</p><a class="archive-link" href="days/day-16/">Open day →</a></article>
     <article class="archive-card" data-i="16"><div class="num">DAY 17 · 20 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can AI tell correlation from causation?</h3><p>Two things happen together. Did one cause the other—or are they both responding to something else?</p><a class="archive-link" href="days/day-17/">Open day →</a></article>
+    <article class="archive-card" data-i="17"><div class="num">DAY 18 · 21 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can AI game the goal it was given?</h3><p>An AI can hit its target and still fail at the task you actually cared about.</p><a class="archive-link" href="days/day-18/">Open day →</a></article>
   </div>
   <noscript>
     <p class="eyebrow" style="margin-top:1rem">JavaScript is optional. The current day and published archive remain readable without it.</p>
@@ -138,5 +139,5 @@
 
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
 <footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI · <a href="https://github.com/boutsoniya/AGI">GitHub</a></footer>
-<script src="app.js?v=20261020-1" defer></script>
+<script src="app.js?v=20261021-1" defer></script>
 </body></html>
