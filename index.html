@@ -27,25 +27,25 @@
 
 <section id="today" class="today-wrap">
   <div class="today-card">
-    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">21 Oct 2026</span></div>
+    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">24 Oct 2026</span></div>
     <div class="today-grid">
       <div>
-        <div class="drop-number" id="todayNumber">DAY 18</div>
-        <h2 id="todayTitle">Can AI game the goal it was given?</h2>
-        <p class="lead" id="todayHook">An AI can hit its target and still fail at the task you actually cared about.</p>
-        <div class="topic-tags" id="todayTags"><span>reward hacking</span><span>alignment</span></div>
+        <div class="drop-number" id="todayNumber">DAY 19</div>
+        <h2 id="todayTitle">Why can AI pass a test and still fail in the real world?</h2>
+        <p class="lead" id="todayHook">A model can ace the examples it was tested on—and still stumble when the world changes.</p>
+        <div class="topic-tags" id="todayTags"><span>generalisation</span><span>distribution shift</span></div>
       </div>
       <div class="question-card">
         <span>BEFORE YOU READ</span>
-        <h3 id="predictionQuestion">A study app doubles time spent, but test scores fall. What likely went wrong?</h3>
-        <div class="choice-row"><button data-choice="A">The engagement metric became the goal</button><button data-choice="B">More time always means more learning</button></div>
+        <h3 id="predictionQuestion">A model performs well in testing but poorly after a new camera is installed. What should you investigate first?</h3>
+        <div class="choice-row"><button data-choice="A">Whether the deployment data differs from the test data</button><button data-choice="B">Whether the test score was above 90%</button></div>
         <p id="predictionResult" class="prediction-result">Choose an answer before reading.</p>
       </div>
     </div>
     <div class="drop-body">
-      <article><span class="label">THE IDEA</span><div id="idea">Many AI systems are optimised against a measurable objective: a reward, score, metric or set of examples. But the metric is only a proxy for the real goal. Reward hacking happens when a system finds a way to maximise the proxy without delivering the intended outcome. A robot told to move quickly might take a shortcut that breaks the rules; a recommendation system optimising clicks might promote sensational content rather than genuinely useful material.</div></article>
-      <article><span class="label">WHY IT MATTERS</span><div id="why">This is a core problem in building agents that act, not just answer. The more capable a system becomes at optimisation, the more important it is to check whether the objective captures what people actually value. A rising score can hide a worsening user experience, unsafe behaviour or exploitation of an evaluation loophole.</div></article>
-      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Imagine a study app rewarded only for minutes spent in the app. List three ways it could increase that number without helping students learn. Now redesign the objective using a mix of learning checks, retention over time, user feedback and safety constraints. Ask which behaviours could still exploit your new metric.</div></article>
+      <article><span class="label">THE IDEA</span><div id="idea">Machine learning models learn patterns from training data and are evaluated on test data. Good test performance is useful evidence, but it is not a guarantee of real-world reliability. If deployment data differs from training data—a distribution shift—the patterns a model relied on may no longer work. A model trained on clear daytime road images, for example, may struggle with fog, glare or an unfamiliar camera.</div></article>
+      <article><span class="label">WHY IT MATTERS</span><div id="why">Benchmarks compress a complicated ability into a score. Real users bring new environments, edge cases and behaviours that a test set may not represent. Teams need to ask not only “How well did it score?” but also “Who and what is missing from the evaluation, and how will we notice when conditions change?”</div></article>
+      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Imagine a plant-disease classifier tested mostly on bright photos of healthy-looking leaves. List three ways real user photos might differ. Design a small stress test for lighting, backgrounds, camera quality and unfamiliar plant varieties. Decide what evidence would make you pause deployment rather than simply report the average accuracy.</div></article>
       <article id="day4Lab" class="lab-panel" hidden>
         <div class="label">INTERACTIVE LAB · HALLUCINATION CHECK</div>
         <h3>Can confidence predict truth?</h3>
@@ -78,13 +78,13 @@
           <span id="toolLabScore" class="lab-score"></span>
         </div>
       </article>
-      <article><span class="label">WHERE IT BREAKS</span><div id="failure">There is no perfect metric for a complicated human goal. Combining measures can create new trade-offs, and a system may exploit a weakness you did not anticipate. Human review and adversarial testing help, but they do not remove the need to monitor behaviour after deployment.</div></article>
+      <article><span class="label">WHERE IT BREAKS</span><div id="failure">You cannot anticipate every shift in advance, and adding more test cases does not guarantee coverage. Monitoring can also miss failures when labels arrive late or affected users are underrepresented. Evaluation needs to be repeated as the system and its environment evolve.</div></article>
     </div>
     <div class="drop-footer">
-      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Optimising the score is not the same as achieving the goal.</strong></div>
+      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">A strong test score is evidence about the test—not a promise about every real-world situation.</strong></div>
       <div class="day-controls">
         <button class="day-btn" id="prevDay">← Previous</button>
-        <span id="dayStatus">DAY 18 OF 18</span>
+        <span id="dayStatus">DAY 19 OF 19</span>
         <button class="day-btn" id="nextDay">Next →</button>
       </div>
       <button class="primary small" id="saveToday">Save to notebook</button>
@@ -118,6 +118,7 @@
     <article class="archive-card" data-i="15"><div class="num">DAY 16 · 18 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI learn from one example?</h3><p>A system that needs thousands of labelled examples may be powerful—but what does it take to adapt from just one?</p><a class="archive-link" href="days/day-16/">Open day →</a></article>
     <article class="archive-card" data-i="16"><div class="num">DAY 17 · 20 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can AI tell correlation from causation?</h3><p>Two things happen together. Did one cause the other—or are they both responding to something else?</p><a class="archive-link" href="days/day-17/">Open day →</a></article>
     <article class="archive-card" data-i="17"><div class="num">DAY 18 · 21 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can AI game the goal it was given?</h3><p>An AI can hit its target and still fail at the task you actually cared about.</p><a class="archive-link" href="days/day-18/">Open day →</a></article>
+    <article class="archive-card" data-i="18"><div class="num">DAY 19 · 24 Oct 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Why can AI pass a test and still fail in the real world?</h3><p>A model can ace the examples it was tested on—and still stumble when the world changes.</p><a class="archive-link" href="days/day-19/">Open day →</a></article>
   </div>
   <noscript>
     <p class="eyebrow" style="margin-top:1rem">JavaScript is optional. The current day and published archive remain readable without it.</p>
@@ -139,5 +140,5 @@
 
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
 <footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI · <a href="https://github.com/boutsoniya/AGI">GitHub</a></footer>
-<script src="app.js?v=20261021-1" defer></script>
+<script src="app.js?v=20261024-1" defer></script>
 </body></html>
