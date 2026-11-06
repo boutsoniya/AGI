@@ -27,13 +27,13 @@
 
 <section id="today" class="today-wrap">
   <div class="today-card">
-    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">3 Nov 2026</span></div>
+    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">6 Nov 2026</span></div>
     <div class="today-grid">
       <div>
-        <div class="drop-number" id="todayNumber">DAY 26</div>
-        <h2 id="todayTitle">Can an AI tell when its answer is out of date?</h2>
-        <p class="lead" id="todayHook">A fact can be correct yesterday and wrong today. How should an AI handle knowledge that changes?</p>
-        <div class="topic-tags" id="todayTags"><span>freshness</span><span>retrieval</span><span>uncertainty</span></div>
+        <div class="drop-number" id="todayNumber">DAY 27</div>
+        <h2 id="todayTitle">Can an AI experiment safely before it acts?</h2>
+        <p class="lead" id="todayHook">An agent does not always need to learn by making mistakes in the real world. Sometimes it can test a plan in a sandbox first.</p>
+        <div class="topic-tags" id="todayTags"><span>simulation</span><span>agents</span><span>safety</span></div>
       </div>
       <div class="question-card">
         <span>BEFORE YOU READ</span>
@@ -43,9 +43,9 @@
       </div>
     </div>
     <div class="drop-body">
-      <article><span class="label">THE IDEA</span><div id="idea">Machine learning models learn patterns from training data and are evaluated on test data. Good test performance is useful evidence, but it is not a guarantee of real-world reliability. If deployment data differs from training data—a distribution shift—the patterns a model relied on may no longer work. A model trained on clear daytime road images, for example, may struggle with fog, glare or an unfamiliar camera.</div></article>
-      <article><span class="label">WHY IT MATTERS</span><div id="why">Benchmarks compress a complicated ability into a score. Real users bring new environments, edge cases and behaviours that a test set may not represent. Teams need to ask not only “How well did it score?” but also “Who and what is missing from the evaluation, and how will we notice when conditions change?”</div></article>
-      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Imagine a plant-disease classifier tested mostly on bright photos of healthy-looking leaves. List three ways real user photos might differ. Design a small stress test for lighting, backgrounds, camera quality and unfamiliar plant varieties. Decide what evidence would make you pause deployment rather than simply report the average accuracy.</div></article>
+      <article><span class="label">THE IDEA</span><div id="idea">A sandbox is a separated environment where an AI system can try actions without directly affecting real users, files, money or infrastructure. A simulator can model how an environment may respond. These approaches let developers inspect plans, test edge cases and compare alternatives before allowing an action to reach the real system.</div></article>
+      <article><span class="label">WHY IT MATTERS</span><div id="why">An agent that can use tools may have real consequences: it could delete data, send a message, spend money or change a configuration. Testing in a controlled environment creates a checkpoint between deciding what to do and doing it. The goal is to discover avoidable failures while the cost of a mistake is still low.</div></article>
+      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Imagine an AI agent asked to clean up a shared project folder. First, let it propose files to delete without deleting anything. Next, run that plan on a copied folder with test files. Check whether important files survive, whether the result matches the request, and whether the agent can explain each proposed deletion.</div></article>
       <article id="day4Lab" class="lab-panel" hidden>
         <div class="label">INTERACTIVE LAB · HALLUCINATION CHECK</div>
         <h3>Can confidence predict truth?</h3>
@@ -78,13 +78,13 @@
           <span id="toolLabScore" class="lab-score"></span>
         </div>
       </article>
-      <article><span class="label">WHERE IT BREAKS</span><div id="failure">You cannot anticipate every shift in advance, and adding more test cases does not guarantee coverage. Monitoring can also miss failures when labels arrive late or affected users are underrepresented. Evaluation needs to be repeated as the system and its environment evolve.</div></article>
+      <article><span class="label">WHERE IT BREAKS</span><div id="failure">A sandbox is only useful if it resembles the real environment closely enough. Simulations can omit permissions, unusual file types, network effects or human behaviour. A plan that passes a test can still fail outside it, so high-impact actions need limits, monitoring and human approval.</div></article>
     </div>
     <div class="drop-footer">
-      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">A strong test score is evidence about the test—not a promise about every real-world situation.</strong></div>
+      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Let agents rehearse risky actions in a controlled space; keep real-world execution bounded and reviewable.</strong></div>
       <div class="day-controls">
         <button class="day-btn" id="prevDay">← Previous</button>
-        <span id="dayStatus">DAY 26 OF 26</span>
+        <span id="dayStatus">DAY 27 OF 27</span>
         <button class="day-btn" id="nextDay">Next →</button>
       </div>
       <button class="primary small" id="saveToday">Save to notebook</button>
@@ -126,6 +126,7 @@
     <article class="archive-card" data-i="23"><div class="num">DAY 24 · 1 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>What happens when AI learns from AI-generated data?</h3><p>Synthetic data can help models learn—but repeated reuse can also amplify mistakes and reduce diversity.</p><a class="archive-link" href="days/day-24/">Open day →</a></article>
     <article class="archive-card" data-i="24"><div class="num">DAY 25 · 2 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>When should an AI distrust its own tools?</h3><p>A tool result can be useful evidence without being automatically true, relevant or safe.</p><a class="archive-link" href="days/day-25/">Open day →</a></article>
     <article class="archive-card" data-i="25"><div class="num">DAY 26 · 3 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI tell when its answer is out of date?</h3><p>A fact can be correct yesterday and wrong today—freshness is part of reliability.</p><a class="archive-link" href="days/day-26/">Open day →</a></article>
+    <article class="archive-card" data-i="26"><div class="num">DAY 27 · 6 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI experiment safely before it acts?</h3><p>Agents can rehearse risky plans in a sandbox before real-world execution.</p><a class="archive-link" href="days/day-27/">Open day →</a></article>
   </div>
   <noscript>
     <p class="eyebrow" style="margin-top:1rem">JavaScript is optional. The current day and published archive remain readable without it.</p>
@@ -147,5 +148,5 @@
 
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
 <footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI · <a href="https://github.com/boutsoniya/AGI">GitHub</a></footer>
-<script src="app.js?v=20261103-1" defer></script>
+<script src="app.js?v=20261106-1" defer></script>
 </body></html>
