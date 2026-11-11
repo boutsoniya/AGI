@@ -27,25 +27,25 @@
 
 <section id="today" class="today-wrap">
   <div class="today-card">
-    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">7 Nov 2026</span></div>
+    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">11 Nov 2026</span></div>
     <div class="today-grid">
       <div>
-        <div class="drop-number" id="todayNumber">DAY 28</div>
-        <h2 id="todayTitle">Can an AI tell when its plan is going wrong?</h2>
-        <p class="lead" id="todayHook">A plan is only useful while the world keeps matching its assumptions. What should an agent do when reality disagrees?</p>
-        <div class="topic-tags" id="todayTags"><span>feedback</span><span>planning</span><span>agents</span></div>
+        <div class="drop-number" id="todayNumber">DAY 29</div>
+        <h2 id="todayTitle">Can an AI tell a goal from a constraint?</h2>
+        <p class="lead" id="todayHook">“Get this done quickly” is a goal. “Do not delete user data” is a constraint. A capable agent needs to know the difference.</p>
+        <div class="topic-tags" id="todayTags"><span>planning</span><span>constraints</span><span>AI agents</span></div>
       </div>
       <div class="question-card">
         <span>BEFORE YOU READ</span>
-        <h3 id="predictionQuestion">A website button moved, so the agent’s click missed. What should it do?</h3>
-        <div class="choice-row"><button data-choice="A">Repeat the same click again and again</button><button data-choice="B">Inspect the new page state and re-plan</button></div>
+        <h3 id="predictionQuestion">An agent can finish faster by ignoring “never delete originals.” What should it do?</h3>
+        <div class="choice-row"><button data-choice="A">Ignore it to finish faster</button><button data-choice="B">Treat it as a hard constraint</button></div>
         <p id="predictionResult" class="prediction-result">Choose an answer before reading.</p>
       </div>
     </div>
     <div class="drop-body">
-      <article><span class="label">THE IDEA</span><div id="idea">An AI agent often works through a loop: make a plan, take an action, observe what happened, and decide what to do next. The observation is feedback. If the result differs from the prediction, the agent should update its picture of the situation rather than blindly continue with the original plan. This is a basic form of closed-loop control and adaptive planning.</div></article>
-      <article><span class="label">WHY IT MATTERS</span><div id="why">Real environments are uncertain. A website may change, a tool may fail, a robot may meet an obstacle, or a user may provide new information. Open-loop behaviour executes a fixed sequence without checking what happened. Closed-loop behaviour uses feedback to adjust. That difference can turn a brittle demo into a system that recovers from ordinary surprises.</div></article>
-      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Ask an AI agent to complete a small multi-step task, such as finding a setting in a mock website. Before each step, ask it to predict what it expects to see. After the action, compare the actual result with that prediction. Introduce one harmless change—move a button or make a page load differently—and observe whether the agent notices, updates its plan and explains the next step.</div></article>
+      <article><span class="label">THE IDEA</span><div id="idea">A goal describes the outcome a system should try to achieve. A constraint describes a boundary it must respect while pursuing that outcome. For example, an assistant may be asked to organise files quickly (goal), but it must not delete originals or expose private documents (constraints). In planning and optimisation, the system searches for actions that make progress toward the goal while staying inside the allowed boundaries. Some constraints are hard rules; others are preferences that can be traded off.</div></article>
+      <article><span class="label">WHY IT MATTERS</span><div id="why">Without this distinction, an agent can optimise the easiest measurable outcome and violate the reason the task mattered. It might finish quickly by skipping checks, save money by lowering quality, or complete a workflow by taking an action the user never authorised. Explicit constraints make plans safer and make trade-offs easier to explain.</div></article>
+      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Give an AI this task: “Plan a one-day college event under ₹20,000.” Then add constraints: “Keep it accessible, do not schedule during exams, and reserve ₹2,000 for emergencies.” Ask it to list the goal, hard constraints and flexible preferences separately. Change the budget and see whether it revises the plan without quietly dropping a hard constraint.</div></article>
       <article id="day4Lab" class="lab-panel" hidden>
         <div class="label">INTERACTIVE LAB · HALLUCINATION CHECK</div>
         <h3>Can confidence predict truth?</h3>
@@ -78,13 +78,13 @@
           <span id="toolLabScore" class="lab-score"></span>
         </div>
       </article>
-      <article><span class="label">WHERE IT BREAKS</span><div id="failure">Feedback is not automatically reliable. The agent may misread the result, overreact to noisy observations, or keep retrying an action that cannot succeed. Replanning also has a cost. A robust system needs limits on retries, clear success conditions, safe fallback behaviour and a way to ask a human when uncertainty remains high.</div></article>
+      <article><span class="label">WHERE IT BREAKS</span><div id="failure">Natural-language instructions can be incomplete or contradictory. A model may mistake a strong preference for a hard rule, overlook an implied safety boundary, or claim a plan satisfies a constraint without checking the numbers. Real systems need explicit validation, clarification when requirements conflict, and human approval for consequential exceptions.</div></article>
     </div>
     <div class="drop-footer">
-      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">A capable agent does not just follow a plan; it checks reality and changes course when the evidence says it should.</strong></div>
+      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">A good plan does not merely reach the goal; it reaches it without crossing the boundaries that define success.</strong></div>
       <div class="day-controls">
         <button class="day-btn" id="prevDay">← Previous</button>
-        <span id="dayStatus">DAY 28 OF 28</span>
+        <span id="dayStatus">DAY 29 OF 29</span>
         <button class="day-btn" id="nextDay">Next →</button>
       </div>
       <button class="primary small" id="saveToday">Save to notebook</button>
@@ -128,6 +128,7 @@
     <article class="archive-card" data-i="25"><div class="num">DAY 26 · 3 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI tell when its answer is out of date?</h3><p>A fact can be correct yesterday and wrong today—freshness is part of reliability.</p><a class="archive-link" href="days/day-26/">Open day →</a></article>
     <article class="archive-card" data-i="26"><div class="num">DAY 27 · 6 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI experiment safely before it acts?</h3><p>Agents can rehearse risky plans in a sandbox before real-world execution.</p><a class="archive-link" href="days/day-27/">Open day →</a></article>
     <article class="archive-card" data-i="27"><div class="num">DAY 28 · 7 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI tell when its plan is going wrong?</h3><p>Reliable agents compare predictions with outcomes and adapt when reality disagrees.</p><a class="archive-link" href="days/day-28/">Open day →</a></article>
+    <article class="archive-card" data-i="28"><div class="num">DAY 29 · 11 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI tell a goal from a constraint?</h3><p>A good plan reaches the goal without crossing the boundaries that define success.</p><a class="archive-link" href="days/day-29/">Open day →</a></article>
   </div>
   <noscript>
     <p class="eyebrow" style="margin-top:1rem">JavaScript is optional. The current day and published archive remain readable without it.</p>
@@ -149,5 +150,5 @@
 
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
 <footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI · <a href="https://github.com/boutsoniya/AGI">GitHub</a></footer>
-<script src="app.js?v=20261107-1" defer></script>
+<script src="app.js?v=20261111-1" defer></script>
 </body></html>
