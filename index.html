@@ -27,25 +27,25 @@
 
 <section id="today" class="today-wrap">
   <div class="today-card">
-    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">11 Nov 2026</span></div>
+    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">14 Nov 2026</span></div>
     <div class="today-grid">
       <div>
-        <div class="drop-number" id="todayNumber">DAY 29</div>
-        <h2 id="todayTitle">Can an AI tell a goal from a constraint?</h2>
-        <p class="lead" id="todayHook">“Get this done quickly” is a goal. “Do not delete user data” is a constraint. A capable agent needs to know the difference.</p>
-        <div class="topic-tags" id="todayTags"><span>planning</span><span>constraints</span><span>AI agents</span></div>
+        <div class="drop-number" id="todayNumber">DAY 30</div>
+        <h2 id="todayTitle">When should an AI hand a decision to a human?</h2>
+        <p class="lead" id="todayHook">Some decisions are too risky, unclear or consequential for an AI agent to make alone. Knowing when to hand off is part of being reliable.</p>
+        <div class="topic-tags" id="todayTags"><span>human oversight</span><span>AI agents</span><span>safety</span></div>
       </div>
       <div class="question-card">
         <span>BEFORE YOU READ</span>
-        <h3 id="predictionQuestion">An agent can finish faster by ignoring “never delete originals.” What should it do?</h3>
-        <div class="choice-row"><button data-choice="A">Ignore it to finish faster</button><button data-choice="B">Treat it as a hard constraint</button></div>
+        <h3 id="predictionQuestion">A venue deposit is non-refundable, and the user never approved that risk. What should the agent do?</h3>
+        <div class="choice-row"><button data-choice="A">Pay now to complete the task</button><button data-choice="B">Pause and ask for approval</button></div>
         <p id="predictionResult" class="prediction-result">Choose an answer before reading.</p>
       </div>
     </div>
     <div class="drop-body">
-      <article><span class="label">THE IDEA</span><div id="idea">A goal describes the outcome a system should try to achieve. A constraint describes a boundary it must respect while pursuing that outcome. For example, an assistant may be asked to organise files quickly (goal), but it must not delete originals or expose private documents (constraints). In planning and optimisation, the system searches for actions that make progress toward the goal while staying inside the allowed boundaries. Some constraints are hard rules; others are preferences that can be traded off.</div></article>
-      <article><span class="label">WHY IT MATTERS</span><div id="why">Without this distinction, an agent can optimise the easiest measurable outcome and violate the reason the task mattered. It might finish quickly by skipping checks, save money by lowering quality, or complete a workflow by taking an action the user never authorised. Explicit constraints make plans safer and make trade-offs easier to explain.</div></article>
-      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Give an AI this task: “Plan a one-day college event under ₹20,000.” Then add constraints: “Keep it accessible, do not schedule during exams, and reserve ₹2,000 for emergencies.” Ask it to list the goal, hard constraints and flexible preferences separately. Change the budget and see whether it revises the plan without quietly dropping a hard constraint.</div></article>
+      <article><span class="label">THE IDEA</span><div id="idea">A human handoff is different from asking a routine clarification. The agent pauses its own action and gives a person the context needed to decide or approve the next step. A useful handoff includes what the agent was trying to do, what it observed, what remains uncertain, the possible consequences and the exact decision it needs help with. The system should also make clear whether it has paused safely or whether anything is still running.</div></article>
+      <article><span class="label">WHY IT MATTERS</span><div id="why">AI systems increasingly interact with money, accounts, private information and real-world services. A small misunderstanding can become costly when an agent has permission to act. Human oversight creates a checkpoint for high-impact actions, unusual situations and cases where the system's confidence or evidence is not good enough.</div></article>
+      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Give an agent a mock task: book a refundable venue for a college event. Let it compare options, but add a rule that it must ask a person before paying a deposit or accepting a non-refundable term. Check whether it pauses at the right moment and provides the options, costs, cancellation terms and reason for the handoff.</div></article>
       <article id="day4Lab" class="lab-panel" hidden>
         <div class="label">INTERACTIVE LAB · HALLUCINATION CHECK</div>
         <h3>Can confidence predict truth?</h3>
@@ -78,13 +78,13 @@
           <span id="toolLabScore" class="lab-score"></span>
         </div>
       </article>
-      <article><span class="label">WHERE IT BREAKS</span><div id="failure">Natural-language instructions can be incomplete or contradictory. A model may mistake a strong preference for a hard rule, overlook an implied safety boundary, or claim a plan satisfies a constraint without checking the numbers. Real systems need explicit validation, clarification when requirements conflict, and human approval for consequential exceptions.</div></article>
+      <article><span class="label">WHERE IT BREAKS</span><div id="failure">A handoff can fail if the agent escalates everything and overwhelms people, or if it waits too long after an irreversible action. A vague message such as “Please review” is not enough. Good systems define escalation triggers in advance, preserve relevant evidence, stop safely, and make it obvious what the human is being asked to decide.</div></article>
     </div>
     <div class="drop-footer">
-      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">A good plan does not merely reach the goal; it reaches it without crossing the boundaries that define success.</strong></div>
+      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Reliable autonomy includes knowing when not to act alone—and making the human handoff clear and timely.</strong></div>
       <div class="day-controls">
         <button class="day-btn" id="prevDay">← Previous</button>
-        <span id="dayStatus">DAY 29 OF 29</span>
+        <span id="dayStatus">DAY 30 OF 30</span>
         <button class="day-btn" id="nextDay">Next →</button>
       </div>
       <button class="primary small" id="saveToday">Save to notebook</button>
@@ -129,6 +129,7 @@
     <article class="archive-card" data-i="26"><div class="num">DAY 27 · 6 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI experiment safely before it acts?</h3><p>Agents can rehearse risky plans in a sandbox before real-world execution.</p><a class="archive-link" href="days/day-27/">Open day →</a></article>
     <article class="archive-card" data-i="27"><div class="num">DAY 28 · 7 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI tell when its plan is going wrong?</h3><p>Reliable agents compare predictions with outcomes and adapt when reality disagrees.</p><a class="archive-link" href="days/day-28/">Open day →</a></article>
     <article class="archive-card" data-i="28"><div class="num">DAY 29 · 11 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI tell a goal from a constraint?</h3><p>A good plan reaches the goal without crossing the boundaries that define success.</p><a class="archive-link" href="days/day-29/">Open day →</a></article>
+    <article class="archive-card" data-i="29"><div class="num">DAY 30 · 14 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>When should an AI hand a decision to a human?</h3><p>Reliable agents pause before high-impact decisions and give people the context to approve the next step.</p><a class="archive-link" href="days/day-30/">Open day →</a></article>
   </div>
   <noscript>
     <p class="eyebrow" style="margin-top:1rem">JavaScript is optional. The current day and published archive remain readable without it.</p>
@@ -150,5 +151,5 @@
 
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
 <footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI · <a href="https://github.com/boutsoniya/AGI">GitHub</a></footer>
-<script src="app.js?v=20261111-1" defer></script>
+<script src="app.js?v=20261114-1" defer></script>
 </body></html>
