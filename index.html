@@ -27,25 +27,25 @@
 
 <section id="today" class="today-wrap">
   <div class="today-card">
-    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">14 Nov 2026</span></div>
+    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">15 Nov 2026</span></div>
     <div class="today-grid">
       <div>
-        <div class="drop-number" id="todayNumber">DAY 30</div>
-        <h2 id="todayTitle">When should an AI hand a decision to a human?</h2>
-        <p class="lead" id="todayHook">Some decisions are too risky, unclear or consequential for an AI agent to make alone. Knowing when to hand off is part of being reliable.</p>
-        <div class="topic-tags" id="todayTags"><span>human oversight</span><span>AI agents</span><span>safety</span></div>
+        <div class="drop-number" id="todayNumber">DAY 31</div>
+        <h2 id="todayTitle">Can an AI prove that it completed the task?</h2>
+        <p class="lead" id="todayHook">An agent saying “done” is not the same as the task actually being done. Reliable systems check the result against the goal.</p>
+        <div class="topic-tags" id="todayTags"><span>verification</span><span>AI agents</span><span>reliability</span></div>
       </div>
       <div class="question-card">
         <span>BEFORE YOU READ</span>
-        <h3 id="predictionQuestion">A venue deposit is non-refundable, and the user never approved that risk. What should the agent do?</h3>
-        <div class="choice-row"><button data-choice="A">Pay now to complete the task</button><button data-choice="B">Pause and ask for approval</button></div>
+        <h3 id="predictionQuestion">An agent clicks “Send” and receives a timeout. What should it report?</h3>
+        <div class="choice-row"><button data-choice="A">The message was definitely sent</button><button data-choice="B">The outcome is uncertain; check the sent state</button></div>
         <p id="predictionResult" class="prediction-result">Choose an answer before reading.</p>
       </div>
     </div>
     <div class="drop-body">
-      <article><span class="label">THE IDEA</span><div id="idea">A human handoff is different from asking a routine clarification. The agent pauses its own action and gives a person the context needed to decide or approve the next step. A useful handoff includes what the agent was trying to do, what it observed, what remains uncertain, the possible consequences and the exact decision it needs help with. The system should also make clear whether it has paused safely or whether anything is still running.</div></article>
-      <article><span class="label">WHY IT MATTERS</span><div id="why">AI systems increasingly interact with money, accounts, private information and real-world services. A small misunderstanding can become costly when an agent has permission to act. Human oversight creates a checkpoint for high-impact actions, unusual situations and cases where the system's confidence or evidence is not good enough.</div></article>
-      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Give an agent a mock task: book a refundable venue for a college event. Let it compare options, but add a rule that it must ask a person before paying a deposit or accepting a non-refundable term. Check whether it pauses at the right moment and provides the options, costs, cancellation terms and reason for the handoff.</div></article>
+      <article><span class="label">THE IDEA</span><div id="idea">Task completion needs evidence. An agent should define what a successful outcome looks like, take the action, then inspect the resulting state. If it was asked to send a file, it should verify that the file was sent to the right person. If it was asked to update a record, it should read the record back and check the changed fields. This is a postcondition check: confirming that the world now satisfies the intended result, rather than trusting the action call itself.</div></article>
+      <article><span class="label">WHY IT MATTERS</span><div id="why">Tools can time out, return misleading success messages, act on the wrong item or partially complete a multi-step task. Without verification, an agent may report success after only attempting an action. Evidence-based completion makes failures visible and gives users a truthful status: completed, partially completed, failed or still uncertain.</div></article>
+      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Give an agent a harmless task in a test environment: create a note with a specific title and two bullet points. After it reports success, independently open the note and check the title and both bullets. Then deliberately change one bullet in the test data and see whether the agent notices the mismatch instead of claiming the task is complete.</div></article>
       <article id="day4Lab" class="lab-panel" hidden>
         <div class="label">INTERACTIVE LAB · HALLUCINATION CHECK</div>
         <h3>Can confidence predict truth?</h3>
@@ -78,13 +78,13 @@
           <span id="toolLabScore" class="lab-score"></span>
         </div>
       </article>
-      <article><span class="label">WHERE IT BREAKS</span><div id="failure">A handoff can fail if the agent escalates everything and overwhelms people, or if it waits too long after an irreversible action. A vague message such as “Please review” is not enough. Good systems define escalation triggers in advance, preserve relevant evidence, stop safely, and make it obvious what the human is being asked to decide.</div></article>
+      <article><span class="label">WHERE IT BREAKS</span><div id="failure">Verification can also be weak. Checking only that a button was clicked does not prove the intended state changed. A stale cache, wrong account or incomplete check can create false confidence. The system must verify the outcome that matters, using an independent and appropriately scoped signal where possible.</div></article>
     </div>
     <div class="drop-footer">
-      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Reliable autonomy includes knowing when not to act alone—and making the human handoff clear and timely.</strong></div>
+      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">A reliable agent verifies the result, not just the action it attempted.</strong></div>
       <div class="day-controls">
         <button class="day-btn" id="prevDay">← Previous</button>
-        <span id="dayStatus">DAY 30 OF 30</span>
+        <span id="dayStatus">DAY 31 OF 31</span>
         <button class="day-btn" id="nextDay">Next →</button>
       </div>
       <button class="primary small" id="saveToday">Save to notebook</button>
@@ -130,6 +130,7 @@
     <article class="archive-card" data-i="27"><div class="num">DAY 28 · 7 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI tell when its plan is going wrong?</h3><p>Reliable agents compare predictions with outcomes and adapt when reality disagrees.</p><a class="archive-link" href="days/day-28/">Open day →</a></article>
     <article class="archive-card" data-i="28"><div class="num">DAY 29 · 11 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI tell a goal from a constraint?</h3><p>A good plan reaches the goal without crossing the boundaries that define success.</p><a class="archive-link" href="days/day-29/">Open day →</a></article>
     <article class="archive-card" data-i="29"><div class="num">DAY 30 · 14 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>When should an AI hand a decision to a human?</h3><p>Reliable agents pause before high-impact decisions and give people the context to approve the next step.</p><a class="archive-link" href="days/day-30/">Open day →</a></article>
+    <article class="archive-card" data-i="30"><div class="num">DAY 31 · 15 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI prove that it completed the task?</h3><p>A reliable agent checks the outcome it was asked to achieve, rather than trusting that an action was attempted.</p><a class="archive-link" href="days/day-31/">Open day →</a></article>
   </div>
   <noscript>
     <p class="eyebrow" style="margin-top:1rem">JavaScript is optional. The current day and published archive remain readable without it.</p>
@@ -151,5 +152,5 @@
 
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
 <footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI · <a href="https://github.com/boutsoniya/AGI">GitHub</a></footer>
-<script src="app.js?v=20261114-1" defer></script>
+<script src="app.js?v=20261115-1" defer></script>
 </body></html>
