@@ -27,25 +27,25 @@
 
 <section id="today" class="today-wrap">
   <div class="today-card">
-    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">15 Nov 2026</span></div>
+    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">17 Nov 2026</span></div>
     <div class="today-grid">
       <div>
-        <div class="drop-number" id="todayNumber">DAY 31</div>
-        <h2 id="todayTitle">Can an AI prove that it completed the task?</h2>
-        <p class="lead" id="todayHook">An agent saying “done” is not the same as the task actually being done. Reliable systems check the result against the goal.</p>
-        <div class="topic-tags" id="todayTags"><span>verification</span><span>AI agents</span><span>reliability</span></div>
+        <div class="drop-number" id="todayNumber">DAY 32</div>
+        <h2 id="todayTitle">Can an AI agent have too much permission?</h2>
+        <p class="lead" id="todayHook">An agent may need access to do a task—but should it get access to everything? The safest useful system gets only the authority it needs.</p>
+        <div class="topic-tags" id="todayTags"><span>least privilege</span><span>AI agents</span><span>security</span></div>
       </div>
       <div class="question-card">
         <span>BEFORE YOU READ</span>
-        <h3 id="predictionQuestion">An agent clicks “Send” and receives a timeout. What should it report?</h3>
-        <div class="choice-row"><button data-choice="A">The message was definitely sent</button><button data-choice="B">The outcome is uncertain; check the sent state</button></div>
+        <h3 id="predictionQuestion">An agent only needs to create one calendar event. Which access is safer?</h3>
+        <div class="choice-row"><button data-choice="A">Full access to the user's account</button><button data-choice="B">Permission to create that event only</button></div>
         <p id="predictionResult" class="prediction-result">Choose an answer before reading.</p>
       </div>
     </div>
     <div class="drop-body">
-      <article><span class="label">THE IDEA</span><div id="idea">Task completion needs evidence. An agent should define what a successful outcome looks like, take the action, then inspect the resulting state. If it was asked to send a file, it should verify that the file was sent to the right person. If it was asked to update a record, it should read the record back and check the changed fields. This is a postcondition check: confirming that the world now satisfies the intended result, rather than trusting the action call itself.</div></article>
-      <article><span class="label">WHY IT MATTERS</span><div id="why">Tools can time out, return misleading success messages, act on the wrong item or partially complete a multi-step task. Without verification, an agent may report success after only attempting an action. Evidence-based completion makes failures visible and gives users a truthful status: completed, partially completed, failed or still uncertain.</div></article>
-      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Give an agent a harmless task in a test environment: create a note with a specific title and two bullet points. After it reports success, independently open the note and check the title and both bullets. Then deliberately change one bullet in the test data and see whether the agent notices the mismatch instead of claiming the task is complete.</div></article>
+      <article><span class="label">THE IDEA</span><div id="idea">The principle of least privilege says a system should receive only the permissions required for its current job, and no more. An agent asked to organise a calendar event may need to read availability and create an event, but it does not automatically need permission to delete calendars, read private files or send messages to everyone. Permissions should also be limited by scope and time: one folder rather than the whole drive, one transaction rather than unrestricted payments, and temporary access rather than permanent access.</div></article>
+      <article><span class="label">WHY IT MATTERS</span><div id="why">Tool access turns an AI decision into a real-world capability. If an agent misunderstands an instruction, follows malicious content or makes a faulty plan, broad permissions increase the damage it can cause. Narrow permissions create boundaries outside the model itself. They do not make the agent infallible, but they limit what a mistake can affect.</div></article>
+      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Create a mock assistant with three tools: read a calendar, create an event and delete events. Give it the task of scheduling a meeting. First allow all three tools; then remove delete permission and allow event creation only after confirmation. Try a prompt that asks it to clear the calendar. Compare what it can do in each setup.</div></article>
       <article id="day4Lab" class="lab-panel" hidden>
         <div class="label">INTERACTIVE LAB · HALLUCINATION CHECK</div>
         <h3>Can confidence predict truth?</h3>
@@ -78,13 +78,13 @@
           <span id="toolLabScore" class="lab-score"></span>
         </div>
       </article>
-      <article><span class="label">WHERE IT BREAKS</span><div id="failure">Verification can also be weak. Checking only that a button was clicked does not prove the intended state changed. A stale cache, wrong account or incomplete check can create false confidence. The system must verify the outcome that matters, using an independent and appropriately scoped signal where possible.</div></article>
+      <article><span class="label">WHERE IT BREAKS</span><div id="failure">Permissions can be too narrow and block legitimate work, or too broad and expose data or actions unnecessarily. A permission check also needs to happen at the tool boundary—not just in the model's prompt—because the model can ignore or misunderstand instructions. Review access when the task changes and revoke temporary grants when they are no longer needed.</div></article>
     </div>
     <div class="drop-footer">
-      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">A reliable agent verifies the result, not just the action it attempted.</strong></div>
+      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Give an agent the minimum authority needed for the task—and enforce that boundary outside the model.</strong></div>
       <div class="day-controls">
         <button class="day-btn" id="prevDay">← Previous</button>
-        <span id="dayStatus">DAY 31 OF 31</span>
+        <span id="dayStatus">DAY 32 OF 32</span>
         <button class="day-btn" id="nextDay">Next →</button>
       </div>
       <button class="primary small" id="saveToday">Save to notebook</button>
@@ -131,6 +131,7 @@
     <article class="archive-card" data-i="28"><div class="num">DAY 29 · 11 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI tell a goal from a constraint?</h3><p>A good plan reaches the goal without crossing the boundaries that define success.</p><a class="archive-link" href="days/day-29/">Open day →</a></article>
     <article class="archive-card" data-i="29"><div class="num">DAY 30 · 14 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>When should an AI hand a decision to a human?</h3><p>Reliable agents pause before high-impact decisions and give people the context to approve the next step.</p><a class="archive-link" href="days/day-30/">Open day →</a></article>
     <article class="archive-card" data-i="30"><div class="num">DAY 31 · 15 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI prove that it completed the task?</h3><p>A reliable agent checks the outcome it was asked to achieve, rather than trusting that an action was attempted.</p><a class="archive-link" href="days/day-31/">Open day →</a></article>
+    <article class="archive-card" data-i="31"><div class="num">DAY 32 · 17 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI agent have too much permission?</h3><p>Agents should have only the access needed for the task, with boundaries enforced by the tools themselves.</p><a class="archive-link" href="days/day-32/">Open day →</a></article>
   </div>
   <noscript>
     <p class="eyebrow" style="margin-top:1rem">JavaScript is optional. The current day and published archive remain readable without it.</p>
@@ -152,5 +153,5 @@
 
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
 <footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI · <a href="https://github.com/boutsoniya/AGI">GitHub</a></footer>
-<script src="app.js?v=20261115-1" defer></script>
+<script src="app.js?v=20261117-1" defer></script>
 </body></html>
