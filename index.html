@@ -27,25 +27,25 @@
 
 <section id="today" class="today-wrap">
   <div class="today-card">
-    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">20 Nov 2026</span></div>
+    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">21 Nov 2026</span></div>
     <div class="today-grid">
       <div>
-        <div class="drop-number" id="todayNumber">DAY 34</div>
-        <h2 id="todayTitle">What should an AI remember—and what should it forget?</h2>
-        <p class="lead" id="todayHook">Memory makes an AI more useful across time, but storing everything can be a privacy and reliability problem. The design question is what deserves to persist.</p>
-        <div class="topic-tags" id="todayTags"><span>AI memory</span><span>personalisation</span><span>privacy</span></div>
+        <div class="drop-number" id="todayNumber">DAY 35</div>
+        <h2 id="todayTitle">Can an AI know when it doesn\u2019t know?</h2>
+        <p class="lead" id="todayHook">An answer is not always the best response. Sometimes the most intelligent move is to recognise missing evidence and stop.</p>
+        <div class="topic-tags" id="todayTags"><span>uncertainty</span><span>calibration</span><span>reliability</span></div>
       </div>
       <div class="question-card">
         <span>BEFORE YOU READ</span>
-        <h3 id="predictionQuestion">Which memory policy is better for a personal AI?</h3>
-        <div class="choice-row"><button data-choice="A">Store every conversation forever</button><button data-choice="B">Save relevant, user-controllable facts with review and deletion</button></div>
+        <h3 id="predictionQuestion">When an AI has weak evidence, what should it do?</h3>
+        <div class="choice-row"><button data-choice="A">Give its best guess confidently</button><button data-choice="B">State uncertainty, seek evidence or abstain</button></div>
         <p id="predictionResult" class="prediction-result">Choose an answer before reading.</p>
       </div>
     </div>
     <div class="drop-body">
-      <article><span class="label">THE IDEA</span><div id="idea">A useful AI memory is not a transcript of everything it has seen. It is a carefully selected set of information that may help future interactions: stable preferences, ongoing goals, relevant project context or a decision the user explicitly wants carried forward. Memory needs a lifecycle—what gets saved, why it is useful, how it can be corrected, when it expires and how it is deleted. Retrieval matters too: even a correct memory can be harmful if it is surfaced in the wrong context.</div></article>
-      <article><span class="label">WHY IT MATTERS</span><div id="why">Without memory, people repeatedly explain their preferences and projects. With indiscriminate memory, the system may retain sensitive, outdated or irrelevant details and use them unexpectedly. Good memory design balances continuity with user control, relevance and data minimisation. A system should be able to distinguish a temporary fact from a durable preference, and uncertainty from something the user confirmed.</div></article>
-      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Try a simple memory policy for an assistant: save only facts that are useful in future sessions, avoid sensitive information unless necessary and explicitly requested, attach a reason or timestamp, and let the user review or correct saved items. Compare how well it helps with a recurring task after saving a few preferences versus storing an entire conversation.</div></article>
+      <article><span class="label">THE IDEA</span><div id="idea">A model\u2019s uncertainty is not the same as the uncertainty expressed in its words. A system can generate \u201cI\u2019m 90% sure\u201d without that number being calibrated. Calibration asks whether, across many predictions made at a given confidence level, roughly that proportion is correct. Selective prediction goes one step further: a system can answer when its evidence is strong and abstain when it is not.</div></article>
+      <article><span class="label">WHY IT MATTERS</span><div id="why">In high-stakes or changing situations, an unsupported answer can be worse than no answer. Knowing when to defer, ask a question, retrieve evidence or hand off to a human is part of reliable intelligence—not a weakness to hide.</div></article>
+      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Make a set of 20 questions: some you know, some obscure, and some whose answer depends on recent information. Ask an AI to answer each, assign confidence, and flag which it would abstain from. Verify the answers. Group the results by confidence and see whether the high-confidence group is actually more accurate.</div></article>
       <article id="day4Lab" class="lab-panel" hidden>
         <div class="label">INTERACTIVE LAB · HALLUCINATION CHECK</div>
         <h3>Can confidence predict truth?</h3>
@@ -78,7 +78,7 @@
           <span id="toolLabScore" class="lab-score"></span>
         </div>
       </article>
-      <article><span class="label">WHERE IT BREAKS</span><div id="failure">Memory can become stale, overgeneralise from one interaction, or retrieve a detail that is irrelevant or uncomfortable. A preference may change; a one-time request is not a permanent trait. Retrieval errors and unclear controls can undermine trust. The system should treat memory as fallible context—not unquestionable truth—and provide a clear way to update or remove it.</div></article>
+      <article><span class="label">WHERE IT BREAKS</span><div id="failure">A model may use confident language without calibrated confidence. It can also abstain too often, avoiding easy questions, or too rarely, bluffing when evidence is weak. Calibration can shift when the topic or data changes.</div></article>
     </div>
     <div class="drop-footer">
       <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Good AI memory is selective, useful, revisable and under the user's control.</strong></div>
@@ -133,7 +133,7 @@
     <article class="archive-card" data-i="30"><div class="num">DAY 31 · 15 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI prove that it completed the task?</h3><p>A reliable agent checks the outcome it was asked to achieve, rather than trusting that an action was attempted.</p><a class="archive-link" href="days/day-31/">Open day →</a></article>
     <article class="archive-card" data-i="31"><div class="num">DAY 32 · 17 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI agent have too much permission?</h3><p>Agents should have only the access needed for the task, with boundaries enforced by the tools themselves.</p><a class="archive-link" href="days/day-32/">Open day →</a></article>
     <article class="archive-card" data-i="32"><div class="num">DAY 33 · 18 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI tell instructions from information?</h3><p>A webpage can contain useful facts—and also text that tries to hijack the agent reading it. Which parts should the agent obey?</p><a class="archive-link" href="days/day-33/">Open day →</a></article>
-    <article class="archive-card" data-i="33"><div class="num">DAY 34 · 20 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>What should an AI remember—and what should it forget?</h3><p>Memory makes an AI more useful across time, but storing everything can be a privacy and reliability problem. The design question is what deserves to persist.</p><a class="archive-link" href="days/day-34/">Open day →</a></article>
+    <article class="archive-card" data-i="34"><div class="num">DAY 35 · 21 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI know when it doesn’t know?</h3><p>An answer is not always the best response. Sometimes the most intelligent move is to recognise missing evidence and stop.</p><a class="archive-link" href="days/day-35/">Open day →</a></article>
   </div>
   <noscript>
     <p class="eyebrow" style="margin-top:1rem">JavaScript is optional. The current day and published archive remain readable without it.</p>
@@ -155,5 +155,5 @@
 
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
 <footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI · <a href="https://github.com/boutsoniya/AGI">GitHub</a></footer>
-<script src="app.js?v=20261120-1" defer></script>
+<script src="app.js?v=20261121-1" defer></script>
 </body></html>
