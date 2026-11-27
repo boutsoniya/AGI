@@ -27,25 +27,25 @@
 
 <section id="today" class="today-wrap">
   <div class="today-card">
-    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">26 Nov 2026</span></div>
+    <div class="today-top"><span class="eyebrow" id="todayLabel">TODAY'S DROP</span><span id="todayDate">27 Nov 2026</span></div>
     <div class="today-grid">
       <div>
-        <div class="drop-number" id="todayNumber">DAY 39</div>
-        <h2 id="todayTitle">Can an AI choose what it needs to know?</h2>
-        <p class="lead" id="todayHook">Sometimes the smartest next action is not doing the task. It is finding the one observation that makes the task possible.</p>
-        <div class="topic-tags" id="todayTags"><span>active perception</span><span>information gathering</span><span>decision-making</span></div>
+        <div class="drop-number" id="todayNumber">DAY 40</div>
+        <h2 id="todayTitle">Can an AI know when to stop thinking?</h2>
+        <p class="lead" id="todayHook">More reasoning is not always better. Sometimes intelligence means knowing when another step is no longer worth its cost.</p>
+        <div class="topic-tags" id="todayTags"><span>metareasoning</span><span>bounded rationality</span><span>decision-making</span></div>
       </div>
       <div class="question-card">
         <span>BEFORE YOU READ</span>
-        <h3 id="predictionQuestion">An event agent is unsure whether a venue can hold 200 people. What should it check first?</h3>
-        <div class="choice-row"><button data-choice="A">Browse examples of event posters</button><button data-choice="B">Check the venue\u2019s verified capacity</button></div>
+        <h3 id="predictionQuestion">An AI has a good event plan, but one unverified detail could make the venue unsafe. What should it do?</h3>
+        <div class="choice-row"><button data-choice="A">Stop because the plan already sounds convincing</button><button data-choice="B">Spend another step verifying the safety-critical detail</button></div>
         <p id="predictionResult" class="prediction-result">Choose an answer before reading.</p>
       </div>
     </div>
     <div class="drop-body">
-      <article><span class="label">THE IDEA</span><div id="idea">Most AI systems are described as if they receive information and then decide what to do. Active perception reverses part of that picture: the system can choose what information to acquire. A robot might move its camera to see behind an obstacle; an assistant might inspect a relevant file before answering; a search agent might open the source most likely to resolve an uncertainty. The loop is: identify what is missing, choose an observation, acquire it, update the picture, and decide again. The key is that the observation is selected because it may change the next decision.</div></article>
-      <article><span class="label">WHY IT MATTERS</span><div id="why">A system that passively consumes whatever information arrives can waste time processing irrelevant detail while missing the one fact that matters. Active information gathering makes perception purposeful. It connects curiosity to action: the agent does not just ask 'what do I know?' but 'what should I look at next, and why?' This is useful in robotics, visual search, navigation, research and tool-using agents.</div></article>
-      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Imagine an AI helping organise a college event, but it does not know the venue capacity, available budget or expected attendance. Give it three possible actions: inspect the venue booking document, check last year's attendance, or browse poster-design ideas. Ask it which observation should come first for deciding whether the event is feasible. Then reveal the information and repeat the choice. Compare this with an agent that reads all three sources in a fixed order. Did the chosen observation reduce uncertainty that mattered to the decision?</div></article>
+      <article><span class="label">THE IDEA</span><div id="idea">An AI system may spend computation to improve an answer: search another source, run another calculation, compare another hypothesis or ask another model. Metareasoning is reasoning about that reasoning. The system estimates whether another thinking step is likely to improve the decision enough to justify the time, compute or money it consumes. The value of computation is the expected benefit of more computation: continue when that benefit exceeds the cost; stop when the likely improvement is too small. This does not mean guessing quickly. It means treating thinking itself as a limited resource that should be allocated intelligently.</div></article>
+      <article><span class="label">WHY IT MATTERS</span><div id="why">A model that stops too early can miss an important detail. A model that never stops can waste resources, delay useful action and bury a clear answer under unnecessary analysis. Real agents operate under limits: battery, latency, API budgets, deadlines and attention. Metareasoning helps them choose not only what answer to pursue, but how much effort to spend pursuing it.</div></article>
+      <article class="experiment"><span class="label">TRY THIS</span><div id="experiment">Ask an AI to plan a one-day college event with a fixed budget and three constraints. First, let it answer immediately. Then let it spend one extra step checking the biggest uncertainty, such as venue capacity. Finally, give it permission to spend five more steps checking minor details. Compare whether each extra step changes the decision, reduces a meaningful risk or merely makes the response longer. Write down the benefit and cost of every additional step.</div></article>
       <article id="day4Lab" class="lab-panel" hidden>
         <div class="label">INTERACTIVE LAB · HALLUCINATION CHECK</div>
         <h3>Can confidence predict truth?</h3>
@@ -78,13 +78,13 @@
           <span id="toolLabScore" class="lab-score"></span>
         </div>
       </article>
-      <article><span class="label">WHERE IT BREAKS</span><div id="failure">The agent may choose an observation that looks informative but cannot change the decision, underestimate the cost or risk of gathering it, or keep searching after it already has enough evidence. Its estimate of information gain can also be wrong: the source may be outdated, inaccessible or misleading. More information is not automatically better; it must be relevant, trustworthy and worth its cost.</div></article>
+      <article><span class="label">WHERE IT BREAKS</span><div id="failure">The system may misjudge the value of another step: it can stop while a critical uncertainty remains, or continue because it mistakes activity for progress. Its estimate of compute cost or answer improvement may be inaccurate. Some decisions also have asymmetric stakes: a small chance of preventing serious harm may justify extra checking, while a low-stakes choice may not. A stopping rule must consider uncertainty, consequences and resource limits—not just a fixed number of steps.</div></article>
     </div>
     <div class="drop-footer">
-      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">An intelligent agent should not only use information well. It should choose which information is worth acquiring next.</strong></div>
+      <div class="takeaway-wrap"><span class="label">TAKEAWAY</span><strong id="takeaway">Intelligence is not thinking for the longest time. It is spending the right amount of thought on the decision that matters.</strong></div>
       <div class="day-controls">
         <button class="day-btn" id="prevDay">← Previous</button>
-        <span id="dayStatus">DAY 39 OF 39</span>
+        <span id="dayStatus">DAY 40 OF 40</span>
         <button class="day-btn" id="nextDay">Next →</button>
       </div>
       <button class="primary small" id="saveToday">Save to notebook</button>
@@ -137,6 +137,7 @@
     <article class="archive-card" data-i="36"><div class="num">DAY 37 · 24 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI plan when the future is uncertain?</h3><p>A plan is not reliable just because it works in the one future the agent expected.</p><a class="archive-link" href="days/day-37/">Open day →</a></article>
     <article class="archive-card" data-i="37"><div class="num">DAY 38 · 25 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can multiple AI agents solve a problem together?</h3><p>Giving a task to five agents does not automatically give you a better team.</p><a class="archive-link" href="days/day-38/">Open day →</a></article>
     <article class="archive-card" data-i="38"><div class="num">DAY 39 · 26 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI choose what it needs to know?</h3><p>Sometimes the smartest next action is not doing the task. It is finding the one observation that makes the task possible.</p><a class="archive-link" href="days/day-39/">Open day →</a></article>
+    <article class="archive-card" data-i="39"><div class="num">DAY 40 · 27 Nov 2026 <span class="status-pill live">PUBLISHED</span></div><h3>Can an AI know when to stop thinking?</h3><p>More reasoning is not always better. Sometimes intelligence means knowing when another step is no longer worth its cost.</p><a class="archive-link" href="days/day-40/">Open day →</a></article>
   </div>
   <noscript>
     <p class="eyebrow" style="margin-top:1rem">JavaScript is optional. The current day and published archive remain readable without it.</p>
@@ -158,5 +159,5 @@
 
 <div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
 <footer>ONE IDEA / DAY · AI, INTELLIGENCE & AGI · <a href="https://github.com/boutsoniya/AGI">GitHub</a></footer>
-<script src="app.js?v=20261126-1" defer></script>
+<script src="app.js?v=20261127-1" defer></script>
 </body></html>
